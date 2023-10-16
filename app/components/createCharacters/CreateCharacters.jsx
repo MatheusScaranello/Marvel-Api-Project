@@ -4,7 +4,6 @@ import styles from './createCharacters.module.css'
 import { useState } from 'react'
 import powers from '@/data/Powers';
 import avatarsData from '@/data/Avatars';
-import characters from '@/models/Characters';
 
 
 export default function CreateCharacters() {
