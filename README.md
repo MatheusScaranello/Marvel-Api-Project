@@ -8,16 +8,15 @@
 
 <h1 align="center"> Marvel API 🦸🏻‍♂️ </h1>
 
-First, run the development server:
+## Primeiros Comandos.
+Ao inicial o seu projeto, vá até o terminal e digite os seguintes comandos. 
 
 ```bash
+npm install
+
+npm axios
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 
