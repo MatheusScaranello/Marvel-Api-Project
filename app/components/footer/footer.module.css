@@ -1,5 +1,4 @@
 
-
 .site
 {
   background-color:#26272b;
@@ -34,17 +33,17 @@
   color:#3366cc;
   text-decoration:none;
 }
-.footer
-{
+.footer{
   padding-left:0;
-  list-style:none
+  list-style:none;
+  display:flex;
+  width:100%;
 }
-.footer li
-{
-  display:block
-}
+
 .footer a
 {
+    margin: 5px;
+    display:flex;
   color:#737373
 }
 .footer a:active,.footer a:focus,.footer a:hover

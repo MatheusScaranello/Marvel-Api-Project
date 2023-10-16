@@ -4,7 +4,27 @@ import Footer from './components/footer/Footer'
 export default function Home() {
   return (
     <>
-      <Header />
+    <Header/>
+    <div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
       <Footer />
     </>
   )

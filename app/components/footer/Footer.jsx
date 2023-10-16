@@ -5,25 +5,21 @@ const Footer = () =>{
 return(
     <>
     <footer className={styles.site }>
-      <div className={styles.container}>
         <div className={styles.row}>
+            <div className={styles.home}>
           <div className={styles.col}>
-            <h6>About</h6>
-            <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+            <h6>Sobre</h6>
+            <p class="text-justify">O Marvel Character Hub é o seu portal para explorar o vasto universo de personagens da Marvel. Neste site, você pode mergulhar nas histórias e aventuras de seus heróis e vilões favoritos, além de criar seu próprio personagem e imaginar novas histórias no universo Marvel.</p>
           </div>
 
           <div className={styles.col}>
-            <h6>Categories</h6>
+            <h6>Categorias</h6>
             <ul className={styles.footer}>
-              <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-              <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-              <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-              <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-              <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-              <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+              <li>Home</li>
+              <li>Sobre nós</li>
             </ul>
           </div>
-
+      
           <div className={styles.col}>
             <h6>Quick Links</h6>
             <ul className={styles.footer}>
@@ -35,6 +31,7 @@ return(
             </ul>
           </div>
         </div>
+       
     
       </div>
       <div className={styles.container}>
