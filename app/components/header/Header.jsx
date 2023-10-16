@@ -3,7 +3,8 @@ import styles from './header.module.css'
 const Header = () => {
     return (
         <div className={styles.header}>
-        <h1 className={styles.title}>Welcome to my website</h1>
+            <div className={styles.marvel}><p className={styles.marvelTitle}>MARVEL</p></div>
+            <div className={styles.studios}><p className={styles.studiosTitle}>Studios</p></div>
         </div>
     )
     }
