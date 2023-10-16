@@ -12,11 +12,10 @@ const generateHash = (timeStamp) => {
     return hash;
 };
 
-export const getCharacters = async () => {
+export const getCharacters = async (name) => {
     const timeStamp = getTimeStamp();
     const hash = generateHash(timeStamp);
-    const url = `${API_BASE_URL}/characters?ts=${timeStamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}&limit=100&offset=0`;
-
+    const url = `${API_BASE_URL}/characters?ts=${timeStamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}&limit=100&offset=0&nameStartsWith=${name}`;
 
     try {
         const resp = await axios.get(url);
@@ -24,5 +23,4 @@ export const getCharacters = async () => {
     } catch (error) {
         throw error;
     }
-}
-
+};
