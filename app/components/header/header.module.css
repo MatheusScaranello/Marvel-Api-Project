@@ -3,7 +3,7 @@
 }
 .wrapper { margin-top:10%; }
 .marvel { 
-  border: solid 1px #fff;
+  
   padding: 8px 4px 0 0;
   animation: zoomOut 9s ease-in-out infinite;
   -webkit-animation: zoomOut 9s ease-in-out infinite;
