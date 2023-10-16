@@ -13,11 +13,12 @@
      <a href="https://github.com/MatheusScaranello/Marvel-Api-Project">🔗 Git</a>
 </h1>
 
+A API da Marvel é uma API pública que oference acesso a vários filmes e séries do mundo da Marvel.
+
   ## *Descrição:* O Marvel Character Hub é o seu portal para explorar o vasto universo de personagens da Marvel. Neste site, você pode mergulhar nas histórias e aventuras de seus heróis e vilões favoritos, além de criar seu próprio personagem e imaginar novas histórias no universo Marvel.
    **Recursos Principais:** - **Pesquisa de Personagens Marvel**: Encontre
 
-
-A API da Marvel é uma API pública que oference acesso a vários filmes e séries do mundo da Marvel. 
+ 
 
 <h1 align="center">
     <a href="https://support.github.com/contact/bug-report">Reporta erro</a>
