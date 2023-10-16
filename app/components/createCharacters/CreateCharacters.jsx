@@ -4,6 +4,7 @@ import styles from './createCharacters.module.css'
 import { useState } from 'react'
 import powers from '@/data/Powers';
 import avatarsData from '@/data/Avatars';
+import characters from '@/models/Characters';
 
 
 export default function CreateCharacters() {
@@ -11,12 +12,23 @@ export default function CreateCharacters() {
     const [power, setPower] = useState('')
     const [avatar, setAvatar] = useState('')
     const [characters, setCharacters] = useState([])
+    const [id, setId] = useState(0)
+
+    const generateId = () => {
+        setId(id + 1)
+        return id
+    }
 
     const addCharacters = () => {
-        setCharacters([...characters, {name, power, avatar}])
+        generateId()
+        setCharacters([...characters, {id, name, power, avatar}])
         setName('')
         setPower('')
         setAvatar('')
+    }
+
+    const removeCharacters = (id) => {
+        setCharacters(characters.filter((character) => character.id !== id))
     }
 
     return (
@@ -74,6 +86,7 @@ export default function CreateCharacters() {
                                     }
                                 })
                             }
+                            <button onClick={() => removeCharacters(character.id)} className={styles.removeButton}>Remover</button>
                         </div>
                     )
                 })
