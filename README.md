@@ -8,6 +8,12 @@
 
 <h1 align="center"> Marvel API 🦸🏻‍♂️ </h1>
 
+<h1 align="center">
+    <a href="https://pt-br.reactjs.org/">🔗 React</a>
+     <a href="https://github.com/MatheusScaranello/Marvel-Api-Project">🔗 Git</a>
+
+</h1>
+
 ## Primeiros Comandos.
 Ao inicial o seu projeto, vá até o terminal e digite os seguintes comandos. 
 
