@@ -39,11 +39,18 @@ function Home() {
       <div className={styles.grid}>
         {
           apiData ? apiData.map((item) => (
-            <div className={styles.card} key={item.id}>
-              <h3 className={styles.name}>{item.name}</h3>
+
+            <div className={styles.card} key={item.id} 
+            onClick={()=>navigate(`/${item.id}`)}>
+
               <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name} className={styles.img} />
-              <p className={styles.desc}>{item.description}</p>
-              <button type="button" className={styles.btnInfos}>Mais Informações</button>
+
+              <h3 className={styles.name}>{item.name}</h3>
+
+              {/*  <p className={styles.desc}>{item.description}</p>  */}
+
+              {/* <button type="button" className={styles.btnInfos}>Mais Informações</button> */}
+
             </div>
           )) :
             <div className={styles.spinner}>
