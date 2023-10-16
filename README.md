@@ -39,3 +39,8 @@ O projeto utiliza a API Marvel, necessita obter sua própria chave de autentica�
 . URL base <a href="https://gateway.marvel.com/v1/public">Acesse</a>
 
 
+## Autenticação.
+
+API_PUBLIC_KEY = "b0a30f2c6cf1fda6fd1fd440ee6d52d6";
+API_PRIVATE_KEY"d57d50281d8ac0e805135173184c87e419b4eec1";
+
