@@ -1,9 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+<div align="center">
 
 ![ texto](https://i.pinimg.com/564x/bf/0d/3d/bf0d3d4f2dc382f56fbc94f5d8358401.jpg)
+</div>
 
 
-## Marvel API
+
+<h1 align="center"> Marvel API 🦸🏻‍♂️ </h1>
 
 First, run the development server:
 
