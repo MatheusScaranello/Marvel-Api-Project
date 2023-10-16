@@ -11,12 +11,52 @@ export default function CreateCharacters() {
     const [power, setPower] = useState('')
     const [avatar, setAvatar] = useState('')
     const [characters, setCharacters] = useState([])
+    const [id, setId] = useState(0)
+    const [idEdit, setIdEdit] = useState(0)
+    const [flag, setFlag] = useState(false)
+
+    const generateId = () => {
+        setId(id + 1)
+        return id
+    }
 
     const addCharacters = () => {
-        setCharacters([...characters, {name, power, avatar}])
+        generateId()
+        setCharacters([...characters, {id, name, power, avatar}])
         setName('')
         setPower('')
         setAvatar('')
+    }
+
+    const removeCharacters = (id) => {
+        setCharacters(characters.filter((character) => character.id !== id))
+    }
+
+    function getCharacters(id) {
+        const character = characters.find((character) => character.id === id)
+        return character
+    }
+
+    const editCharacters = (id) => {
+        setIdEdit(id)
+        const characters = getCharacters(id)
+        setName(characters.name)
+        setPower(characters.power)
+        setAvatar(characters.avatar)
+        setFlag(true)
+    }
+
+    function atualizarCharacters(id) {
+        const character = characters.find((character) => character.id === id)
+        character.name = name
+        character.power = power
+        character.avatar = avatar
+    }
+
+    const updateCharacters = () => {
+        atualizarCharacters(idEdit)
+        
+        setFlag(false)
     }
 
     return (
@@ -52,7 +92,12 @@ export default function CreateCharacters() {
                     }
                 </select></label>
             </form>
-            <button onClick={addCharacters} className={styles.addButton}>Adicione seu Personagem</button>
+            <div>
+                {
+                    flag ? <button onClick={updateCharacters} className={styles.buttonUpgrade}>Atualizar</button> : <button onClick={addCharacters} className={styles.addButton}>Adicionar</button>
+                }
+            </div>
+            
         </div>
         <div className={styles.charactersList}>
             {
@@ -74,6 +119,8 @@ export default function CreateCharacters() {
                                     }
                                 })
                             }
+                            <button onClick={() => removeCharacters(character.id)} className={styles.removeButton}>Remover</button>
+                            <button onClick={() => editCharacters(character.id)} className={styles.editButton}>Editar</button>
                         </div>
                     )
                 })
