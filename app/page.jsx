@@ -25,7 +25,6 @@ function Home() {
 
 
 
-
   return (
     <div className={styles.container}>
 
@@ -43,7 +42,8 @@ function Home() {
             <div className={styles.card} key={item.id}>
               <h3 className={styles.name}>{item.name}</h3>
               <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name} className={styles.img} />
-              <p>{item.description}</p>
+              <p className={styles.desc}>{item.description}</p>
+              <button type="button" className={styles.btnInfos}>Mais Informações</button>
             </div>
           )) :
             <div className={styles.spinner}>
