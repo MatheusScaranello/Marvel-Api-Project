@@ -3,7 +3,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ![ texto](https://i.pinimg.com/564x/bf/0d/3d/bf0d3d4f2dc382f56fbc94f5d8358401.jpg)
 
 
-
 ## Marvel API
 
 First, run the development server:
