@@ -13,15 +13,15 @@
      <a href="https://github.com/MatheusScaranello/Marvel-Api-Project">🔗 Git</a>
 </h1>
 
-DESCRIÇÃO
+A API da Marvel é uma API pública que oference acesso a vários filmes e séries do mundo da Marvel. 
 
 <h1 align="center">
-    <a href="https://support.github.com/contact/bug-report">.suporte</a>
+    <a href="https://support.github.com/contact/bug-report">Reporta erro</a>
 </h1>
 
 
 ## Primeiros Comandos.
-Ao inicial o seu projeto, vá até o terminal e digite os seguintes comandos. 
+Ao inicial o projeto, vá até o terminal e digite os seguintes comandos. 
 
 ```bash
 npm install
@@ -30,18 +30,15 @@ npm axios
 
 npm run dev
 ```
+## Acesso.
+
+O projeto utiliza a API Marvel, necessita obter sua própria chave de autenticação (API key).Para executar em seu projeito.
+
+. Acesse o <a href="https://developer.marvel.com">Portal do Desenvolvedor Marvel</a>
+
+. URL base <a href="https://gateway.marvel.com/v1/public">Acesse</a>
 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
