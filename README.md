@@ -41,7 +41,3 @@ O projeto utiliza a API Marvel, necessita obter sua própria chave de autentica�
 
 ## Autenticação.
 Todas as solicitações à API devem incluir uma chave de autenticação (API key) como um parâmetro de consulta.
-
-API_PUBLIC_KEY = "b0a30f2c6cf1fda6fd1fd440ee6d52d6";
-API_PRIVATE_KEY"d57d50281d8ac0e805135173184c87e419b4eec1";
-
