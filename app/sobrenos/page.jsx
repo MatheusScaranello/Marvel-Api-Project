@@ -14,3 +14,5 @@ const Sobrenos = () => {
         </div>
     )
 }
+
+export default Sobrenos
