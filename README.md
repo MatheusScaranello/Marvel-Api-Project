@@ -50,11 +50,5 @@ O projeto utiliza a API Marvel, necessita obter sua própria chave de autentica�
 ## Autenticação.
 Todas as solicitações à API devem incluir uma chave de autenticação (API key) como um parâmetro de consulta.
 
-## Requisitos Disponível
 
-O Projeto Marvel oferece uma variedade de recursos, incluindo:
-
-Personagem : Criando seus personagem e escolhendo seus poderes.
-
-Filmes e Séries : Onde pode navegar e filtar os filmes e séries dos seus personagens favoritos.
 
