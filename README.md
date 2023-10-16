@@ -19,8 +19,6 @@
 
 
 <h1 align="center">
-    Marvel API
-
     A API da Marvel é uma API pública que oference acesso a vários filmes e séries do mundo da Marvel.
 </h1>
 
@@ -53,3 +51,5 @@ O projeto utiliza a API Marvel, necessita obter sua própria chave de autentica�
 Todas as solicitações à API devem incluir uma chave de autenticação (API key) como um parâmetro de consulta.
 
 ## Requicitos Disponivel 
+
+.Nossos 
