@@ -24,9 +24,9 @@ A API da Marvel é uma API pública que oference acesso a vários filmes e séri
 Ao inicial o projeto, vá até o terminal e digite os seguintes comandos. 
 
 ```bash
-npm install
+npm install react-icons
 
-npm axios
+npm i axios
 
 npm run dev
 ```
