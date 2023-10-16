@@ -19,9 +19,9 @@
 
 
 <h1 align="center">
-    A API da Marvel é uma API pública que oference acesso a vários filmes e séries do mundo da Marvel.
+     Marvel API
 </h1>
-
+ A API da Marvel é uma API pública que oference acesso a vários filmes e séries do mundo da Marvel.
 
 <h1 align="center">
     <a href="https://support.github.com/contact/bug-report">Reporta erro</a>
