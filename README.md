@@ -15,7 +15,7 @@
 
 
 
-  ## *Descrição:* O Marvel Character Hub é o seu portal para explorar o vasto universo de personagens da Marvel. Neste site, você pode mergulhar nas histórias e aventuras de seus heróis e vilões favoritos, além de criar seu próprio personagem e imaginar novas histórias no universo Marvel.
+  ## *Descrição:* O Marvel é o seu portal para explorar o vasto universo de personagens da Marvel. Neste site, você pode mergulhar nas histórias e aventuras de seus heróis e vilões favoritos, além de criar seu próprio personagem e imaginar novas histórias no universo Marvel.
 
 
 <h1 align="center">
@@ -50,6 +50,11 @@ O projeto utiliza a API Marvel, necessita obter sua própria chave de autentica�
 ## Autenticação.
 Todas as solicitações à API devem incluir uma chave de autenticação (API key) como um parâmetro de consulta.
 
-## Requicitos Disponivel 
+## Requisitos Disponível
 
-.Nossos 
+O Projeto Marvel oferece uma variedade de recursos, incluindo:
+
+Personagem : Criando seus personagem e escolhendo seus poderes.
+
+Filmes e Séries : Onde pode navegar e filtar os filmes e séries dos seus personagens favoritos.
+
