@@ -26,6 +26,8 @@
     padding: 2rem;
     text-align: center;
     background-color: #e01a38;
+    width: 100%;
+    height: auto;
 }
 
 .inpts {
