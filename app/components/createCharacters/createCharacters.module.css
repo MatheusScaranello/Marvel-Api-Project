@@ -1,0 +1,112 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+ .title{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+.labels{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.inputs{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 0.125rem;
+}
+
+.addButton{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.125rem;
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.imagesPower{
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.charactersList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.character{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+    padding: 0.5rem;
+
+}
+
+.characterName{
+    color: #fdfdfd;
+    font-size: 2rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+.avatarImage{
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+.labelAvatar{
+    font-size: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+.divAvatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.avatarInput{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 0.125rem;
+}
+.characterAvatar{
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+}
+.powerTitle{
+    color: #fdfdfd;
+    font-size: 1.125rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+.powerName{
+    color: #fdfdfd;
+    font-size: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+}
