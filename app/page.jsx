@@ -54,7 +54,13 @@ function Home() {
                 <h3 className={styles.name}>{item.name}</h3>
               </div>
               <div className={`${styles.info} ${styles.back}`}>
-                <p className={styles.desc}>Descrição: {item.description}</p>
+                {item.description ? ( // Verifica se a descrição existe
+                  <p className={styles.desc}>Descrição: {item.description}</p>
+                ) : (
+                  <p className={styles.noDescription}>
+                    Esse personagem não possui descrição
+                  </p>
+                )}
               </div>
             </div>
           ))
