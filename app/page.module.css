@@ -65,13 +65,11 @@
     transition: transform 0.5s;
     cursor: pointer;
     perspective: 1000px;
-    /* Define a perspectiva para criar a ilusão de 3D */
     transform-style: preserve-3d;
 }
 
 .card:hover {
     transform: rotateY(180deg);
-    /* Rotação de 180 graus para revelar o verso */
 }
 
 .front,
@@ -97,9 +95,7 @@
 
 .front .img {
     width: 100px;
-    /* Ajuste o tamanho conforme necessário */
     height: 100px;
-    /* Ajuste o tamanho conforme necessário */
     border-radius: 50%;
     margin-bottom: 10px;
 }
