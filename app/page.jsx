@@ -45,12 +45,17 @@ function Home() {
         {apiData ? (
           apiData.map((item) => (
             <div className={styles.card} key={item.id}>
-              <img
-                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                alt={item.name}
-                className={styles.img}
-              />
-              <h3 className={styles.name}>{item.name}</h3>
+              <div className={styles.front}>
+                <img
+                  src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                  alt={item.name}
+                  className={styles.img}
+                />
+                <h3 className={styles.name}>{item.name}</h3>
+              </div>
+              <div className={`${styles.info} ${styles.back}`}>
+                <p className={styles.desc}>Descrição: {item.description}</p>
+              </div>
             </div>
           ))
         ) : (

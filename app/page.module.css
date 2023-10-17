@@ -28,8 +28,11 @@
     background-color: #e01a38;
     width: 100%;
     height: auto;
-}
-
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 .inpts {
     background-color: #171821;
     width: 90%;
@@ -59,15 +62,61 @@
     margin-top: 9rem;
     width: 45%;
     height: 300px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    perspective: 1000px;
+    /* Define a perspectiva para criar a ilusão de 3D */
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+    /* Rotação de 180 graus para revelar o verso */
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.front .img {
+    width: 100px;
+    /* Ajuste o tamanho conforme necessário */
+    height: 100px;
+    /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.front .name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem;
 }
 
 
 
 .img {
-border-radius: 50%;
-width: 20%;
-margin-bottom: 1rem;
-margin-top: 1rem;
+    border-radius: 50%;
+    width: 20%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .spinner {
@@ -81,7 +130,7 @@ margin-top: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
     margin: 1rem;
-    
+
 }
 
 .desc {
@@ -109,4 +158,3 @@ margin-top: 1rem;
     align-items: center;
     gap: 3rem;
 }
-
