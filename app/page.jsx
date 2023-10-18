@@ -54,7 +54,7 @@ function Home() {
                 <h3 className={styles.name}>{item.name}</h3>
               </div>
               <div className={`${styles.info} ${styles.back}`}>
-                {item.description ? ( // Verifica se a descrição existe
+                {item.description ? ( 
                   <p className={styles.desc}>Descrição: {item.description}</p>
                 ) : (
                   <p className={styles.noDescription}>
