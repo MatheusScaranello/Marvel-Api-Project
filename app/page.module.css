@@ -27,7 +27,7 @@
     text-align: center;
     background-color: #e01a38;
     width: 100%;
-    height: auto;
+    height: 400vh;
 }
 
 .inpts {
@@ -59,15 +59,57 @@
     margin-top: 9rem;
     width: 45%;
     height: 300px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.front .img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.front .name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem;
 }
 
 
 
 .img {
-border-radius: 50%;
-width: 20%;
-margin-bottom: 1rem;
-margin-top: 1rem;
+    border-radius: 50%;
+    width: 20%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .spinner {
@@ -81,7 +123,7 @@ margin-top: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
     margin: 1rem;
-    
+
 }
 
 .desc {
@@ -102,6 +144,14 @@ margin-top: 1rem;
 
 }
 
+.noDescription {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.5rem;
+    text-align: center;
+    color: #fff;
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -109,4 +159,3 @@ margin-top: 1rem;
     align-items: center;
     gap: 3rem;
 }
-
