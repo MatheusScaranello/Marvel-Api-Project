@@ -24,3 +24,17 @@ export const getCharacters = async (name) => {
         throw error;
     }
 };
+
+export const getCharactersRadom = async () => {
+    const timeStamp = getTimeStamp();
+    const hash = generateHash(timeStamp);
+    const url = `${API_BASE_URL}/characters?ts=${timeStamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}&limit=100&offset=0`;
+
+
+    try {
+        const resp = await axios.get(url);
+        return resp.data.data.results;
+    } catch (error) {
+        throw error;
+    }
+};
