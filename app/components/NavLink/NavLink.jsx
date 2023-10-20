@@ -1,5 +1,3 @@
-export default NavLink
-
 import styles from "./navLink.module.css"
 import Link from "next/link"
 
