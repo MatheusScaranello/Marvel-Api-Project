@@ -1,6 +1,5 @@
 import styles from './footer.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import NavLink from '../NavLink/NavLink'
+import NavLink from "../NavLink/NavLink"
 
 
 const Footer = () =>{
@@ -47,10 +46,10 @@ return(
 
           <div className={styles.col}>
             <ul className={styles.social}>
-              <li><a className={styles.facebook} href="#"><FontAwesomeIcon icon="fa-brands fa-github" /></a></li>
-              <li><a className={styles.twitter} href="#"><i className={styles.fa}></i></a></li>
-              <li><a className={styles.dribbble} href="#"><i className={styles.fa }></i></a></li>
-              <li><a className={styles.linkedin} href="#"><i class={styles.fa }></i></a></li>   
+              <li><a className={styles.facebook} href="#"></a></li>
+              <li><a className={styles.twitter} href="#"></a></li>
+              <li><a className={styles.dribbble} href="#"></a></li>
+              <li><a className={styles.linkedin} href="#"></a></li>   
             </ul>
           </div>
         </div>
