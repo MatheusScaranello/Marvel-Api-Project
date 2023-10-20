@@ -73,7 +73,7 @@ export default function CreateCharacters() {
     return (
         <>
         <div className={styles.container}>
-            <h1 className={styles.title}>Create Characters</h1>
+            <h1 className={styles.title}>Crie seu Herói</h1>
             <form>
                 <label className={styles.labels}>
                     Name:
