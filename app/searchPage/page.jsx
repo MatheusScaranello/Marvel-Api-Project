@@ -74,15 +74,13 @@ function Home() {
                         alt={item.name}
                         className={styles.img}
                       />
-                      <h3 className={styles.name}>Felipe</h3>
+                      <h3 className={styles.name}>{item.name}</h3>
                     </div>
                     <div className={`${styles.info} ${styles.back}`}>
                       {item.description ? (
                         <div className={styles.infos}>
                           <p className={styles.desc}>Descrição: {item.description}</p>
                           <div className={styles.icons}>
-                            <FaPen className={styles.icon} />
-                            <FaTrash className={styles.icon} />
                           </div>
                         </div>
                       ) : (
@@ -95,9 +93,9 @@ function Home() {
                 )
                 :
                 (
-                  <p>Igual</p>
+                  null
                 )
-                )
+            )
           ) : (
             <div className={styles.spinner}>
               <TailSpin
@@ -120,10 +118,10 @@ function Home() {
           ) : (
             apiDataRadom ? (
               apiDataRadom.map((item) => {
-                
-                if (item.description && item.name && item.id ||item.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ) {
+
+                if (item.description && item.name && item.id || item.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available") {
                   return (
-                    
+
                     <div className={styles.card} key={item.id}>
                       <div className={styles.front}>
                         <img
