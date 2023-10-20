@@ -2,8 +2,6 @@
 
 import styles from './createCharacters.module.css'
 import { useState } from 'react'
-import powers from '@/data/Powers';
-import avatarsData from '@/data/Avatars';
 import createdCharacters from '@/models/createdCharacters';
 import showCharacters from '../showCharacters/showCharacters';
 
@@ -12,8 +10,7 @@ const characters = new createdCharacters()
 
 export default function CreateCharacters() {
     const [name, setName] = useState('')
-    const [power, setPower] = useState('')
-    const [powerImg, setPowerImg] = useState('')
+    const [descri, setDescri] = useState('')
     const [avatar, setAvatar] = useState('')
     const [id, setId] = useState(0)
     const [idEdit, setIdEdit] = useState(0)
@@ -25,10 +22,10 @@ export default function CreateCharacters() {
     }
 
     const addCharacters = () => {
-        characters.addCharacter(name, power, avatar, generateId())
+        characters.addCharacter(name, descri, avatar, generateId())
         generateId()
         setName('')
-        setPower('')
+        setDescri('')
         setAvatar('')
     }
 
@@ -40,7 +37,7 @@ export default function CreateCharacters() {
         setIdEdit(id)
         const chara = characters.getCharacter(id)
         setName(chara.name)
-        setPower(chara.power)
+        setDescri(chara.descri)
         setAvatar(chara.avatar)
 
         setFlag(true)
@@ -49,7 +46,7 @@ export default function CreateCharacters() {
     function atualizarCharacters(id) {
         const chara = characters.getCharacter(id)
         chara.name = name
-        chara.power = power
+        chara.descri = descri
         chara.avatar = avatar
 
         characters.updateCharacter(chara)
@@ -63,7 +60,7 @@ export default function CreateCharacters() {
 
     function limparInput(){
         setName('')
-        setPower('')
+        setDescri('')
         setAvatar('')
     }
 
@@ -77,19 +74,10 @@ export default function CreateCharacters() {
                     <input type="text" value={name} onChange={e => setName(e.target.value)} className={styles.inputs}/>
                 </label>
                 <div className={styles.divAvatar}>
-                <label className={styles.labelAvatar}>Avatar:</label>
+                <label className={styles.labelAvatar}>Sua foto:</label>
                 <div>
-                    
-                    {
-                        avatarsData.map((avatar) => {
-                            return(
-                                <label className={styles.avatarLabel}>
-                                    <input type="radio" name="avatar" value={avatar.link} onChange={e => setAvatar(e.target.value)} className={styles.avatarInput}/>
-                                    <img src={avatar.link} alt={avatar.name} className={styles.avatarImage}/>
-                                </label>
-                            )
-                        })
-                    }</div>
+                    <input type="file" className={styles.avatar} value={avatar} onChange={e => setAvatar(e.target.value)} />
+                    </div>
                 </div>
                 <label className={styles.labels} >Poder:
                 <select name="power" id="power" value={power} onChange={e => setPower(e.target.value)} className={styles.inputs}>
