@@ -1,10 +1,10 @@
 "use client"
 import { useState } from 'react';
+import { TailSpin } from 'react-loader-spinner';
 import styles from './searchPage.module.css';
 import { useEffect } from 'react';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
-import CardCharacters from '../components/cardCharacters/CardCharacters';
-
+import { FaPen, FaTrash, FaSearch } from 'react-icons/fa';
 
 function Home() {
   const [apiData, setApiData] = useState([]);
@@ -61,7 +61,108 @@ function Home() {
         </div>
       </div>
 
-      <CardCharacters apiData={apiData} apiDataRadom={apiDataRadom} flag={flag} />
+      <div className={styles.grid}>
+        {
+          flag ? apiData.length > 0 ? apiData ? (
+            apiData.map((item) =>
+              item.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ?
+                (
+                  <div className={styles.card} key={item.id}>
+                    <div className={styles.front}>
+                      <img
+                        src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                        alt={item.name}
+                        className={styles.img}
+                      />
+                      <h3 className={styles.name}>Felipe</h3>
+                    </div>
+                    <div className={`${styles.info} ${styles.back}`}>
+                      {item.description ? (
+                        <div className={styles.infos}>
+                          <p className={styles.desc}>Descrição: {item.description}</p>
+                          <div className={styles.icons}>
+                            <FaPen className={styles.icon} />
+                            <FaTrash className={styles.icon} />
+                          </div>
+                        </div>
+                      ) : (
+                        <p className={styles.noDescription}>
+                          Esse personagem não possui descrição
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )
+                :
+                (
+                  <p>Igual</p>
+                )
+                )
+          ) : (
+            <div className={styles.spinner}>
+              <TailSpin
+                height="80"
+                width="80"
+                color="#ffffff"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            </div>
+          ) : (
+            <div className={styles.nothing}>
+              <h1 className={styles.nothingText}>
+                Nenhum personagem encontrado
+              </h1>
+            </div>
+          ) : (
+            apiDataRadom ? (
+              apiDataRadom.map((item) => {
+                
+                if (item.description && item.name && item.id ||item.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ) {
+                  return (
+                    
+                    <div className={styles.card} key={item.id}>
+                      <div className={styles.front}>
+                        <img
+                          src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                          alt={item.name}
+                          className={styles.img}
+                        />
+                        <h3 className={styles.name}>{item.name}</h3>
+                      </div>
+                      <div className={`${styles.info} ${styles.back}`}>
+                        {item.description ? (
+                          <p className={styles.desc}>Descrição: {item.description}</p>
+                        ) : (
+                          <p className={styles.noDescription}>
+                            Esse personagem não possui descrição
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  )
+                }
+
+              })
+            ) : (
+              <div className={styles.spinner}>
+                <TailSpin
+                  height="80"
+                  width="80"
+                  color="#ffffff"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                />
+              </div>
+            )
+          )}
+      </div>
     </div>
   );
 }
