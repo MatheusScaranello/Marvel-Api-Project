@@ -1,8 +1,9 @@
 import styles from "./page.module.css"
+import NavLink from "@/app/components/NavLink/NavLink"
 
 const home = () => {
   return (
-    <div>page</div>
+    <NavLink rota='/searchPage' texto='Página Inicial' />
   )
 }
 
