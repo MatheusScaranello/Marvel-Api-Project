@@ -1,5 +1,10 @@
 const powers = [
     {
+        id: 0,
+        link: '',
+        name: ""
+    },
+    {
         id: 1,
         link: "https://cdn-icons-png.flaticon.com/256/3571/3571473.png",
         name: "Voar"
