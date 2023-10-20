@@ -5,7 +5,6 @@ import styles from './searchPage.module.css';
 import { useEffect } from 'react';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import { useRouter } from 'next/navigation';
-import { FaPen, FaTrash, FaSearch } from 'react-icons/fa';
 
 
 function Home() {
