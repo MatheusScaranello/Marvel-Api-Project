@@ -1,0 +1,110 @@
+.cont {
+    background-color: rgb(193, 5, 5);
+}
+
+.character {
+    background-color: rgb(193, 5, 5);
+    color: white;
+
+}
+
+.rightImage {
+    float: right;
+    width: 50%;
+    height: 50%;
+    color: white;
+}
+
+.comics {
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.comics li {
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.movie {
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.movie li {
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.movieList {
+    padding: 10px;
+    margin: 1rem;
+    display: flex;
+
+}
+
+.comicsList {
+    background-color: rgb(193, 5, 5);
+    padding: 10px;
+    display: flex;
+
+}
+
+.h1 {
+    color: white;
+}
+
+.desc {
+    color: white;
+}
+
+.img {
+    /* set the img in right */
+    float: right;
+    width: 100%;
+    height: 40.5rem;
+}
+
+.leftImage {
+    float: left;
+    width: 50%;
+    height: 50%;
+    color: white;
+}
+
+.info {
+    background-color: rgb(193, 5, 5);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.all {
+    /*i want that the two things inside this div stay in the same line  */
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background-color: #e01a38;
+    color: white;
+    border-radius: 0.5em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    
+}

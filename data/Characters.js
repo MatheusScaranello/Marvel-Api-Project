@@ -38,3 +38,16 @@ export const getCharactersRadom = async () => {
         throw error;
     }
 };
+
+export const getCharacterById = async (id) => {
+    const timeStamp = getTimeStamp();
+    const hash = generateHash(timeStamp);
+    const url = `${API_BASE_URL}/characters/${id}?ts=${timeStamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`;
+
+    try {
+        const resp = await axios.get(url);
+        return resp.data.data.results;
+    } catch (error) {
+        throw error;
+    }
+}
