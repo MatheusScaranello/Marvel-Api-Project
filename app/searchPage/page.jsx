@@ -1,11 +1,11 @@
 "use client"
 import { useState } from 'react';
-import { TailSpin } from 'react-loader-spinner';
 import styles from './searchPage.module.css';
 import { useEffect } from 'react';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import CardCharacters from '../components/cardCharacters/CardCharacters';
 
 
 function Home() {
@@ -71,8 +71,6 @@ function Home() {
 
       <div className={styles.grid}>
         {
-
-
           flag ? apiData.length > 0 ? apiData ? (
             apiData.map((item) => (
               <div className={styles.card} key={item.id}>

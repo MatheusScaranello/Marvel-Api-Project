@@ -81,6 +81,7 @@ function Hero({ params }) {
                             ))
                         }                        
                         </div>
+                        
                 </div>
 
             </div>
