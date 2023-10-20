@@ -107,7 +107,7 @@ export default function CreateCharacters() {
             
         </div>
         <div>
-            
+            {showCharacters(characters.characters)}
         </div>
         </>
     )
