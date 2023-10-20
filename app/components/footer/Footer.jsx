@@ -1,4 +1,6 @@
 import styles from './footer.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import NavLink from '../NavLink/NavLink'
 
 
 const Footer = () =>{
@@ -23,11 +25,12 @@ return(
           <div className={styles.col}>
             <h6>Quick Links</h6>
             <ul className={styles.footer}>
-              <li><a href="http://scanfcode.com/about/">About Us</a></li>
-              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-              <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+              <li><NavLink texto="Home" rota="/"/></li>
+              <li><NavLink texto="Sobre nós" rota="/sobrenos"/></li>
+              <li><NavLink texto="Personagens" rota="/searchPage"/></li>
+              <li><NavLink texto="Crie personagens" rota="/createCharacters"/></li>
+              
+
             </ul>
           </div>
         </div>
@@ -44,7 +47,7 @@ return(
 
           <div className={styles.col}>
             <ul className={styles.social}>
-              <li><a className={styles.facebook} href="#"><i className={styles.fa}></i></a></li>
+              <li><a className={styles.facebook} href="#"><FontAwesomeIcon icon="fa-brands fa-github" /></a></li>
               <li><a className={styles.twitter} href="#"><i className={styles.fa}></i></a></li>
               <li><a className={styles.dribbble} href="#"><i className={styles.fa }></i></a></li>
               <li><a className={styles.linkedin} href="#"><i class={styles.fa }></i></a></li>   
