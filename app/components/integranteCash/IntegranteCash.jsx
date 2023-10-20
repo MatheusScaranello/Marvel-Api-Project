@@ -1,7 +1,9 @@
-import styles from './IntegranteCash.module.css'
+import styles from "./integranteCash.module.css"
 
-function integranteCash(nome, cargo, foto, description){
+
+function integranteCash({ nome, cargo, foto, description }) {
     return (
+        
         <div className={styles.card}>
             <img className={styles.foto} src={foto} alt={nome} />
             <h2 className={styles.nome}>{nome}</h2>
