@@ -4,13 +4,17 @@ import styles from './createCharacters.module.css'
 import { useState } from 'react'
 import powers from '@/data/Powers';
 import avatarsData from '@/data/Avatars';
+import createdCharacters from '@/models/createdCharacters';
+import showCharacters from '../showCharacters/showCharacters';
+
+const characters = new createdCharacters()
 
 
 export default function CreateCharacters() {
     const [name, setName] = useState('')
     const [power, setPower] = useState('')
+    const [powerImg, setPowerImg] = useState('')
     const [avatar, setAvatar] = useState('')
-    const [characters, setCharacters] = useState([])
     const [id, setId] = useState(0)
     const [idEdit, setIdEdit] = useState(0)
     const [flag, setFlag] = useState(false)
@@ -21,42 +25,46 @@ export default function CreateCharacters() {
     }
 
     const addCharacters = () => {
+        characters.addCharacter(name, power, avatar, generateId())
         generateId()
-        setCharacters([...characters, {id, name, power, avatar}])
         setName('')
         setPower('')
         setAvatar('')
     }
 
     const removeCharacters = (id) => {
-        setCharacters(characters.filter((character) => character.id !== id))
-    }
-
-    function getCharacters(id) {
-        const character = characters.find((character) => character.id === id)
-        return character
+        characters.deleteCharacter(id)
     }
 
     const editCharacters = (id) => {
         setIdEdit(id)
-        const characters = getCharacters(id)
-        setName(characters.name)
-        setPower(characters.power)
-        setAvatar(characters.avatar)
+        const chara = characters.getCharacter(id)
+        setName(chara.name)
+        setPower(chara.power)
+        setAvatar(chara.avatar)
+
         setFlag(true)
     }
 
     function atualizarCharacters(id) {
-        const character = characters.find((character) => character.id === id)
-        character.name = name
-        character.power = power
-        character.avatar = avatar
+        const chara = characters.getCharacter(id)
+        chara.name = name
+        chara.power = power
+        chara.avatar = avatar
+
+        characters.updateCharacter(chara)
+        limparInput()
     }
 
     const updateCharacters = () => {
         atualizarCharacters(idEdit)
-        
         setFlag(false)
+    }
+
+    function limparInput(){
+        setName('')
+        setPower('')
+        setAvatar('')
     }
 
     return (
@@ -99,34 +107,10 @@ export default function CreateCharacters() {
             </div>
             
         </div>
+        <div>
+            {showCharacters(characters.characters, editCharacters, removeCharacters)}
 
-        
-        <div className={styles.charactersList}>
-            {
-                characters.map((character) => {
-                    return(
-                        <div className={styles.character}>
-                            <p className={styles.characterName}>{character.name}</p>
-                            <img src={character.avatar} alt={character.name} className={styles.characterAvatar}/>
-                            <p className={styles.powerTitle}>Poder:</p>
-                            {
-                                powers.map((power) => {
-                                    if (power.name === character.power) {
-                                        return(
-                                            <>
-                                            <p className={styles.powerName}>{power.name}</p>
-                                            <img src={power.link} alt={power.name} className={styles.imagesPower}/>
-                                            </>
-                                            )
-                                    }
-                                })
-                            }
-                            <button onClick={() => removeCharacters(character.id)} className={styles.removeButton}>Remover</button>
-                            <button onClick={() => editCharacters(character.id)} className={styles.editButton}>Editar</button>
-                        </div>
-                    )
-                })
-            }
+      
         </div>
         </>
     )
