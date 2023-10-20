@@ -1,9 +1,12 @@
 import styles from "./page.module.css"
-import NavLink from "@/app/components/NavLink/NavLink"
+import Header from "./components/header/Header"
+import Footer from "./components/footer/Footer"
 
 const home = () => {
-  return (
-    <NavLink rota='/searchPage' texto='Página Inicial' />
+  return (<>
+    <Header />
+    <Footer />
+  </>
   )
 }
 

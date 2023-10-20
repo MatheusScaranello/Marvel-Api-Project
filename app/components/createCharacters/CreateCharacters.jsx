@@ -2,15 +2,16 @@
 
 import styles from './createCharacters.module.css'
 import { useState } from 'react'
-import powers from '@/data/Powers';
-import avatarsData from '@/data/Avatars';
+import createdCharacters from '@/models/createdCharacters';
+import showCharacters from '../showCharacters/showCharacters';
+
+const characters = new createdCharacters()
 
 
 export default function CreateCharacters() {
     const [name, setName] = useState('')
-    const [power, setPower] = useState('')
+    const [descri, setDescri] = useState('')
     const [avatar, setAvatar] = useState('')
-    const [characters, setCharacters] = useState([])
     const [id, setId] = useState(0)
     const [idEdit, setIdEdit] = useState(0)
     const [flag, setFlag] = useState(false)
@@ -21,42 +22,46 @@ export default function CreateCharacters() {
     }
 
     const addCharacters = () => {
+        characters.addCharacter(name, descri, avatar, generateId())
         generateId()
-        setCharacters([...characters, {id, name, power, avatar}])
         setName('')
-        setPower('')
+        setDescri('')
         setAvatar('')
     }
 
     const removeCharacters = (id) => {
-        setCharacters(characters.filter((character) => character.id !== id))
-    }
-
-    function getCharacters(id) {
-        const character = characters.find((character) => character.id === id)
-        return character
+        characters.deleteCharacter(id)
     }
 
     const editCharacters = (id) => {
         setIdEdit(id)
-        const characters = getCharacters(id)
-        setName(characters.name)
-        setPower(characters.power)
-        setAvatar(characters.avatar)
+        const chara = characters.getCharacter(id)
+        setName(chara.name)
+        setDescri(chara.descri)
+        setAvatar(chara.avatar)
+
         setFlag(true)
     }
 
     function atualizarCharacters(id) {
-        const character = characters.find((character) => character.id === id)
-        character.name = name
-        character.power = power
-        character.avatar = avatar
+        const chara = characters.getCharacter(id)
+        chara.name = name
+        chara.descri = descri
+        chara.avatar = avatar
+
+        characters.updateCharacter(chara)
+        limparInput()
     }
 
     const updateCharacters = () => {
         atualizarCharacters(idEdit)
-        
         setFlag(false)
+    }
+
+    function limparInput(){
+        setName('')
+        setDescri('')
+        setAvatar('')
     }
 
     return (
@@ -69,19 +74,10 @@ export default function CreateCharacters() {
                     <input type="text" value={name} onChange={e => setName(e.target.value)} className={styles.inputs}/>
                 </label>
                 <div className={styles.divAvatar}>
-                <label className={styles.labelAvatar}>Avatar:</label>
+                <label className={styles.labelAvatar}>Sua foto:</label>
                 <div>
-                    
-                    {
-                        avatarsData.map((avatar) => {
-                            return(
-                                <label className={styles.avatarLabel}>
-                                    <input type="radio" name="avatar" value={avatar.link} onChange={e => setAvatar(e.target.value)} className={styles.avatarInput}/>
-                                    <img src={avatar.link} alt={avatar.name} className={styles.avatarImage}/>
-                                </label>
-                            )
-                        })
-                    }</div>
+                    <input type="file" className={styles.avatar} value={avatar} onChange={e => setAvatar(e.target.value)} />
+                    </div>
                 </div>
                 <label className={styles.labels} >Poder:
                 <select name="power" id="power" value={power} onChange={e => setPower(e.target.value)} className={styles.inputs}>
@@ -99,34 +95,10 @@ export default function CreateCharacters() {
             </div>
             
         </div>
+        <div>
+            {showCharacters(characters.characters, editCharacters, removeCharacters)}
 
-        
-        <div className={styles.charactersList}>
-            {
-                characters.map((character) => {
-                    return(
-                        <div className={styles.character}>
-                            <p className={styles.characterName}>{character.name}</p>
-                            <img src={character.avatar} alt={character.name} className={styles.characterAvatar}/>
-                            <p className={styles.powerTitle}>Poder:</p>
-                            {
-                                powers.map((power) => {
-                                    if (power.name === character.power) {
-                                        return(
-                                            <>
-                                            <p className={styles.powerName}>{power.name}</p>
-                                            <img src={power.link} alt={power.name} className={styles.imagesPower}/>
-                                            </>
-                                            )
-                                    }
-                                })
-                            }
-                            <button onClick={() => removeCharacters(character.id)} className={styles.removeButton}>Remover</button>
-                            <button onClick={() => editCharacters(character.id)} className={styles.editButton}>Editar</button>
-                        </div>
-                    )
-                })
-            }
+      
         </div>
         </>
     )
