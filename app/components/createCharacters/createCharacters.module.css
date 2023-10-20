@@ -12,6 +12,11 @@
     border-radius: 5%;
 
 }
+.divDescri{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
  .title{
     margin-top: 6%;
     font-size: 2rem;

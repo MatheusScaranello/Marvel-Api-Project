@@ -64,6 +64,12 @@ export default function CreateCharacters() {
         setAvatar('')
     }
 
+      
+        const handleImageChange = (event) => {
+          const file = event.target.files[0];
+          setAvatar(URL.createObjectURL(file));
+        };
+
     return (
         <>
         <div className={styles.container}>
@@ -75,18 +81,12 @@ export default function CreateCharacters() {
                 </label>
                 <div className={styles.divAvatar}>
                 <label className={styles.labelAvatar}>Sua foto:</label>
-                <div>
-                    <input type="file" className={styles.avatar} value={avatar} onChange={e => setAvatar(e.target.value)} />
-                    </div>
+                <input type="file" onChange={handleImageChange} className={styles.inputAvatar}/>
                 </div>
-                <label className={styles.labels} >Poder:
-                <select name="power" id="power" value={power} onChange={e => setPower(e.target.value)} className={styles.inputs}>
-                    {
-                        powers.map((power) => (
-                            <option key={power.id} value={power.name}>{power.name}</option>
-                        ))
-                    }
-                </select></label>
+                <div className={styles.divDescri}>
+                <label className={styles.labelAvatar}>Descrição:    </label>
+                <textarea value={descri} onChange={e => setDescri(e.target.value)} className={styles.textarea}></textarea>
+                </div>
             </form>
             <div>
                 {

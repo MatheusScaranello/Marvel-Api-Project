@@ -3,8 +3,8 @@ export default class createdCharacters{
         this.characters = [];
     }
 
-    addCharacter(name, power, avatar, id) {
-        const character = new personagem(name, power, avatar, id);
+    addCharacter(name, descri, avatar, id) {
+        const character = new personagem(name, descri, avatar, id);
         this.characters.push(character);
     }
 
@@ -31,11 +31,10 @@ export default class createdCharacters{
 }
 
 class personagem {
-    constructor(name, power, avatar, id, powerImg) {
+    constructor(name, descri, avatar, id) {
         this.name = name;
-        this.power = power;
+        this.descri = descri;
         this.avatar = avatar;
         this.id = id;
-        this.powerImg = powerImg;   
     }
 }

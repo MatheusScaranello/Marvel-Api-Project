@@ -10,17 +10,16 @@ const showCharacters = (characters, edit, removeCharacters) => {
 
     return (
         <div className={styles.container}>
-            <h1>Personagens</h1>
+            <h1>Lista de Personagens</h1>
             <div className={styles.lista}>
                 {lista.map((item) => (
                     <div className={styles.item}>
-                        { console.log(item)}
-                        <div className={styles.avatar}>
-                            <img src={item.avatar} alt={item.name} />
+                        <div >
+                            <img src={item.avatar} alt={item.name} className={styles.avatar}/>
                         </div>
                         <div className={styles.info}>
                             <h2>{item.name}</h2>
-                            <p>{item.power}</p>
+                            <p>{item.descri}</p>
                         </div>
                         <div className={styles.botoes}>
                             <button onClick={() => removeCharacters(item.id)}>Remover</button>

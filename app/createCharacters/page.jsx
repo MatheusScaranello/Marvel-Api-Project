@@ -1,9 +1,9 @@
-import createCharacters from '../components/createCharacters/CreateCharacters';
+import CreateCharacters from "../components/createCharacters/CreateCharacters"
 
-const createCharactersPage = () => {
+export default function teste() {
     return (
         <>
-        <createCharacters />
+            <CreateCharacters />
         </>
     )
-    }
+}
