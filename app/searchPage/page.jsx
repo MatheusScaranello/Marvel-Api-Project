@@ -5,6 +5,9 @@ import styles from './searchPage.module.css';
 import { useEffect } from 'react';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import { useRouter } from 'next/navigation';
+import Header from "../components/header/Header"
+import Footer from "../components/footer/Footer"
+
 
 
 function Home() {
@@ -51,6 +54,8 @@ function Home() {
   }
 
   return (
+    <div>
+      <Header />
     <div className={styles.container}>
       <div className={styles.inpts}>
         <div className={styles.inputcontainer}>
@@ -179,6 +184,8 @@ function Home() {
           )}
       </div>
     </div >
+    <Footer />
+    </div>
   );
 }
 
