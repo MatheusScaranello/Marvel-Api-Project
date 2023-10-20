@@ -31,10 +31,11 @@ export default class createdCharacters{
 }
 
 class personagem {
-    constructor(name, power, avatar, id) {
+    constructor(name, power, avatar, id, powerImg) {
         this.name = name;
         this.power = power;
         this.avatar = avatar;
         this.id = id;
+        this.powerImg = powerImg;   
     }
 }

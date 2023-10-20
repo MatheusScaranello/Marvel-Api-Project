@@ -13,6 +13,7 @@ const characters = new createdCharacters()
 export default function CreateCharacters() {
     const [name, setName] = useState('')
     const [power, setPower] = useState('')
+    const [powerImg, setPowerImg] = useState('')
     const [avatar, setAvatar] = useState('')
     const [id, setId] = useState(0)
     const [idEdit, setIdEdit] = useState(0)
@@ -107,7 +108,7 @@ export default function CreateCharacters() {
             
         </div>
         <div>
-            {showCharacters(characters.characters)}
+            {showCharacters(characters.characters, editCharacters, removeCharacters)}
         </div>
         </>
     )
