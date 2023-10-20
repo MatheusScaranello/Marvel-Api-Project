@@ -99,6 +99,8 @@ export default function CreateCharacters() {
             </div>
             
         </div>
+
+        
         <div className={styles.charactersList}>
             {
                 characters.map((character) => {
