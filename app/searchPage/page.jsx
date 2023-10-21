@@ -92,13 +92,14 @@ function Home() {
                       {item.description ? (
                         <div className={styles.infos}>
                           <p className={styles.desc}>Descrição: {item.description}</p>
-                          <div className={styles.icons}>
-                          </div>
+                          <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
                         </div>
                       ) : (
-                        <p className={styles.noDescription}>
-                          Esse personagem não possui descrição
-                        </p>
+                        
+                        <div className={styles.infos}><p className={styles.noDescription}>
+                          Esse personagem não possui descrição 
+                        </p> <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button></div>
+                        
                       )}
                     </div>
                   </div>
@@ -146,7 +147,7 @@ function Home() {
                       <div className={`${styles.info} ${styles.back}`}>
                         {item.description ? (
 
-                          <div>
+                          <div className={styles.infos}>
                             <p className={styles.desc}>Descrição: {item.description}</p>
                             <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
 

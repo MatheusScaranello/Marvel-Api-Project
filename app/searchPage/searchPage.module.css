@@ -14,20 +14,13 @@
     color: white;
     border-radius: 0.5em;
     cursor: pointer;
+    padding: 0.5em 1em;
 
 }
 
 .btn:hover {
     background-color: #da485e;
     color: white;
-}
-
-.container {
-    padding: 2rem;
-    text-align: center;
-    background-color: #e01a38;
-    width: 100%;
-    height: 400vh;
 }
 
 .inpts {
@@ -51,14 +44,18 @@
 }
 
 .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15px;
     background-color: #171821;
-    border-radius: 8px;
-    color: white;
     margin-bottom: 1rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 9rem;
-    width: 45%;
-    height: 300px;
+    border-radius: 0.5em;
+    width: 300px;
+    height: 350px;
     transition: transform 0.5s;
     cursor: pointer;
     perspective: 1000px;
@@ -90,40 +87,12 @@
     transform: rotateY(180deg);
 }
 
-.front .img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.front .name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0.5rem;
-}
-
-
-
-.img {
-    border-radius: 50%;
-    width: 20%;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
 
 .spinner {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 1rem;
-
 }
 
 .desc {
@@ -168,4 +137,50 @@
     color: #fff;
     margin: 0;
     margin-top: 10%;
-}
+} 
+
+/*matheus*/
+
+.container{
+    font-family: sans-serif;
+    background: linear-gradient(to bottom right, #B71C1C, #212121);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+  }
+  /*for displaying as card*/
+  .front{
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px 10px black;
+    margin: 10px;
+    background: linear-gradient(to bottom right, #B71C1C, #212121);
+    }
+  /*heros description*/
+.info{
+    color: white;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  /*styling image*/
+  .img {
+      display: block;
+      border: 0;
+      width: 100%;
+      height: auto;
+  }
+  /*heros heading description*/
+  .name{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+  }

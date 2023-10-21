@@ -6,10 +6,10 @@ const home = () => {
   return (<>
     <Header />
     <div className={styles.container}>
-      <div className={styles.introducao}>
-        <h1 className={styles.bemVindo}>Seja bem vindo!</h1>
-        <p className={styles.text}>Esse é o site de personagens da Marvel, aqui você pode criar seu próprio personagem, ou ver os personagens originais da propria Marvel.</p>
-      </div>
+    <div className={styles.introducao}>
+          <h1 className={`${styles.bemVindo} ${styles.fade}`}>Seja bem vindo!</h1>
+          <p className={styles.text}>Esse é o site de personagens da Marvel, aqui você pode criar seu próprio personagem, ou ver os personagens originais da própria Marvel.</p>
+        </div>
       <div className={styles.marvel}>
         <h1 className={styles.marvelTitle}>Marvel</h1>
         <img src="https://segredosdomundo.r7.com/wp-content/uploads/2020/06/marvel-a-historia-da-editora-nos-quadrinhos-e-no-cinema.jpg" alt="Marvel" />
@@ -17,6 +17,20 @@ const home = () => {
         <p className={styles.text}>O universo da Marvel também se expandiu para outras formas de mídia, incluindo filmes, séries de TV, jogos e produtos relacionados. O Marvel Cinematic Universe (MCU), lançado em 2008 com o filme Homem de Ferro, tornou-se uma franquia cinematográfica extremamente popular, conectando histórias e personagens em uma narrativa compartilhada. Isso levou a uma série de filmes de sucesso, incluindo Os Vingadores, Pantera Negra, Capitã Marvel e muitos outros.</p>
         <p className={styles.text}>Além disso, a Marvel continuou a criar histórias inovadoras e diversificadas nos quadrinhos, abordando questões sociais e políticas de maneiras criativas. A empresa é conhecida por suas narrativas complexas, desenvolvimento de personagens e por explorar temas relevantes, tornando-se uma parte importante da cultura pop global.</p>
       </div>
+      <section className={styles.features}>
+          <div className={styles.feature}>
+            <h2>Produtos de Qualidade</h2>
+            <p>Explore nossa ampla gama de produtos de alta qualidade.</p>
+          </div>
+          <div className={styles.feature}>
+            <h2>Atendimento ao Cliente</h2>
+            <p>Oferecemos suporte excepcional aos nossos clientes.</p>
+          </div>
+          <div className={styles.feature}>
+            <h2>Envio Rápido</h2>
+            <p>Entrega rápida para que você obtenha seus produtos rapidamente.</p>
+          </div>
+        </section>
     </div>
     <Footer />
   </>
