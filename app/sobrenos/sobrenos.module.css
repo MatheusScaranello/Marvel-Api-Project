@@ -31,3 +31,14 @@
 .cards{
     padding-left: 20%;
 }
+
+.carouselSlide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 70vw;
+    background-size: cover;
+    border-radius: 5px;
+    gap: 10px;;   
+}
