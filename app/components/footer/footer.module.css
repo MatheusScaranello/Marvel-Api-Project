@@ -22,7 +22,7 @@
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
-  letter-spacing:2px
+  letter-spacing:2px;
 }
 .site a
 {
@@ -30,7 +30,7 @@
 }
 .site a:hover
 {
-  color:#3366cc;
+  color:#cc3333;
   text-decoration:none;
 }
 .footer{
@@ -48,7 +48,7 @@
 }
 .footer a:active,.footer a:focus,.footer a:hover
 {
-  color:#3366cc;
+  color:#cc3333;
   text-decoration:none;
 }
 .footer.inline li
@@ -161,4 +161,7 @@
     margin-right:0;
     font-weight:600
   }
+}
+.col{
+  margin-left: 10px;
 }
