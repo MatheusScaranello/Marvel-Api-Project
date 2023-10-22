@@ -137,19 +137,20 @@
     color: #fff;
     margin: 0;
     margin-top: 10%;
-} 
+}
 
 /*matheus*/
 
-.container{
+.container {
     font-family: sans-serif;
     background: linear-gradient(to bottom right, #B71C1C, #212121);
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
-  }
-  /*for displaying as card*/
-  .front{
+}
+
+/*for displaying as card*/
+.front {
     max-width: 350px;
     height: auto;
     border-radius: 10px;
@@ -157,9 +158,10 @@
     box-shadow: 0 40px 80px 10px black;
     margin: 10px;
     background: linear-gradient(to bottom right, #B71C1C, #212121);
-    }
-  /*heros description*/
-.info{
+}
+
+/*heros description*/
+.info {
     color: white;
     margin: 8px;
     display: flex;
@@ -167,20 +169,24 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-  }
-  /*styling image*/
-  .img {
-      display: block;
-      border: 0;
-      width: 100%;
-      height: auto;
-  }
-  /*heros heading description*/
-  .name{
+}
+
+/*styling image*/
+.img {
+    display: block;
+    border: 0;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+/*heros heading description*/
+.name {
     color: white;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
     padding: 5px;
     margin: 10px;
-  }
+}
