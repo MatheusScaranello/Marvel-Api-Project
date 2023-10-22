@@ -35,8 +35,8 @@ return(
       <div className={styles.container}>
         <div className={styles.row}>
           <div className={styles.col}>
-            <p className={styles.copyright}>Copyright &copy; 2017 All Rights Reserved by 
-         <a href="#">Scanfcode</a>.
+            <p className={styles.copyright}>Copyright &copy; 2023 All Rights Reserved by 
+         <a href="./sobrenos">6Devs</a>.
             </p>
           </div>
 
