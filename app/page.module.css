@@ -1,0 +1,71 @@
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+  }
+  
+  .feature {
+    max-width: 300px;
+    text-align: center;
+    margin: 0 20px;
+  }
+  
+  .feature h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 16px;
+    color: #777;
+  }
+
+  /* page.module.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .introducao {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .bemVindo {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .text {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .marvelTitle {
+    font-size: 28px;
+    color: #ff0000; /* Cor vermelha da Marvel */
+  }
+  
+  .marvel img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fade {
+    animation: fadeIn 1.5s ease-in;
+  }
+  
