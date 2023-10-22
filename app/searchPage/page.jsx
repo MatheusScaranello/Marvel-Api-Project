@@ -1,34 +1,31 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TailSpin } from 'react-loader-spinner';
 import styles from './searchPage.module.css';
-import { useEffect } from 'react';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import { useRouter } from 'next/navigation';
-import Header from "../components/header/Header"
-import Footer from "../components/footer/Footer"
-
-
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 
 function Home() {
   const [apiData, setApiData] = useState([]);
   const [apiDataRadom, setApiDataRadom] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [flag, setFlag] = useState(false);
+  const [numCharacters, setNumCharacters] = useState(10); 
 
   const router = useRouter();
 
   useEffect(() => {
-    const fetchCharacters = async () => {
+    const fetchCharactersRandom = async () => {
       try {
-        const dados = await getCharactersRadom()
-        console.log(dados)
-        setApiDataRadom(dados)
+        const dados = await getCharactersRadom();
+        setApiDataRadom(dados);
       } catch (error) {
-        throw error;
+        console.error(error);
       }
     };
-    fetchCharacters();
+    fetchCharactersRandom();
   }, []);
 
   const handleSearch = async () => {
@@ -36,156 +33,84 @@ function Home() {
       const dados = await getCharacters(searchTerm);
       setApiData(dados);
       setFlag(true);
+      setNumCharacters(10);
     } catch (error) {
       console.error(error);
     }
   };
 
-
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSearch();
     }
-
   };
 
   const moreInfos = (id) => {
-    router.push(`/hero/${id}`)
-  }
+    router.push(`/hero/${id}`);
+  };
+
+  const loadMoreCharacters = () => {
+    if (numCharacters < (flag ? apiData.length : apiDataRadom.length)) {
+      setNumCharacters(numCharacters + 100);
+    }
+  };
 
   return (
     <div>
       <Header />
-    <div className={styles.container}>
-      <div className={styles.inpts}>
-        <div className={styles.inputcontainer}>
-          <input
-            type="text"
-            placeholder="Procurar"
-            className={styles.input}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <button type="button" className={styles.btn} onClick={handleSearch}>
-            Procurar 🔎
-          </button>
+      <div className={styles.container}>
+        <div className={styles.inpts}>
+          <div className={styles.inputcontainer}>
+            <input
+              type="text"
+              placeholder="Procurar"
+              className={styles.input}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyPress={handleKeyPress}
+            />
+            <button type="button" className={styles.btn} onClick={handleSearch}>
+              Procurar 🔎
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.grid}>
-        {
-          flag ? apiData ? apiData.length > 0 ? (
-            apiData.map((item) =>
-              item.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ?
-                (
-                  <div className={styles.card} key={item.id}>
-                    <div className={styles.front}>
-                      <img
-                        src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                        alt={item.name}
-                        className={styles.img}
-                      />
-                      <h3 className={styles.name}>{item.name}</h3>
-                    </div>
-                    <div className={`${styles.info} ${styles.back}`}>
-                      {item.description ? (
-                        <div className={styles.infos}>
-                          <p className={styles.desc}>Descrição: {item.description}</p>
-                          <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
-                        </div>
-                      ) : (
-                        
-                        <div className={styles.infos}><p className={styles.noDescription}>
-                          Esse personagem não possui descrição 
-                        </p> <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button></div>
-                        
-                      )}
-                    </div>
-                  </div>
-                )
-                :
-                (
-                  null
-                )
-            )
-          ) : (
-            <div className={styles.spinner}>
-              <TailSpin
-                height="80"
-                width="80"
-                color="#ffffff"
-                ariaLabel="tail-spin-loading"
-                radius="1"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-              />
-            </div>
-          ) : (
-            <div className={styles.nothing}>
-              <h1 className={styles.nothingText}>
-                Nenhum personagem encontrado
-              </h1>
-            </div>
-          ) : (
-            apiDataRadom ? (
-              apiDataRadom.map((item) => {
-
-                if (item.description && item.name && item.id || item.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available") {
-                  return (
-
-                    <div className={styles.card} key={item.id}>
-                      <div className={styles.front}>
-                        <img
-                          src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                          alt={item.name}
-                          className={styles.img}
-                        />
-                        <h3 className={styles.name}>{item.name}</h3>
-                      </div>
-                      <div className={`${styles.info} ${styles.back}`}>
-                        {item.description ? (
-
-                          <div className={styles.infos}>
-                            <p className={styles.desc}>Descrição: {item.description}</p>
-                            <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
-
-                          </div>
-
-                        ) : (
-                          <div>
-                            <p className={styles.noDescription}>
-                              Esse personagem não possui descrição
-                            </p>
-                            <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
-                          </div>
-
-                        )}
-                      </div>
-                    </div>
-                  )
-                }
-
-              })
-            ) : (
-              <div className={styles.spinner}>
-                <TailSpin
-                  height="80"
-                  width="80"
-                  color="#ffffff"
-                  ariaLabel="tail-spin-loading"
-                  radius="1"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
+        <div className={styles.grid}>
+          {(flag ? apiData : apiDataRadom).slice(0, numCharacters).map((item) => (
+            <div className={styles.card} key={item.id}>
+              <div className={styles.front}>
+                <img
+                  src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                  alt={item.name}
+                  className={styles.img}
                 />
+                <h3 className={styles.name}>{item.name}</h3>
               </div>
-            )
-          )}
+              <div className={`${styles.info} ${styles.back}`}>
+                {item.description ? (
+                  <div className={styles.infos}>
+                    <p className={styles.desc}>Descrição: {item.description}</p>
+                    <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
+                  </div>
+                ) : (
+                  <div className={styles.infos}>
+                    <p className={styles.noDescription}>
+                      Esse personagem não possui descrição
+                    </p>
+                    <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+        {numCharacters < (flag ? apiData.length : apiDataRadom.length) && (
+          <button className={styles.btn} onClick={loadMoreCharacters}>
+            Ver mais personagens
+          </button>
+        )}
       </div>
-    </div >
-    <Footer />
+      <Footer />
     </div>
   );
 }
