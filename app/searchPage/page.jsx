@@ -11,7 +11,8 @@ function Home() {
   const [apiDataRadom, setApiDataRadom] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [flag, setFlag] = useState(false);
-  const [numCharacters, setNumCharacters] = useState(10); 
+  const [numCharacters, setNumCharacters] = useState(100);
+  
 
   const router = useRouter();
 
@@ -26,6 +27,8 @@ function Home() {
     };
     fetchCharactersRandom();
   }, []);
+
+  
 
   const handleSearch = async () => {
     try {
@@ -78,11 +81,18 @@ function Home() {
           {(flag ? apiData : apiDataRadom).slice(0, numCharacters).map((item) => (
             <div className={styles.card} key={item.id}>
               <div className={styles.front}>
-                <img
+
+                {
+                  item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? 
+                  <img src="/interro.png"
+                  alt={item.name}
+                  className={styles.img}
+                  /> : <img
                   src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
                   alt={item.name}
                   className={styles.img}
                 />
+                }
                 <h3 className={styles.name}>{item.name}</h3>
               </div>
               <div className={`${styles.info} ${styles.back}`}>
