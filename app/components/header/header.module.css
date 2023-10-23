@@ -1,59 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Work+Sans&display=swap');
 .header { 
-  background: #8d0808; width:100%; height: 100%; overflow-x: hidden; overflow-y: hidden;
+  background-color: #8d0808;
+  opacity: 0.7;
+  height: 100px;
+  width: 100%; 
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: fixed;
+  display: flex;
+
 }
-.wrapper { margin-top:10%; }
-.marvel { 
-  
-  padding: 8px 4px 0 0;
-  animation: zoomOut 9s ease-in-out infinite;
-  -webkit-animation: zoomOut 9s ease-in-out infinite;
-  margin: auto auto;
-  text-align: center;
-  color: #fff; 
-  width: 570px; 
-  margin-top: 50px;  
-  font-size: 15em; 
-  line-height: .80;
-  font-family: "Benton Sans Ex Comp Bla", sans-serif; 
-  margin-left: 50px;
+.imagem{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
-.studios { 
-  font-family: "Orbitron", sans-serif;
-  animation: zoomOut 9s ease-in-out infinite;
-  -webkit-animation: zoomOut 9s ease-in-out infinite ;
-  font-weight: bolder;
-  color: #fff;
-  letter-spacing: 67px;
-  text-align: center;
-  position: relative;
-  margin: 7px 15px 7px 85px;
+.link{
+  padding-top: 38px;
+  padding-left: 175px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  flex-wrap: nowrap;
+}
+.link a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.link li{
+  list-style: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-wrap: nowrap;
+  display: inline;
 }
 
-@keyframes zoomOut {
-  0% { transform: scale(1,1); }
-  50% { transform: scale(1.1,.9); }
-  100% { transform: scale(1,1); }
-}
 
-@-webkit-keyframes zoomOut {
-  0% { -webkit-transform: scale(1,1); }
-  50% { -webkit-transform: scale(1.1,.9); }
-  100% { -webkit-transform: scale(1,1); }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; 
-    -webkit-transform: translateY(-20px); 
-    transform: translateY(-20px); 
-    -ms-transform: translateY(0);
-}
-
-100% { opacity: 1; 
-  -webkit-transform: translateY(0); 
-  transform: translateY(0); 
-  -ms-transform: translateY(0);
-}
-  
-}
 
 
