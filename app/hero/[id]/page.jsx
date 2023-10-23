@@ -28,31 +28,29 @@ function Hero({ params }) {
                 {
                     apiDataRadom.map((item) => (
                         <div key={item.id}>
-                            <img
-                                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                                alt={item.name}
-                                className={styles.img}
-                            />
 
                             <div className={styles.info}>
-                            <h1 className={styles.h1}>{item.name}</h1>
-                            <p className={styles.desc}>{item.description}</p>
+                                <h1 className={styles.h1n}>{item.name}</h1>
                             </div>
+                            <div className={styles.perso}>
 
+                                <img
+                                    src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                                    alt={item.name}
+                                    className={styles.img}
+                                    width={300}
+                                    height={300}
+                                />
+                                <p className={styles.desc}>Descrição: {item.description}</p>
+                            </div>
+                            <div className={styles.line}></div>
                         </div>
                     ))
                 }
-                <div className={styles.character}>
-                    <h1>{apiDataRadom.name}</h1>
-                    <p>{apiDataRadom.description}</p>
-                </div>
+            </div>
+            <div className={styles.all}>
 
-                <div className={styles.rightImage}>
-                </div>
-
-                <div className={styles.all}>
-
-                    <h1 className={styles.h1}>Filmes:</h1>
+                <h1 className={styles.h1}>Aparições em Historias:</h1>
                 <div className={styles.movie}>
                     {
                         apiDataRadom.map((item) => (
@@ -62,11 +60,12 @@ function Hero({ params }) {
                                 </ul>
                             )
                             )
-                            ))
-                        }
+                        ))
+                    }
                 </div>
+                <div className={styles.line}></div>
 
-                    <h1 className={styles.h1}>Quadrinhos:</h1>
+                <h1 className={styles.h1}>Aparições em Quadrinhos:</h1>
                 <div className={styles.comics}>
                     {
                         apiDataRadom.map((item) => (
@@ -78,13 +77,12 @@ function Hero({ params }) {
                                 </ul>
                             )
                             )
-                            ))
-                        }                        
-                        </div>
-                        
+                        ))
+                    }
                 </div>
 
             </div>
+
         </>
     )
 }
