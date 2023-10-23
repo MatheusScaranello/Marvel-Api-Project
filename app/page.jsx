@@ -4,10 +4,14 @@ import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
 import NavLink from "./components/NavLink/NavLink"
 
+
 const home = () => {
   return (<>
     <Header />
+<<<<<<< HEAD
 
+=======
+>>>>>>> b26b49d5dce25e49651f9033cf803fbc848e22b2
     <div className={styles.container}>
       <div className={styles.introducao}>
         <h1 className={`${styles.bemVindo} ${styles.fade}`}>Seja bem vindo!</h1>
