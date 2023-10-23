@@ -1,18 +1,16 @@
-import styles from './IntegranteCash.module.css'
+import styles from "./integranteCash.module.css";
 
-const IntegranteCash = (nome, cargo , foto, description) => {
-    return (
-        <div className={styles.card}>
-        <h3 className={styles.name}>{nome}</h3>
-        <h4 className={styles.cargo}>{cargo}</h4>
-        <img
-            src={foto}
-            alt={nome}
-            className={styles.img}
-        />
-        <p className={styles.desc}>{description}</p>
-        </div>
-    )
-    }
+function integranteCash({ nome, cargo, foto, description, insta }) {
+  return (
+    <div className={styles.card}>
+      <a href={insta} target="_blank">
+        <img className={styles.foto} src={foto} alt={nome} />
+        <h2 className={styles.nome}>{nome}</h2>
+        <h3 className={styles.cargo}>{cargo}</h3>
+        <p className={styles.description}>{description}</p>
+      </a>
+    </div>
+  );
+}
 
-    export default IntegranteCash
+export default integranteCash;
