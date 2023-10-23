@@ -1,114 +1,96 @@
 .cont {
-    background-color: rgb(193, 5, 5);
-}
-
-.character {
-    background-color: rgb(193, 5, 5);
-    color: white;
-}
-
-.rightImage {
-    float: right;
-    width: 50%;
-    height: 50%;
-    color: white;
-}
-
-.comics {
-    color: white;
-    padding: 1rem;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.comics li {
-    padding: 1rem;
-    flex-direction: column;
-}
-
-.movie {
-    color: white;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.movie li {
-    padding: 1rem;
-    flex-direction: column;
-}
-
-.movieList {
-    padding: 10px;
-    margin: 1rem;
-    display: flex;
-}
-
-.comicsList {
-    background-color: rgb(193, 5, 5);
-    padding: 10px;
-    display: flex;
-}
-
-.h1 {
-    color: white;
-}
-
-.desc {
-    color: white;
+    background-color: #590902;
+    color: #A6A6A6;
 }
 
 .img {
-    float: right;
-    width: 100%;
-    height: auto;
-}
-
-.leftImage {
-    float: left;
-    width: 50%;
-    height: 50%;
-    color: white;
+    margin-left: 2rem;
+    border-radius: 50%;
+    -webkit-box-shadow: 1px 1px 127px 1px rgba(166, 166, 166, 1);
+    -moz-box-shadow: 1px 1px 127px 1px rgba(166, 166, 166, 1);
+    box-shadow: 1px 1px 127px 1px rgba(166, 166, 166, 1);
 }
 
 .info {
-    background-color: rgb(193, 5, 5);
-    color: white;
+    margin: 2rem;
+}
+
+.desc {
     padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: column;
+    margin-left: 0.8rem;
+    font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 7rem;
+    align-self: center;
+}
+
+
+.h1 {
+    margin-left: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.h1n {
+    margin-left: 3rem;
+}
+
+.perso {
+    display: flex;
 }
 
 .all {
     display: flex;
+    flex-direction: column;
+    background-color: #590902;
+    color: #A6A6A6;
+}
+
+.movie {
+    display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    padding: 1.5rem;
+    margin-left: 1.5rem;
+
+}
+
+.comics {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 1.5rem;
+    margin-left: 1.5em;
+}
+
+.line {
+    border: 1px solid #A6A6A6;
+    margin: 1.5rem;
+}
+
+.movie li,
+.comics li {
+    margin: 1.5rem;
+    list-style-type: none;
+
 }
 
 .btn {
-    outline: none;
+    background-color: #A6A6A6;
+    color: #590902;
     border: none;
-    background-color: #e01a38;
-    color: white;
-    border-radius: 0.5em;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin: 1rem;
+    width: 15%;
     cursor: pointer;
-    padding: 0.5em 1em;
-    margin: 0.5em;
+    margin-left: 34rem;
 }
 
-@media screen and (max-width: 600px) and (min-height: 400px) {
-    .rightImage {
-        width: 100%;
-        height: auto;
-    }
-
-    .leftImage {
-        width: 100%;
-        height: auto;
-    }
+.btn:hover {
+    background-color: #404040;
 }

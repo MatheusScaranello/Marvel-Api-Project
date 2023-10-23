@@ -6,9 +6,13 @@ import Footer from "../components/footer/Footer"
 export default function teste() {
     return (
         <>
+        <div className={styles.container}>
             <Header />
+            <div className={styles.conteudo}>
             <CreateCharacters />
+            </div>
             <Footer />
+            </div>
         </>
     )
 }

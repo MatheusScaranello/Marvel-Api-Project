@@ -28,63 +28,79 @@ function Hero({ params }) {
                 {
                     apiDataRadom.map((item) => (
                         <div key={item.id}>
-                            <img
-                                src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                                alt={item.name}
-                                className={styles.img}
-                            />
 
                             <div className={styles.info}>
-                            <h1 className={styles.h1}>{item.name}</h1>
-                            <p className={styles.desc}>{item.description}</p>
+                                <h1 className={styles.h1n}>{item.name}</h1>
                             </div>
+                            <div className={styles.perso}>
 
+
+{
+    item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? 
+    <img src="/interro.png" 
+    alt={item.name} 
+    className={styles.img} 
+    width={300} 
+    height={300} /> :<img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                        alt={item.name}
+                        className={styles.img}
+                        width={300}
+                        height={300}
+/>
+}
+
+                {
+                    item.description === "" ? <p className={styles.desc}>Descrição: Não há descrição para este personagem</p> : <p className={styles.desc}>Descrição: {item.description}</p>
+                }
+                            </div>
+                            <div className={styles.line}></div>
                         </div>
                     ))
                 }
-                <div className={styles.character}>
-                    <h1>{apiDataRadom.name}</h1>
-                    <p>{apiDataRadom.description}</p>
-                </div>
+            </div>
+            <div className={styles.all}>
 
-                <div className={styles.rightImage}>
-                </div>
-
-                <div className={styles.all}>
-
-                    <h1 className={styles.h1}>Filmes:</h1>
+                <h1 className={styles.h1}>Aparições em Historias:</h1>
                 <div className={styles.movie}>
                     {
                         apiDataRadom.map((item) => (
                             item.stories.items.map((story) => (
                                 <ul key={story.name}>
-                                    <li>{story.name}</li>
+                                    {
+                                        story.name === "" ? <li>O personagem não tem aparição em nenhuma historia.</li> : <li>{story.name}</li>
+                                    }
                                 </ul>
                             )
                             )
-                            ))
-                        }
+                        ))
+                    }
                 </div>
+                <div className={styles.line}></div>
 
-                    <h1 className={styles.h1}>Quadrinhos:</h1>
+                <h1 className={styles.h1}>Aparições em Quadrinhos:</h1>
                 <div className={styles.comics}>
                     {
                         apiDataRadom.map((item) => (
                             item.comics.items.map((comic) => (
                                 <ul key={comic.name}>
-                                    <li>
-                                        {comic.name}
-                                    </li>
+                                    {
+                                        comic.name === "" ? <li>O personagem não tem aparição em nenhum quadrinho.</li> : <li>{comic.name}</li>
+                                    }
                                 </ul>
                             )
                             )
-                            ))
-                        }                        
-                        </div>
-                        
+                        ))
+                    }
                 </div>
 
+                 {/* copilot fez a boa nesse onclick 🔥 */}
+                <button className={styles.btn} onClick={() => window.history.back()}>Voltar</button>
+
             </div>
+
+            
+            
+
         </>
     )
 }
