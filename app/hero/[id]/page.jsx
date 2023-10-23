@@ -34,14 +34,24 @@ function Hero({ params }) {
                             </div>
                             <div className={styles.perso}>
 
-                                <img
-                                    src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                                    alt={item.name}
-                                    className={styles.img}
-                                    width={300}
-                                    height={300}
-                                />
-                                <p className={styles.desc}>Descrição: {item.description}</p>
+
+{
+    item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? 
+    <img src="/interro.png" 
+    alt={item.name} 
+    className={styles.img} 
+    width={300} 
+    height={300} /> :<img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                        alt={item.name}
+                        className={styles.img}
+                        width={300}
+                        height={300}
+/>
+}
+
+                {
+                    item.description === "" ? <p>Descrição: Não há descrição para este personagem</p> : <p>Descrição: {item.description}</p>
+                }
                             </div>
                             <div className={styles.line}></div>
                         </div>
@@ -56,7 +66,9 @@ function Hero({ params }) {
                         apiDataRadom.map((item) => (
                             item.stories.items.map((story) => (
                                 <ul key={story.name}>
-                                    <li>{story.name}</li>
+                                    {
+                                        story.name === "" ? <li>O personagem não tem aparição em nenhuma historia.</li> : <li>{story.name}</li>
+                                    }
                                 </ul>
                             )
                             )
@@ -71,9 +83,9 @@ function Hero({ params }) {
                         apiDataRadom.map((item) => (
                             item.comics.items.map((comic) => (
                                 <ul key={comic.name}>
-                                    <li>
-                                        {comic.name}
-                                    </li>
+                                    {
+                                        comic.name === "" ? <li>O personagem não tem aparição em nenhum quadrinho.</li> : <li>{comic.name}</li>
+                                    }
                                 </ul>
                             )
                             )
@@ -82,6 +94,9 @@ function Hero({ params }) {
                 </div>
 
             </div>
+
+            
+            
 
         </>
     )
