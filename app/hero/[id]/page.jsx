@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './route.module.css';
 import { getCharacterById } from '@/data/Characters';
 import { useEffect, useState } from 'react';
+import Footer from '@/app/components/footer/Footer';
 
 
 function Hero({ params }) {
@@ -100,7 +101,7 @@ function Hero({ params }) {
 
             
             
-
+        <Footer />
         </>
     )
 }
