@@ -72,22 +72,17 @@ export default function CreateCharacters() {
 
     return (
         <>
+        <div className={styles.main}>
         <div className={styles.container}>
             <h1 className={styles.title}>Crie seu Herói</h1>
-            <form>
-                <label className={styles.labels}>
-                    Name:
-                    <input type="text" value={name} onChange={e => setName(e.target.value)} className={styles.inputs}/>
-                </label>
-                <div className={styles.divAvatar}>
-                <label className={styles.labelAvatar}>Sua foto:</label>
-                <input type="file" onChange={handleImageChange} className={styles.inputAvatar}/>
-                </div>
-                <div className={styles.divDescri}>
-                <label className={styles.labelAvatar}>Descrição:    </label>
-                <textarea value={descri} onChange={e => setDescri(e.target.value)} className={styles.textarea}></textarea>
-                </div>
-            </form>
+            <div className={styles.inputContainer}>
+                <label htmlFor="name">Nome</label>
+                <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                <label htmlFor="avatar">Sua foto:</label>
+                <input type="file" id="avatar" onChange={handleImageChange} />
+                <label htmlFor="descri">Descrição</label>
+                <textarea id="descri" value={descri} onChange={(e) => setDescri(e.target.value)} />
+            </div>
             <div>
                 {
                     flag ? <button onClick={updateCharacters} className={styles.buttonUpgrade}>Atualizar</button> : <button onClick={addCharacters} className={styles.addButton}>Adicionar</button>
@@ -99,6 +94,7 @@ export default function CreateCharacters() {
             {showCharacters(characters.characters, editCharacters, removeCharacters)}
 
       
+        </div>
         </div>
         </>
     )
