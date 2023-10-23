@@ -38,8 +38,8 @@ const Sobrenos = () => {
         </div>
       </div>
       <div className={styles.controls}>
-        <button onClick={anteriorIntegrant}><BsFillCaretLeftFill/></button>
-        <button onClick={nextIntegrant}><BsFillCaretRightFill/></button>
+        <button className={styles.button} onClick={anteriorIntegrant}><BsFillCaretLeftFill/></button>
+        <button className={styles.button} onClick={nextIntegrant}><BsFillCaretRightFill/></button>
       </div>
     </div>
   );
