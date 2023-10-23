@@ -5,6 +5,8 @@ import styles from './sobrenos.module.css';
 import IntegranteCash from '../components/integranteCash/IntegranteCash';
 import {BsFillCaretLeftFill, BsFillCaretRightFill} from 'react-icons/bs';
 import integrantes from '@/data/Integrantes';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 const Sobrenos = () => {
 
@@ -28,6 +30,8 @@ const Sobrenos = () => {
   };
 
   return (
+    <>
+    <Header />
     <div className={styles.container}>
       <h1 className={styles.title}>Sobre nós</h1>
       <div className={styles.carouselContainer}>
@@ -42,6 +46,8 @@ const Sobrenos = () => {
         <button className={styles.button} onClick={nextIntegrant}><BsFillCaretRightFill/></button>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

@@ -10,15 +10,13 @@
   text-align: center;
   margin: 0 20px;
 }
-
+.feactures p{
+  font-size: 300px;
+  color: #777;
+}
 .feature h2 {
   font-size: 24px;
   margin-bottom: 10px;
-}
-
-.feature p {
-  font-size: 16px;
-  color: #777;
 }
 
 .container {
@@ -95,3 +93,4 @@
     font-size: 20px;
   }
 }
+
