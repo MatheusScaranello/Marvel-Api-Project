@@ -2,7 +2,7 @@
 import styles from "./page.module.css"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
-
+import NavLink from "./components/NavLink/NavLink"
 
 
 const home = () => {
@@ -22,16 +22,17 @@ const home = () => {
       </div>
       <section className={styles.features}>
           <div className={styles.feature}>
-            <h2>Produtos de Qualidade</h2>
-            <p>Explore nossa ampla gama de produtos de alta qualidade.</p>
+            <h2>Conheça nossa equipe</h2>
+            <NavLink texto={"Click Aqui"} rota="/sobrenos"/>
           </div>
           <div className={styles.feature}>
-            <h2>Atendimento ao Cliente</h2>
-            <p>Oferecemos suporte excepcional aos nossos clientes.</p>
+            <h2>Procure por um Personagem</h2>
+            <NavLink texto={"Click Aqui"} rota="/searchPage"/>
           </div>
           <div className={styles.feature}>
-            <h2>Envio Rápido</h2>
-            <p>Entrega rápida para que você obtenha seus produtos rapidamente.</p>
+            <h2>Crie seus Personagens</h2>
+            <NavLink texto={"Click Aqui"} rota="/createCharacters"/>
+            
           </div>
         </section>
     </div>

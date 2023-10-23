@@ -78,6 +78,7 @@ function Home() {
         </div>
 
         <div className={styles.grid}>
+          <div className={styles.allCards}>
           {(flag ? apiData : apiDataRadom).slice(0, numCharacters).map((item) => (
             <div className={styles.card} key={item.id}>
               <div className={styles.front}>
@@ -118,6 +119,7 @@ function Home() {
             Ver mais personagens
           </button>
         )}
+        </div>
       </div>
       <Footer />
     </div>
