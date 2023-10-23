@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Work+Sans&display=swap');
 
 .card{
@@ -62,3 +63,11 @@
     margin: 10px;
     text-align: center;
 }
+=======
+.img{
+    border-radius: 50%;
+    width: 20%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+

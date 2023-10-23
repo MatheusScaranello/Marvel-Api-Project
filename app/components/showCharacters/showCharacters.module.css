@@ -1,0 +1,91 @@
+.lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bnt {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.5em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+.bnt:hover {
+    background-color: #da485e;
+    color: white;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15px;
+    background-color: #171821;
+    margin-bottom: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 9rem;
+    border-radius: 0.5em;
+    width: 300px;
+    height: 350px;
+    max-width: 300px;
+    min-height: 350px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: rgb(199, 199, 199);
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 5%;
+    border-radius: 5%;
+}
+
+/*heros description*/
+.info {
+    color: white;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 300px;
+}
+
+/*styling image*/
+.img {
+    display: block;
+    border: 0;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+/*heros heading description*/
+.name {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.descri{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}

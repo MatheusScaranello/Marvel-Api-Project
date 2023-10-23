@@ -1,98 +1,97 @@
-.input {
-    padding: 1em 0.5em;
-    background-color: #3a3939;
-    color: #ffffff;
-    border: none;
-    border-radius: 0.5em;
-    outline: none;
+  
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
 }
 
-.btn {
-    outline: none;
-    border: none;
-    background-color: #e01a38;
-    color: white;
-    border-radius: 0.5em;
-    cursor: pointer;
-
+.feature {
+  max-width: 300px;
+  text-align: center;
+  margin: 0 20px;
 }
 
-.btn:hover {
-    background-color: #da485e;
-    color: white;
+.feature h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 16px;
+  color: #777;
 }
 
 .container {
-    padding: 2rem;
-    text-align: center;
-    background-color: #e01a38;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.inpts {
-    background-color: #171821;
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 3em 2em;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    right: 50%;
-    top: 1rem;
-    border-radius: 1em;
+.introducao {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.inputcontainer {
-    display: grid;
-    grid-template-columns: 9fr 3fr;
-    gap: 1em;
+.bemVindo {
+  font-size: 36px;
+  color: #333;
 }
 
-.card {
-    background-color: #171821;
-    border-radius: 8px;
-    color: white;
-    margin-bottom: 2rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 10rem;
+.text {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.5;
 }
 
-
-.img {
-border-radius: 50%;
-width: 20%;
-margin-bottom: 1rem;
+.marvelTitle {
+  font-size: 28px;
+  color: #ff0000;
 }
 
-.spinner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.marvel img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 1rem;
-    
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
-.desc {
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
+.fade {
+  animation: fadeIn 1.5s ease-in;
 }
 
-.btnInfos {
-    background-color: #e01a38;
-    color: white;
-    border: none;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    margin: 0.5em;
-    outline: none;
-    cursor: pointer;
+@media screen and (max-width: 600px) and (min-device-height: 400px) {
+  .features {
+    flex-direction: column;
+    padding: 20px;
+  }
 
+  .feature {
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .bemVindo {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .marvelTitle {
+    font-size: 20px;
+  }
 }
-
