@@ -90,8 +90,8 @@ export default function CreateCharacters() {
             </div>
             
         </div>
-        <div>
-            {showCharacters(characters.characters, editCharacters, removeCharacters)}
+        <div className={styles.showCharacters}>
+            {showCharacters(characters.characters, editCharacters)}
 
       
         </div>

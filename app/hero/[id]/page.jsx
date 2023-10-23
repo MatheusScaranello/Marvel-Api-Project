@@ -70,7 +70,7 @@ function Hero({ params }) {
                             <li key={story.name}>{story.name}</li>
                             
                             )
-                            ) : <li>O personagem não tem aparição em nenhuma história.</li>
+                            ) : <li key={1}>O personagem não tem aparição em nenhuma história.</li>
                         ))
                     }
                 </div>
@@ -85,7 +85,7 @@ function Hero({ params }) {
                                     <li key={comic.name}>{comic.name}</li>
                                     
                             )
-                            ) : <li>O personagem não tem aparição em nenhum quadrinho.</li>
+                            ) : <li key={1}>O personagem não tem aparição em nenhum quadrinho.</li>
                         ))
                     }
                 </div>
