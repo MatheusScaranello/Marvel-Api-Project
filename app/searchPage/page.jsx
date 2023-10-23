@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { TailSpin } from 'react-loader-spinner';
 import styles from './searchPage.module.css';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import { useRouter } from 'next/navigation';
