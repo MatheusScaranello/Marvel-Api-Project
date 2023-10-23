@@ -7,6 +7,9 @@
 .img {
     margin-left: 2rem;
     border-radius: 50%;
+    -webkit-box-shadow: 1px 1px 127px 1px rgba(166, 166, 166, 1);
+    -moz-box-shadow: 1px 1px 127px 1px rgba(166, 166, 166, 1);
+    box-shadow: 1px 1px 127px 1px rgba(166, 166, 166, 1);
 }
 
 .info {
@@ -16,8 +19,11 @@
 .desc {
     padding: 1rem;
     margin-left: 0.8rem;
-
+    font-size: 1.5rem;
+    text-align: center;
+    align-self: center;
 }
+
 
 .h1 {
     margin-left: 3rem;
@@ -47,7 +53,7 @@
     flex-direction: row;
     padding: 1.5rem;
     margin-left: 1.5rem;
-    
+
 }
 
 .comics {
@@ -68,4 +74,23 @@
     margin: 1.5rem;
     list-style-type: none;
 
+}
+
+.btn {
+    background-color: #A6A6A6;
+    color: #590902;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin: 1rem;
+    width: 15%;
+    cursor: pointer;
+    margin-left: 34rem;
+}
+
+.btn:hover {
+    background-color: #404040;
 }

@@ -50,7 +50,7 @@ function Hero({ params }) {
 }
 
                 {
-                    item.description === "" ? <p>Descrição: Não há descrição para este personagem</p> : <p>Descrição: {item.description}</p>
+                    item.description === "" ? <p className={styles.desc}>Descrição: Não há descrição para este personagem</p> : <p className={styles.desc}>Descrição: {item.description}</p>
                 }
                             </div>
                             <div className={styles.line}></div>
@@ -92,6 +92,9 @@ function Hero({ params }) {
                         ))
                     }
                 </div>
+
+                 {/* copilot fez a boa nesse onclick 🔥 */}
+                <button className={styles.btn} onClick={() => window.history.back()}>Voltar</button>
 
             </div>
 
