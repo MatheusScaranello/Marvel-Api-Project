@@ -15,8 +15,5 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "react-native-md5": "^1.0.0",
-    "react-spinners": "^0.13.8",
-    "swiper": "^10.3.1"
   }
 }
