@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Work+Sans&display=swap');
 .header { 
-  background-color: #8d0808;
+  background-color: #7e0808;
   opacity: 0.7;
   height: 100px;
   width: 100%; 
@@ -11,7 +11,7 @@
 
 }
 .imagem{
-  padding-top: 10px;
+  padding-top: 23px;
   padding-left: 10px;
   padding-bottom: 10px;
 }
