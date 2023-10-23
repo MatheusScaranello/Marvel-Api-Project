@@ -4,15 +4,19 @@ import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
 import NavLink from "./components/NavLink/NavLink"
 
+
 const home = () => {
   return (<>
     <Header />
-    
+<<<<<<< HEAD
+
+=======
+>>>>>>> b26b49d5dce25e49651f9033cf803fbc848e22b2
     <div className={styles.container}>
-    <div className={styles.introducao}>
-          <h1 className={`${styles.bemVindo} ${styles.fade}`}>Seja bem vindo!</h1>
-          <p className={styles.text}>Esse é o site de personagens da Marvel, aqui você pode criar seu próprio personagem, ou ver os personagens originais da própria Marvel.</p>
-        </div>
+      <div className={styles.introducao}>
+        <h1 className={`${styles.bemVindo} ${styles.fade}`}>Seja bem vindo!</h1>
+        <p className={styles.text}>Esse é o site de personagens da Marvel, aqui você pode criar seu próprio personagem, ou ver os personagens originais da própria Marvel.</p>
+      </div>
       <div className={styles.marvel}>
         <h1 className={styles.marvelTitle}>Marvel</h1>
         <img src="https://segredosdomundo.r7.com/wp-content/uploads/2020/06/marvel-a-historia-da-editora-nos-quadrinhos-e-no-cinema.jpg" alt="Marvel" />
@@ -21,20 +25,20 @@ const home = () => {
         <p className={styles.text}>Além disso, a Marvel continuou a criar histórias inovadoras e diversificadas nos quadrinhos, abordando questões sociais e políticas de maneiras criativas. A empresa é conhecida por suas narrativas complexas, desenvolvimento de personagens e por explorar temas relevantes, tornando-se uma parte importante da cultura pop global.</p>
       </div>
       <section className={styles.features}>
-          <div className={styles.feature}>
-            <h2>Conheça nossa equipe</h2>
-            <NavLink texto={"Click Aqui"} rota="/sobrenos"/>
-          </div>
-          <div className={styles.feature}>
-            <h2>Procure por um Personagem</h2>
-            <NavLink texto={"Click Aqui"} rota="/searchPage"/>
-          </div>
-          <div className={styles.feature}>
-            <h2>Crie seus Personagens</h2>
-            <NavLink texto={"Click Aqui"} rota="/createCharacters"/>
-            
-          </div>
-        </section>
+        <div className={styles.feature}>
+          <h2>Conheça nossa equipe</h2>
+          <NavLink texto={"Click Aqui"} rota="/sobrenos" />
+        </div>
+        <div className={styles.feature}>
+          <h2>Procure por um Personagem</h2>
+          <NavLink texto={"Click Aqui"} rota="/searchPage" />
+        </div>
+        <div className={styles.feature}>
+          <h2>Crie seus Personagens</h2>
+          <NavLink texto={"Click Aqui"} rota="/createCharacters" />
+
+        </div>
+      </section>
     </div>
     <Footer />
   </>

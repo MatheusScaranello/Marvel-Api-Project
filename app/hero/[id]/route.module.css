@@ -69,8 +69,8 @@
     margin: 1.5rem;
 }
 
-.movie li,
-.comics li {
+.movie,
+.comics {
     margin: 1.5rem;
     list-style-type: none;
 

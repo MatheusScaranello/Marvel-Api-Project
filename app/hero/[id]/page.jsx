@@ -36,23 +36,23 @@ function Hero({ params }) {
                             <div className={styles.perso}>
 
 
-{
-    item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? 
-    <img src="/interro.png" 
-    alt={item.name} 
-    className={styles.img} 
-    width={300} 
-    height={300} /> :<img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                        alt={item.name}
-                        className={styles.img}
-                        width={300}
-                        height={300}
-/>
-}
+                                {
+                                    item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ?
+                                        <img src="/interro.png"
+                                            alt={item.name}
+                                            className={styles.img}
+                                            width={300}
+                                            height={300} /> : <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                                                alt={item.name}
+                                                className={styles.img}
+                                                width={300}
+                                                height={300}
+                                        />
+                                }
 
-                {
-                    item.description === "" ? <p className={styles.desc}>Descrição: Não há descrição para este personagem</p> : <p className={styles.desc}>Descrição: {item.description}</p>
-                }
+                                {
+                                    item.description === "" ? <p className={styles.desc}>Descrição: Não há descrição para este personagem</p> : <p className={styles.desc}>Descrição: {item.description}</p>
+                                }
                             </div>
                             <div className={styles.line}></div>
                         </div>
@@ -65,14 +65,12 @@ function Hero({ params }) {
                 <div className={styles.movie}>
                     {
                         apiDataRadom.map((item) => (
-                            item.stories.items.map((story) => (
-                                <ul key={story.name}>
-                                    {
-                                        story.name === "" ? <li>O personagem não tem aparição em nenhuma historia.</li> : <li>{story.name}</li>
-                                    }
-                                </ul>
+                            item.stories.items.length > 0 ? item.stories.items.map((story) => (
+
+                            <li key={story.name}>{story.name}</li>
+                            
                             )
-                            )
+                            ) : <li key={1}>O personagem não tem aparição em nenhuma história.</li>
                         ))
                     }
                 </div>
@@ -82,26 +80,24 @@ function Hero({ params }) {
                 <div className={styles.comics}>
                     {
                         apiDataRadom.map((item) => (
-                            item.comics.items.map((comic) => (
-                                <ul key={comic.name}>
-                                    {
-                                        comic.name === "" ? <li>O personagem não tem aparição em nenhum quadrinho.</li> : <li>{comic.name}</li>
-                                    }
-                                </ul>
+                           item.comics.items.length > 0 ? item.comics.items.map((comic) => (
+                            
+                                    <li key={comic.name}>{comic.name}</li>
+                                    
                             )
-                            )
+                            ) : <li key={1}>O personagem não tem aparição em nenhum quadrinho.</li>
                         ))
                     }
                 </div>
 
-                 {/* copilot fez a boa nesse onclick 🔥 */}
+                {/* copilot fez a boa nesse onclick 🔥 */}
                 <button className={styles.btn} onClick={() => window.history.back()}>Voltar</button>
 
             </div>
 
-            
-            
-        <Footer />
+
+
+            <Footer />
         </>
     )
 }
