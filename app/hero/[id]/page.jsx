@@ -54,12 +54,12 @@ function Hero({ params }) {
                                     item.description === "" ? <p className={styles.desc}>Descrição: Não há descrição para este personagem</p> : <p className={styles.desc}>Descrição: {item.description}</p>
                                 }
                             </div>
-                            <div className={styles.line}></div>
                         </div>
                     ))
                 }
             </div>
             <div className={styles.all}>
+                <div className={styles.line}></div>
 
                 <h1 className={styles.h1}>Aparições em Historias:</h1>
                 <div className={styles.movie}>
