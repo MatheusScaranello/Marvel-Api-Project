@@ -5,13 +5,26 @@ import styles from './showCharacters.module.css'
 import { useState } from "react"
 import {FaTrash, FaPen} from 'react-icons/fa'
 
-const showCharacters = (characters, edit, removeCharacters) => {
+const showCharacters = (characters, edit) => {
     const [lista, setLista] = useState(characters)
+
+    const removeCharacters = (id) => {
+        
+            const updatedList = lista.filter((item) => item.id !== id);
+            setLista(updatedList);
+    
+    }
+
+    const flagOn = () => {
+        setFlag(true)
+    }
+    const flagOff = () => {
+        setFlag(false)
+    }
 
 
     return (
         <div className={styles.container}>
-            <h1>Lista de Personagens</h1>
             <div className={styles.lista}>
                 {lista.map((item) => (
                     <div className={styles.item}>
