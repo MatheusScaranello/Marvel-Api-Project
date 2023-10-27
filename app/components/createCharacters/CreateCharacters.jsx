@@ -1,101 +1,150 @@
-"use client";
+"use client"
+import { getCharacters } from "@/data/Characters"
+import styles from "../createCharacters/createCharacters.module.css"
+import { useState } from "react"
 
-import styles from './createCharacters.module.css'
-import { useState } from 'react'
-import createdCharacters from '@/models/createdCharacters';
-import showCharacters from '../showCharacters/showCharacters';
+export default function createCharacters() {
+    const [apiData, setApiData] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [img, setImg] = useState("");
+    const [characterId, setCharacterId] = useState("");
+    const [newCharacter, setNewCharacter] = useState("");
+    const [id, setId] = useState(0);
+    const [flag, setFlag] = useState(false);
 
-const characters = new createdCharacters()
-
-
-export default function CreateCharacters() {
-    const [name, setName] = useState('')
-    const [descri, setDescri] = useState('')
-    const [avatar, setAvatar] = useState('')
-    const [id, setId] = useState(0)
-    const [idEdit, setIdEdit] = useState(0)
-    const [flag, setFlag] = useState(false)
-
-    const generateId = () => {
+    function generateId() {
         setId(id + 1)
         return id
     }
 
-    const addCharacters = () => {
-        characters.addCharacter(name, descri, avatar, generateId())
-        generateId()
-        setName('')
-        setDescri('')
-        setAvatar('')
-    }
+    const handleSearch = async () => {
+        try {
+            const dados = await getCharacters(searchTerm);
+            setApiData(dados);
+            setFlag(true);
+            setNumCharacters(10);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-    const removeCharacters = (id) => {
-        characters.deleteCharacter(id)
-    }
+    const handleKeyPress = (e) => {
+        if (e.key == "Enter") {
+            handleSearch();
+        }
+    };
 
-    const editCharacters = (id) => {
-        setIdEdit(id)
-        const chara = characters.getCharacter(id)
-        setName(chara.name)
-        setDescri(chara.descri)
-        setAvatar(chara.avatar)
+    const handleEdit = (characterId, name, descri, img) => {
+        setName(name);
+        setDescription(descri);
+        setImg(img);
+        setCharacterId(characterId);
+        setFlag(true);
+    };
 
-        setFlag(true)
-    }
-
-    function atualizarCharacters(id) {
-        const chara = characters.getCharacter(id)
-        chara.name = name
-        chara.descri = descri
-        chara.avatar = avatar
-
-        characters.updateCharacter(chara)
-        limparInput()
-    }
-
-    const updateCharacters = () => {
-        atualizarCharacters(idEdit)
+    const handleChange = () => {
+        const updatedData = apiData.map((item) => {
+            if (item.id == characterId) {
+                return { ...item, name, description, img };
+            }
+            return item;
+        });
         setFlag(false)
+        setApiData(updatedData);
+        setCharacterId(characterId);
+        clundFilds()
+    };
+
+    const handleRemove = (id) => {
+        const updatedData = apiData.filter((item) => item.id !== id);
+        setApiData(updatedData);
+    };
+
+    const Adicionar = () => {
+        generateId()
+        const newCharacter = { id: id, name, description, img };
+        const updatedData = [newCharacter, ...apiData];
+        setApiData(updatedData);
+        clundFilds()
+    };
+
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        setImg(URL.createObjectURL(file));
+    };
+
+    const clundFilds = () => {
+        setName("");
+        setCharacterId("");
+        setImg("");
+        setDescription("");
     }
 
-    function limparInput(){
-        setName('')
-        setDescri('')
-        setAvatar('')
-    }
-
-      
-        const handleImageChange = (event) => {
-          const file = event.target.files[0];
-          setAvatar(URL.createObjectURL(file));
-        };
 
     return (
         <>
-        <div className={styles.main}>
-        <div className={styles.container}>
-            <h1 className={styles.title}>Crie seu Herói</h1>
-            <div className={styles.inputContainer}>
+        <div className={styles.inpts}>
+                <div className={styles.inputcontainer}>
+                    <input
+                        type="text"
+                        placeholder="Procurar"
+                        className={styles.input}
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onKeyPress={handleKeyPress}
+                    />
+                    <button type="button" className={styles.btn} onClick={handleSearch}>  Procurar 🔎 </button>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        <div className="App">
+            <div className={styles.containerInputs}>
                 <label htmlFor="name">Nome</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
                 <label htmlFor="avatar">Sua foto:</label>
                 <input type="file" id="avatar" onChange={handleImageChange} />
                 <label htmlFor="descri">Descrição</label>
-                <textarea id="descri" value={descri} onChange={(e) => setDescri(e.target.value)} />
+                <textarea id="descri" value={description} onChange={(e) => setDescription(e.target.value)} />
+                <div>
+                    {!flag ? <button className={styles.bntAdd} onClick={Adicionar}>Adicionar</button> : <button className={styles.bntEdit} onClick={handleChange}>Salvar</button>}
+                </div>
             </div>
-            <div>
-                {
-                    flag ? <button onClick={updateCharacters} className={styles.buttonUpgrade}>Atualizar</button> : <button onClick={addCharacters} className={styles.addButton}>Adicionar</button>
-                }
-            </div>
-            
-        </div>
-        <div className={styles.showCharacters}>
-            {showCharacters(characters.characters, editCharacters)}
+            <h1>Lista de Personagens</h1>
+            <ul>
+                <div className={styles.lista}>
+                    {apiData.map((item) => (
+                        <div className={styles.allCards}>
+                            <div className={styles.item} key={item.id} >
+                                <p className={styles.name}>{item.name}</p>
+                                {
+                                    item.img ? <img src={item.img} className={styles.img} alt={item.name} /> : <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} className={styles.img} alt={item.name} />
+                                }
+                                <p className={styles.info}>{item.description}</p>
 
-      
-        </div>
+
+                                <button className={styles.bnt} onClick={() => handleRemove(item.id)}>Remover</button>
+                                <button className={styles.bnt} onClick={() => handleEdit(item.id, item.name, item.description, item.img)}>Editar</button>
+
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </ul>
+
         </div>
         </>
-    )
+    );
 }

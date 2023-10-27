@@ -3,7 +3,7 @@ import styles from './header.module.css'
 import NavLink from '@/app/components/navLink/NavLink'
 
 
-const Header = () => {
+const Header = (changePage) => {
     return (
         <div className={styles.header}>
             
@@ -13,7 +13,7 @@ const Header = () => {
             <div className={styles.link}>
              <li><NavLink texto="Home" rota="/"/></li>
             <li><NavLink texto="Sobre nós" rota="/sobrenos"/></li>
-            <li><NavLink texto="Personagens" rota="/searchPage"/></li>
+            <li><NavLink texto="Personagens" rota="/createCharacters"/></li>
             <li><NavLink texto="Crie personagens" rota="/createCharacters"/></li> 
             </div>
           

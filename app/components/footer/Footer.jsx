@@ -21,7 +21,7 @@ return(
             <ul className={styles.footer}>
               <li><NavLink texto="Home" rota="/"/></li>
               <li><NavLink texto="Sobre nós" rota="/sobrenos"/></li>
-              <li><NavLink texto="Personagens" rota="/searchPage"/></li>
+              <li><NavLink texto="Personagens" rota="/createCharacters"/></li>
               <li><NavLink texto="Crie personagens" rota="/createCharacters"/></li>
               
 

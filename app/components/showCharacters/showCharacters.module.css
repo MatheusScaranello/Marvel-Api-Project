@@ -1,27 +1,51 @@
-.lista{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.input {
+    padding: 1em 0.5em;
+    background-color: #3a3939;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5em;
+    outline: none;
 }
-.bnt {
+
+.btn {
     outline: none;
     border: none;
-    background-color: transparent;
+    background-color: #e01a38;
     color: white;
     border-radius: 0.5em;
     cursor: pointer;
     padding: 0.5em 1em;
+
 }
 
-.bnt:hover {
+.btn:hover {
     background-color: #da485e;
     color: white;
 }
 
-.item {
+.inpts {
+    background-color: #171821;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 3em 2em;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    right: 50%;
+    margin-top: 10rem;
+    border-radius: 1em;
+}
+
+.inputcontainer {
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 1em;
+}
+
+.card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 15px;
@@ -32,21 +56,116 @@
     border-radius: 0.5em;
     width: 300px;
     height: 350px;
-    max-width: 300px;
-    min-height: 350px;
+    transition: transform 0.5s;
+    cursor: pointer;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
-.container {
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.desc {
+    font-size: 1rem;
+    font-weight: 400;
     margin-bottom: 1rem;
-    background-color: rgb(199, 199, 199);
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 5%;
-    border-radius: 5%;
+}
+
+.btnInfos {
+    background-color: #e01a38;
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    outline: none;
+    cursor: pointer;
+
+}
+
+.noDescription {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.allCards{
+    margin-top: 15rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.nothing {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    margin-top: 10%;
+}
+
+/*matheus*/
+
+.container {
+    font-family: sans-serif;
+    background: linear-gradient(to bottom right, #B71C1C, #212121);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/*for displaying as card*/
+.front {
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px 10px black;
+    margin: 10px;
+    background: linear-gradient(to bottom right, #B71C1C, #212121);
 }
 
 /*heros description*/
@@ -58,7 +177,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 300px;
 }
 
 /*styling image*/
@@ -73,15 +191,6 @@
 
 /*heros heading description*/
 .name {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    padding: 5px;
-    margin: 10px;
-}
-
-.descri{
     color: white;
     font-weight: bold;
     font-size: 20px;
