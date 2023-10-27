@@ -52,19 +52,6 @@
   margin-bottom: 20px;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade {
-  animation: fadeIn 1.5s ease-in;
-}
 
 @media screen and (max-width: 600px) and (min-device-height: 400px) {
   .features {
