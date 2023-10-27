@@ -57,7 +57,7 @@ export default function createCharacters() {
   const Adicionar = () => {
     generateId()
     const newCharacter = { id: id, name };
-    const updatedData = [...apiData, newCharacter];
+    const updatedData = [ newCharacter, ...apiData];
     setApiData(updatedData);
     setName("");
     setCharacterId("");
