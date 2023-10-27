@@ -1,0 +1,10 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    font-family: sans-serif;
+    background: linear-gradient(to bottom right, #B71C1C, #212121);
+}

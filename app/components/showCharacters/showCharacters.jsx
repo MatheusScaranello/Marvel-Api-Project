@@ -4,7 +4,7 @@ import styles from './showCharacters.module.css';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import { useRouter } from 'next/navigation';
 
-function Home() {
+function Home(creaters) {
   const [apiData, setApiData] = useState([]);
   const [apiDataRadom, setApiDataRadom] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,7 +18,7 @@ function Home() {
     const fetchCharactersRandom = async () => {
       try {
         const dados = await getCharactersRadom();
-        setApiDataRadom(dados);
+        setApiDataRadom(dados, creaters);
       } catch (error) {
         console.error(error);
       }
@@ -46,7 +46,7 @@ function Home() {
   };
 
   const moreInfos = (id) => {
-    router.push(`@/app/hero/${id}`);
+    router.push(`hero/${id}`);
   };
 
   const loadMoreCharacters = () => {

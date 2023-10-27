@@ -66,6 +66,7 @@ export default function createCharacters() {
         generateId()
         const newCharacter = { id: id, name, description, img };
         const updatedData = [newCharacter, ...apiData];
+        getCreaterCharacters(newCharacter)
         setApiData(updatedData);
         clundFilds()
     };
