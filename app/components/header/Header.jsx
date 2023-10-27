@@ -3,7 +3,7 @@ import styles from './header.module.css'
 import NavLink from '@/app/components/navLink/NavLink'
 
 
-const Header = (changePage) => {
+const Header = () => {
     return (
         <div className={styles.header}>
             
