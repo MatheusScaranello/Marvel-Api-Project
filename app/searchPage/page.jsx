@@ -87,7 +87,7 @@ function Home() {
               <div className={styles.front}>
 
                 {
-                  item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? 
+                  item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"  ? 
                   <img src="/interro.png"
                   alt={item.name}
                   className={styles.img}

@@ -4,6 +4,7 @@ import styles from './route.module.css';
 import { getCharacterById } from '@/data/Characters';
 import { useEffect, useState } from 'react';
 import Footer from '@/app/components/footer/Footer';
+import Header from '@/app/components/header/Header';
 
 
 function Hero({ params }) {
@@ -25,6 +26,7 @@ function Hero({ params }) {
 
     return (
         <>
+                <Header />  
             <div className={styles.cont}>
                 {
                     apiDataRadom.map((item) => (
@@ -37,7 +39,7 @@ function Hero({ params }) {
 
 
                                 {
-                                    item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ?
+                                    item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" || "http://i.annihil.us/u/prod/marvel/i/mg/f/60/4c002e0305708.gif" ?
                                         <img src="/interro.png"
                                             alt={item.name}
                                             className={styles.img}
