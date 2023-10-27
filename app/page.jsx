@@ -6,6 +6,7 @@ import NavLink from "./components/NavLink/NavLink"
 const home = () => {
   return (<>
     <Header />
+
     <div className={styles.container}>
       <div className={styles.introducao}>
         <h1 className={`${styles.bemVindo} ${styles.fade}`}>Seja bem vindo!</h1>
