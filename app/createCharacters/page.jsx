@@ -1,23 +1,36 @@
-"use client"
+"use client";
 import CreateCharacters from "../components/createCharacters/CreateCharacters";
-import ShowCharacters from "../components/showCharacters/ShowCharacters";
+import ShowCharacters from "../components/showCharacters/showCharacters";
+import { useState } from "react";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
-import { useState } from "react";
+import styles from "./createCharacters.module.css";
 
-export default function page() {
-  const [currentPage, setCurrentPage] = useState('personagens');
+const page = () => {
+  const [flag, setFlag] = useState(false);
+  const [pag, setPag] = useState("Crie seu personagem");
 
-  const handleChangePage = (page) => {
-    setCurrentPage(page);
+  const handleFlag = () => {
+    if (flag) {
+      setFlag(false);
+      setPag("Crie seu personagem");
+    }else{
+      setFlag(true);
+      setPag("Personagens");
+    }
   };
 
   return(
-    <div>
-      <Header changePage={handleChangePage}/>
-      {currentPage === 'personagens' && <ShowCharacters handleChangePage={handleChangePage}/>}
-      {currentPage === "Criar" && <CreateCharacters handleChangePage={handleChangePage}/>}
-      <Footer/>
+    <div className={styles.container}>
+      <Header />
+      <div className={styles.containerButton}>
+        <button onClick={handleFlag}>{pag}</button>
+      </div>
+      {flag ? <CreateCharacters /> : <ShowCharacters />}
+      <Footer />
     </div>
   )
-}
+
+};
+
+export default page;

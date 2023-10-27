@@ -85,6 +85,8 @@ export default function createCharacters() {
 
     return (
         <>
+        <div className={styles.all}>
+            <div className={styles.grid}>
         <div className={styles.inpts}>
                 <div className={styles.inputcontainer}>
                     <input
@@ -98,18 +100,6 @@ export default function createCharacters() {
                     <button type="button" className={styles.btn} onClick={handleSearch}>  Procurar 🔎 </button>
                 </div>
             </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
         <div className="App">
             <div className={styles.containerInputs}>
                 <label htmlFor="name">Nome</label>
@@ -121,7 +111,7 @@ export default function createCharacters() {
                 <div>
                     {!flag ? <button className={styles.bntAdd} onClick={Adicionar}>Adicionar</button> : <button className={styles.bntEdit} onClick={handleChange}>Salvar</button>}
                 </div>
-            </div>
+            </div></div></div>
             <h1>Lista de Personagens</h1>
             <ul>
                 <div className={styles.lista}>
