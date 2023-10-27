@@ -67,10 +67,10 @@ function Hero({ params }) {
                         apiDataRadom.map((item) => (
                             item.stories.items.length > 0 ? item.stories.items.map((story) => (
 
-                            <li key={story.name}>{story.name}</li>
+                            <li key={story.name} className={styles.li}>{story.name}</li>
                             
                             )
-                            ) : <li key={1}>O personagem não tem aparição em nenhuma história.</li>
+                            ) : <li key={1} className={styles.li}>O personagem não tem aparição em nenhuma história.</li>
                         ))
                     }
                 </div>
@@ -82,10 +82,10 @@ function Hero({ params }) {
                         apiDataRadom.map((item) => (
                            item.comics.items.length > 0 ? item.comics.items.map((comic) => (
                             
-                                    <li key={comic.name}>{comic.name}</li>
+                                    <li key={comic.name} className={styles.li}>{comic.name}</li>
                                     
                             )
-                            ) : <li key={1}>O personagem não tem aparição em nenhum quadrinho.</li>
+                            ) : <li key={1} className={styles.li}>O personagem não tem aparição em nenhum quadrinho.</li>
                         ))
                     }
                 </div>
