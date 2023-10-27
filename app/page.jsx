@@ -3,7 +3,6 @@ import styles from "./page.module.css"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
 import NavLink from "./components/NavLink/NavLink"
-import Carossel from "./components/carrossel/Carrossel"
 
 
 const home = () => {
