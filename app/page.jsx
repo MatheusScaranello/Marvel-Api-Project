@@ -5,12 +5,9 @@ import NavLink from "./components/NavLink/NavLink"
 
 const home = () => {
   return (<>
-<<<<<<< HEAD
-    <Header /> 
-=======
+
     <Header />
     <div className={styles.fundo}>
->>>>>>> 60541de77f939d225206a5c636c0aec50297373c
     <div className={styles.container}>
       <div className={styles.introducao}>
         <h1 className={`${styles.bemVindo} ${styles.fade}`}>Bem Vindo á </h1>
