@@ -1,10 +1,11 @@
 .fundo{
- background-image: url(https://i.imgur.com/jsVqTEE.png);
+ background-image: url('https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   height: 100vh;
   width: 100%;
+  background-color: black;
   overflow-x: hidden;
 }
 
@@ -12,24 +13,31 @@
   display: flex;
   justify-content: space-around;
   padding: 40px;
+  margin-top: -15px;
   flex-wrap: nowrap;
-  background-color: black;
-  width: 100vh;
- 
+
 
 }
+
 .text{
   color: white;
   font-size: 20px;
-  font-family: 'Poppins', sans-serif;
   text-align: center;
+  
 
 }
 .feature {
   max-width: 300px;
   text-align: center;
+  text-decoration: none;
   margin: 0 20px;
 }
+
+.feature a{
+  text-decoration: none;
+  color: white;
+}
+
 .feactures p{
   font-size: 300px;
   color: #777;
@@ -53,16 +61,25 @@
 }
 
 .bemVindo {
-  font-size: 55px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 70px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
   color: #FFFFFF;
   font-weight: 700;
+  margin-top: 50px; ;
   margin-right: -9.1px;
 }
-.bemVindo img{
-  width: 100%;
-  height: 100%;
+.person{
+  margin-top: 10px;
+  margin-right: -9.1px;
+  font-size: 70px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #db0f0fc8;
+}
+.img{
+  width: 50px;
+  height: 50px;
   margin-bottom: 20px;
+  margin: auto 0;
 }
 
 .text {
@@ -79,9 +96,31 @@
 .marvel img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
+.icons img{
+  width: 200px;
+  height: 200px;
+  margin: 15px; 
 
+}
+.icons{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.incons2{
+  margin-top: 50px;
+  font-size: 20px;
+  text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #FFFFFF;
+}
+.container2{
+  background-image: url('https://i.pinimg.com/564x/9d/b3/a8/9db3a8156aae930919ca3869e1ed11ff.jpg');
+  
+
+}
 
 @media screen and (max-width: 600px) and (min-device-height: 400px) {
   .features {

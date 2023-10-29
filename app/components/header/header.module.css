@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Work+Sans&display=swap');
 .header { 
   background-color: #861111;
-  opacity: 0.8;
+  opacity: 0.9;
   height: 100px;
-  width: 100%; 
-  overflow-x: hidden;
-  overflow-y: hidden;
+  width: 100%;
+  
   position: relative;
+  z-index: 1;
   display: flex;
+
 
 }
 .imagem{
   padding-top: 23px;
-  padding-left: 10px;
+  padding-left: 20px;
   padding-bottom: 10px;
 }
 .link{
