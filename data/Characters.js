@@ -50,3 +50,17 @@ export const getCharacterById = async (id) => {
         throw error;
     }
 }
+
+const editCharacter = async (characterId, newData) => {
+    const timeStamp = getTimeStamp();
+    const hash = generateHash(timeStamp);
+    const url = `${API_BASE_URL}/characters/${characterId}?ts=${timeStamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`;
+
+    try {
+        const resp = await axios.put(url, newData);
+        return resp.data.data.results;
+    } catch (error) {
+        throw error;
+    }
+
+};

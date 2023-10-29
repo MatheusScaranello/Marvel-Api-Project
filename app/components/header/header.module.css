@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Work+Sans&display=swap');
 .header { 
-  background-color: #7e0808;
-  opacity: 0.7;
+  background-color: #861111;
+  opacity: 0.8;
   height: 100px;
   width: 100%; 
   overflow-x: hidden;
@@ -27,8 +27,8 @@
 .link a{
   text-decoration: none;
   color: white;
-  font-size: 20px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
   align-items: center;
   flex-wrap: nowrap;
 }

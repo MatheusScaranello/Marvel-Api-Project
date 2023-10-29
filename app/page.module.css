@@ -1,10 +1,30 @@
-  
+.fundo{
+ background-image: url(https://i.imgur.com/jsVqTEE.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .features {
   display: flex;
   justify-content: space-around;
   padding: 40px;
-}
+  flex-wrap: nowrap;
+  background-color: black;
+  width: 100vh;
+ 
 
+}
+.text{
+  color: white;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+
+}
 .feature {
   max-width: 300px;
   text-align: center;
@@ -17,6 +37,7 @@
 .feature h2 {
   font-size: 24px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .container {
@@ -28,11 +49,20 @@
 .introducao {
   text-align: center;
   margin-bottom: 20px;
+ 
 }
 
 .bemVindo {
-  font-size: 36px;
-  color: #333;
+  font-size: 55px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #FFFFFF;
+  font-weight: 700;
+  margin-right: -9.1px;
+}
+.bemVindo img{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
 }
 
 .text {
@@ -52,19 +82,6 @@
   margin-bottom: 20px;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade {
-  animation: fadeIn 1.5s ease-in;
-}
 
 @media screen and (max-width: 600px) and (min-device-height: 400px) {
   .features {
