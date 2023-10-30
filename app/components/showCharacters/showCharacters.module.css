@@ -10,15 +10,16 @@
 .iconPen{
     color: #ffffff;
     cursor: pointer;
+ 
 }
 
-.edit{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.edit {
     border-radius: 50%;
     background-color: #e01a38;
     padding: 5px;
+    position: fixed;
+    top: 0;
+    right: 3;
 }
 
 .edit:hover{
@@ -29,7 +30,7 @@
     outline: none;
     border: none;
     background-color: #e01a38;
-    color: rgb(218, 43, 43);
+    color: rgb(245, 243, 243);
     border-radius: 0.5em;
     cursor: pointer;
     padding: 0.5em 1em;
