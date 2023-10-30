@@ -10,7 +10,6 @@ export default function createCharacters() {
     const [description, setDescription] = useState("");
     const [img, setImg] = useState("");
     const [characterId, setCharacterId] = useState("");
-    const [newCharacter, setNewCharacter] = useState("");
     const [id, setId] = useState(0);
     const [flag, setFlag] = useState(false);
 
@@ -66,7 +65,6 @@ export default function createCharacters() {
         generateId()
         const newCharacter = { id: id, name, description, img };
         const updatedData = [newCharacter, ...apiData];
-        getCreaterCharacters(newCharacter)
         setApiData(updatedData);
         clundFilds()
     };
@@ -89,6 +87,7 @@ export default function createCharacters() {
         <div className={styles.all}>
             <div className={styles.grid}>
         <div className={styles.inpts}>
+              <label htmlFor="search">Procure um personagem</label>
                 <div className={styles.inputcontainer}>
                     <input
                         type="text"
@@ -101,7 +100,7 @@ export default function createCharacters() {
                     <button type="button" className={styles.btn} onClick={handleSearch}>  Procurar 🔎 </button>
                 </div>
             </div>
-        <div className="App">
+        <div>
             <div className={styles.containerInputs}>
                 <label htmlFor="name">Nome</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -121,14 +120,14 @@ export default function createCharacters() {
                             <div className={styles.item} key={item.id} >
                                 <p className={styles.name}>{item.name}</p>
                                 {
-                                    item.img ? <img src={item.img} className={styles.img} alt={item.name} /> : <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} className={styles.img} alt={item.name} />
+                                    item.img ? <img src={item.img} alt={item.name} /> : item.thumbnail ? <img src={item.thumbnail.path + "." + item.thumbnail.extension} alt={item.name} /> : <img src="https://i.pinimg.com/originals/0f/8a/9a/0f8a9a5b5b5b5b5b5b5b5b5b5b5b5b5b.jpg" alt={"imagem não encontrada"} />
                                 }
                                 <p className={styles.info}>{item.description}</p>
 
-
-                                <button className={styles.bnt} onClick={() => handleRemove(item.id)}>Remover</button>
-                                <button className={styles.bnt} onClick={() => handleEdit(item.id, item.name, item.description, item.img)}>Editar</button>
-
+                                <div className={styles.bnts}>
+                                <button className={styles.bntRemove} onClick={() => handleRemove(item.id)}>Remover</button>
+                                <button className={styles.bntEdit} onClick={() => handleEdit(item.id, item.name, item.description, item.img)}>Editar</button>
+                                </div>
                             </div>
                         </div>
                     ))}
