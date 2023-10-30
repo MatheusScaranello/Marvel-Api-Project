@@ -30,22 +30,22 @@ const Header = () => {
 
                         <div className={styles.DHome}>
                         <li><NavLink texto={<ImHome3 />} rota="/" /></li>
-                        <p className={styles.pzin}>Home</p>
+                        <p className={styles.pzin}><NavLink texto={"Home"} rota={"/"}/></p>
                         </div>
 
                         <div className={styles.DAbout}>
                         <li><NavLink texto={<IoMdPeople />} rota="/sobrenos" /></li>
-                        <p className={styles.pzin}>Sobre nós</p>
+                        <p className={styles.pzin}><NavLink texto={"Sobre Nós"} rota={"/sobrenos"}/></p>
                         </div>
 
                         <div className={styles.DCharacter}>
                         <li><NavLink texto={<GiSpiderMask />} rota="/searchPage" /></li>
-                        <p className={styles.pzin}>Personagens</p>
+                        <p className={styles.pzin}><NavLink texto={"Personagens"} rota={"/searchPage"}/></p>
                         </div>
 
                         <div className={styles.DCreate}>
                         <li><NavLink texto={<MdCreateNewFolder />} rota="/createCharacters" /></li>
-                        <p className={styles.pzin}>Criar Personagem</p>
+                        <p className={styles.pzin}><NavLink texto={"Criar Personagem"} rota={"/createCharacters"}/></p>
                         </div>
 
                     </div>

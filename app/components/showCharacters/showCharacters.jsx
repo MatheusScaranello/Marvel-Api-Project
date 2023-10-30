@@ -99,8 +99,8 @@ function Home(creaters) {
                 <h3 className={styles.name}>{item.name}</h3>
               </div>
               <div className={`${styles.info} ${styles.back}`}>
-                <div className={styles.edit}>
-                  <BsFillPencilFill onClick={() => editHero(item.id)} />
+                <div className={styles.edit} onClick={() => editHero(item.id)} >
+                  <BsFillPencilFill />
                 </div>
                 {item.description ? (
                   <div className={styles.infos}>
