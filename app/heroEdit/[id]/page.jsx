@@ -9,7 +9,7 @@ import Header from '@/app/components/header/Header';
 
 function HeroEdit({ params }) {
 
-    const [apiData, setapiData] = useState([]);
+    const [apiData, setApiData] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -22,9 +22,7 @@ function HeroEdit({ params }) {
         const fetchCharacters = async () => {
             try {
                 const dados = await getCharacterById(params.id)
-                setSearchTerm(dados[0].name)
-                console.log(dados)
-                setapiData(dados)
+                setApiData(dados)
             } catch (error) {
                 throw error;
             }
@@ -73,8 +71,13 @@ function HeroEdit({ params }) {
         const updatedData = apiData.filter((item) => item.id !== id);
         setApiData(updatedData);
     };
+    
+    const generateId = () => {
+        const maxId = apiData.reduce((max, item) => (item.id > max ? item.id : max), apiData[0].id);
+        return maxId + 1;
+    };
 
-    const Adicionar = () => {
+    const Adicionar = (character) => {
         generateId()
         const newCharacter = { id: id, name, description, img };
         const updatedData = [newCharacter, ...apiData];
@@ -98,6 +101,7 @@ function HeroEdit({ params }) {
 
     return (
         <>
+        <Header />
             <div className={styles.all}>
             <div className={styles.grid}>
         <div className={styles.inpts}>
@@ -149,6 +153,7 @@ function HeroEdit({ params }) {
             </ul>
 
         </div>
+        <Footer />
         </>
     )
 }
