@@ -9,22 +9,27 @@
 
 .iconPen{
     color: #ffffff;
-    margin-left: 0.5rem;
     cursor: pointer;
 }
 
-.bntEdit{
-    background-color: #B71C1C;
-    color: #ffffff;
-    border: none;
-    border-radius: 0.5em;
+.edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #e01a38;
+    padding: 5px;
+}
+
+.edit:hover{
+    background-color: #da485e;
 }
 
 .btn {
     outline: none;
     border: none;
     background-color: #e01a38;
-    color: white;
+    color: rgb(218, 43, 43);
     border-radius: 0.5em;
     cursor: pointer;
     padding: 0.5em 1em;
@@ -33,7 +38,7 @@
 
 .btn:hover {
     background-color: #da485e;
-    color: white;
+    color: rgb(185, 34, 34);
 }
 
 .inpts {

@@ -99,7 +99,9 @@ function Home(creaters) {
                 <h3 className={styles.name}>{item.name}</h3>
               </div>
               <div className={`${styles.info} ${styles.back}`}>
-                <button className={styles.btnEdit} onClick={() => editHero(item.id)}><BsFillPencilFill className={styles.iconPen}/></button>
+                <div className={styles.edit}>
+                  <BsFillPencilFill onClick={() => editHero(item.id)} />
+                </div>
                 {item.description ? (
                   <div className={styles.infos}>
                     <p className={styles.desc}>Descrição: {item.description}</p>
@@ -118,7 +120,7 @@ function Home(creaters) {
           ))}
         </div>
         {numCharacters < (flag ? apiData.length : apiDataRadom.length) && (
-          <button className={styles.btn} onClick={loadMoreCharacters}>
+          <button className={styles.btn2} onClick={loadMoreCharacters}>
             Ver mais personagens
           </button>
         )}
