@@ -2,6 +2,8 @@
     display: flex;
     background-color: #590902;
     color: #A6A6A6;
+    flex-direction: column;
+    width: 100%;
 }
 
 .img {
@@ -14,6 +16,8 @@
 
 .info {
     margin: 2rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .desc {
@@ -22,6 +26,8 @@
     font-size: 1.5rem;
     text-align: center;
     align-self: center;
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -69,8 +75,8 @@
     margin: 1.5rem;
 }
 
-.movie,
-.comics {
+.movie li,
+.comics li {
     margin: 1.5rem;
     list-style-type: none;
 

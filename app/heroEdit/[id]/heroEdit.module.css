@@ -1,0 +1,222 @@
+.all{
+    min-height: 100vh;
+    max-width: 100vw;
+  background-image: url("https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.grid{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    padding: 39px;
+    justify-content: center;
+    align-items: center;
+}
+.grid > div{
+    background-color: #171821;
+    border-radius: 1rem;
+    padding: 20px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inpts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.inpts label{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    margin: 15px;
+}
+.label ft{ 
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    margin: 15px;
+}
+.inpts input{
+    width: 20rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.inpts button{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: #e01a38;
+    color: white;
+    margin: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+.containerInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.containerInputs p{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+   
+}
+.containerInputs input{
+    width: 20rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.containerInputs button{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: #e01a38;
+    color: white;
+    margin: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+.containerInputs select{
+    width: 20rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.containerInputs textarea{
+    width: 20rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    margin: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.all h1{
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #e01a38;
+    margin-bottom: 3rem;
+}
+
+.lista{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+.item{
+    background-color: #171821;
+    border-radius: 1rem;
+    padding: 20px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    max-width: 300px;
+    margin-bottom: 1rem;
+    margin-left: 81px;
+}
+
+.item img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.name{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.info{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.bntRemove{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: #e01a38;
+    color: white;
+    margin: 5px;
+    margin-top: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+.bntRemove:hover{
+    background-color: #e01a38;
+    opacity: 0.8;
+}
+
+.bntEdit{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: #e01a38;
+    color: white;
+    margin: 5px;
+    margin-top: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+.bntEdit:hover{
+    background-color: #e01a38;
+    opacity: 0.8;
+}
+
+.bnts{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
