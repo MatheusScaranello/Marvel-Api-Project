@@ -5,6 +5,22 @@ import { getCharacterById } from '@/data/Characters';
 import { useEffect, useState } from 'react';
 import Footer from '@/app/components/footer/Footer';
 import Header from '@/app/components/header/Header';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+
+const VisuallyHiddenInput = styled('input')({
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: 1,
+    overflow: 'hidden',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    whiteSpace: 'nowrap',
+    width: 1,
+});
+
 
 
 function HeroEdit({ params }) {
@@ -16,13 +32,14 @@ function HeroEdit({ params }) {
     const [img, setImg] = useState("");
     const [characterId, setCharacterId] = useState("");
     const [flag, setFlag] = useState(false);
+    const [id, setId] = useState(1);
 
 
     useEffect(() => {
         const fetchCharacters = async () => {
             try {
                 const dados = await getCharacterById(params.id)
-                setApiData(dados)
+                setApiData(dados, ...apiData)
             } catch (error) {
                 throw error;
             }
@@ -33,7 +50,7 @@ function HeroEdit({ params }) {
     const handleSearch = async () => {
         try {
             const dados = await getCharacters(searchTerm);
-            setApiData(dados);
+            setApiData(dados, ...apiData);
             setNumCharacters(10);
         } catch (error) {
             console.error(error);
@@ -73,11 +90,11 @@ function HeroEdit({ params }) {
     };
     
     const generateId = () => {
-        const maxId = apiData.reduce((max, item) => (item.id > max ? item.id : max), apiData[0].id);
-        return maxId + 1;
+        setId(id + 1)
+        return id
     };
 
-    const Adicionar = (character) => {
+    const Adicionar = () => {
         generateId()
         const newCharacter = { id: id, name, description, img };
         const updatedData = [newCharacter, ...apiData];
@@ -122,8 +139,10 @@ function HeroEdit({ params }) {
             <div className={styles.containerInputs}>
                 <label htmlFor="name">Nome</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
-                <label htmlFor="avatar">Sua foto:</label>
-                <input type="file" id="avatar" onChange={handleImageChange} />
+                <Button component="label" variant="contained" startIcon={<CloudUploadIcon />}>
+                                Upload file
+                                <VisuallyHiddenInput type="file" onChange={handleImageChange} />
+                            </Button>
                 <label htmlFor="descri">Descrição</label>
                 <textarea id="descri" value={description} onChange={(e) => setDescription(e.target.value)} />
                 <div>
