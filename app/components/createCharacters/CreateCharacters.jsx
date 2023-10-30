@@ -86,6 +86,7 @@ export default function createCharacters() {
         <>
         <div className={styles.all}>
             <div className={styles.grid}>
+                
         <div className={styles.inpts}>
               <label htmlFor="search">Procure um personagem</label>
                 <div className={styles.inputcontainer}>
@@ -102,9 +103,10 @@ export default function createCharacters() {
             </div>
         <div>
             <div className={styles.containerInputs}>
+                <p>Crie seu personagem</p>
                 <label htmlFor="name">Nome</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
-                <label htmlFor="avatar">Sua foto:</label>
+                <label  className={styles.ft} htmlFor="avatar">Sua foto:</label>
                 <input type="file" id="avatar" onChange={handleImageChange} />
                 <label htmlFor="descri">Descrição</label>
                 <textarea id="descri" value={description} onChange={(e) => setDescription(e.target.value)} />

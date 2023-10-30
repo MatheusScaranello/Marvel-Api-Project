@@ -31,9 +31,14 @@
 .inpts label{
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5rem;
-    margin-bottom: 10px;
-    margin: 10px;
-
+    margin-bottom: 15px;
+    margin: 15px;
+}
+.label ft{ 
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    margin: 15px;
 }
 .inpts input{
     width: 20rem;
@@ -63,6 +68,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.containerInputs p{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+   
 }
 .containerInputs input{
     width: 20rem;
@@ -114,7 +125,7 @@
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
     color: #e01a38;
-    margin-top: 5rem;
+    margin-bottom: 3rem;
 }
 
 .lista{
@@ -138,6 +149,7 @@
     min-height: 500px;
     max-width: 300px;
     margin-bottom: 1rem;
+    margin-left: 81px;
 }
 
 .item img{
@@ -154,7 +166,7 @@
 }
 
 .info{
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 400;
     margin-bottom: 1rem;
     opacity: 0.8;
@@ -168,6 +180,8 @@
     outline: none;
     background-color: #e01a38;
     color: white;
+    margin: 5px;
+    margin-top: 5px;
     font-family: 'Josefin Sans', sans-serif;
     cursor: pointer;
 }
@@ -185,6 +199,8 @@
     outline: none;
     background-color: #e01a38;
     color: white;
+    margin: 5px;
+    margin-top: 5px;
     font-family: 'Josefin Sans', sans-serif;
     cursor: pointer;
 }
