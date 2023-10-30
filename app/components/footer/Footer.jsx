@@ -42,10 +42,10 @@ return(
 
           <div className={styles.col}>
             <ul className={styles.social}>
-              <li><a className={styles.facebook} href="https://linktr.ee/6d3vs73?utm_source=linktree_profile_share&ltsid=38173729-06e5-4dd6-a081-623f1d3d04a3"><SiLinktree/></a></li>
-              <li><a className={styles.twitter} href="https://www.instagram.com/matheus_sca07/"><SiInstagram/></a></li>
-              <li><a className={styles.dribbble} href="https://github.com/MatheusScaranello"><BsGithub/></a></li>
-              <li><a className={styles.linkedin} href="https://br.linkedin.com/in/matheus-menezes-scaranello-180433261"><BsLinkedin></BsLinkedin></a></li>   
+              <li><a className={styles.facebook} target="_black" href="https://linktr.ee/6d3vs73"><SiLinktree/></a></li>
+              <li><a className={styles.twitter} target="_blank" href="https://www.instagram.com/matheus_sca07/"><SiInstagram/></a></li>
+              <li><a className={styles.dribbble} target="_blank" href="https://github.com/MatheusScaranello"><BsGithub/></a></li>
+              <li><a className={styles.linkedin} target="_blank" href="https://br.linkedin.com/in/matheus-menezes-scaranello-180433261"><BsLinkedin></BsLinkedin></a></li>   
             </ul>
           </div>
         </div>

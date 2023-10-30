@@ -1,52 +1,71 @@
-"use client";
-
-import React, { useState } from 'react';
+"use client"
+import React, { useRef, useEffect } from 'react';
 import styles from './sobrenos.module.css';
 import IntegranteCash from '../components/integranteCash/IntegranteCash';
-import {BsFillCaretLeftFill, BsFillCaretRightFill} from 'react-icons/bs';
 import integrantes from '@/data/Integrantes';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const Sobrenos = () => {
+  const swiperRef = useRef(null);
 
-  const [IntegranteId, setIntegranteId] = useState(1);
+  useEffect(() => {
+    const swiper = swiperRef.current;
 
-  const nextIntegrant = () => {
-    if (IntegranteId < 4) {
-      setIntegranteId(IntegranteId + 1);
-      return;
-    }else {
-        setIntegranteId(1);
-    }
-  };
+    const nextSlide = () => {
+      if (swiper) {
+        swiper.slideNext();
+      }
+    };
 
-  const anteriorIntegrant = () => {
-    if (IntegranteId > 1) {
-      setIntegranteId(IntegranteId - 1);
-      return;
-    }
-    setIntegranteId(4);
-  };
+    const prevSlide = () => {
+      if (swiper) {
+        swiper.slidePrev();
+      }
+    };
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    });
+
+    return () => {
+      document.removeEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          prevSlide();
+        }
+      });
+    };
+  }, []);
 
   return (
     <>
-    <Header />
-    <div className={styles.container}>
+      <Header />
       <h1 className={styles.title}>Sobre nós</h1>
-      <div className={styles.carouselContainer}>
-        <div className={styles.carouselSlide}>
-            <IntegranteCash {...integrantes[IntegranteId - 1]}/>
-            <IntegranteCash {...integrantes[IntegranteId]}/>
-            <IntegranteCash {...integrantes[IntegranteId + 1]}/>
-        </div>
+      <div className={styles.container}>
+        <Swiper
+          spaceBetween={200}
+          slidesPerView={3}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+        >
+          <div className={styles.carouselContainer}>
+            <div className={styles.carouselSlide}>
+              {integrantes.map((integrante, index) => (
+                <SwiperSlide key={index}>
+                  <IntegranteCash {...integrante} />
+                </SwiperSlide>
+              ))}
+            </div>
+          </div>
+        </Swiper>
       </div>
-      <div className={styles.controls}>
-        <button className={styles.button} onClick={anteriorIntegrant}><BsFillCaretLeftFill/></button>
-        <button className={styles.button} onClick={nextIntegrant}><BsFillCaretRightFill/></button>
-      </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };

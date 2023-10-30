@@ -1,17 +1,9 @@
-/* .container {
-    font-family: sans-serif;
-    background: linear-gradient(to bottom right, #B71C1C, #212121);
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-}
-
-.conteudo{
-    display: flex;
-    flex-direction: column;
+.container{
     min-height: 100vh;
-    width: 100%;
-    margin-bottom: 1rem;
-} */
+    max-width: 100vw;
+  background-image: url("https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
