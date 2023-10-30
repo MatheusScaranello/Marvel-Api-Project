@@ -1,0 +1,12 @@
+.navLink {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 0.5rem;
+    border: #fff solid 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
