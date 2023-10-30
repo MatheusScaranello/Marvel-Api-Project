@@ -46,6 +46,7 @@ const Sobrenos = () => {
   return (
     <>
       <Header />
+      <div className={styles.fundo}>
       <h1 className={styles.title}>Sobre nós</h1>
       <div className={styles.container}>
         <Swiper
@@ -64,6 +65,7 @@ const Sobrenos = () => {
             </div>
           </div>
         </Swiper>
+      </div>
       </div>
       <Footer />
     </>

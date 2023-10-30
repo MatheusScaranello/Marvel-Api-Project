@@ -1,15 +1,16 @@
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
     cursor: grab;
 }
 
 .title {
     font-size: 2rem;
     font-weight: bold;
-    color: #000000;
+    color: #fff;
     text-align: center;
     margin: 10px;
 }
