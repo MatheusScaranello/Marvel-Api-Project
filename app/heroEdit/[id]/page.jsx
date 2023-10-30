@@ -1,22 +1,36 @@
 "use client"
-import { getCharacters } from "@/data/Characters"
-import styles from "../createCharacters/createCharacters.module.css"
-import { useState } from "react"
+import Image from 'next/image';
+import styles from './heroEdit.module.css'
+import { getCharacterById } from '@/data/Characters';
+import { useEffect, useState } from 'react';
+import Footer from '@/app/components/footer/Footer';
+import Header from '@/app/components/header/Header';
 
-export default function createCharacters() {
-    const [apiData, setApiData] = useState([]);
+
+function HeroEdit({ params }) {
+
+    const [apiData, setapiData] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [img, setImg] = useState("");
     const [characterId, setCharacterId] = useState("");
-    const [id, setId] = useState(0);
     const [flag, setFlag] = useState(false);
 
-    function generateId() {
-        setId(id + 1)
-        return id
-    }
+
+    useEffect(() => {
+        const fetchCharacters = async () => {
+            try {
+                const dados = await getCharacterById(params.id)
+                setSearchTerm(dados[0].name)
+                console.log(dados)
+                setapiData(dados)
+            } catch (error) {
+                throw error;
+            }
+        };
+        fetchCharacters();
+    }, []);
 
     const handleSearch = async () => {
         try {
@@ -80,12 +94,12 @@ export default function createCharacters() {
         setDescription("");
     }
 
+    
 
     return (
         <>
-        <div className={styles.all}>
+            <div className={styles.all}>
             <div className={styles.grid}>
-                
         <div className={styles.inpts}>
               <label htmlFor="search">Procure um personagem</label>
                 <div className={styles.inputcontainer}>
@@ -102,10 +116,9 @@ export default function createCharacters() {
             </div>
         <div>
             <div className={styles.containerInputs}>
-                <p>Crie seu personagem</p>
                 <label htmlFor="name">Nome</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
-                <label  className={styles.ft} htmlFor="avatar">Sua foto:</label>
+                <label htmlFor="avatar">Sua foto:</label>
                 <input type="file" id="avatar" onChange={handleImageChange} />
                 <label htmlFor="descri">Descrição</label>
                 <textarea id="descri" value={description} onChange={(e) => setDescription(e.target.value)} />
@@ -137,5 +150,7 @@ export default function createCharacters() {
 
         </div>
         </>
-    );
+    )
 }
+
+export default HeroEdit
