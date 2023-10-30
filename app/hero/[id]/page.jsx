@@ -30,6 +30,7 @@ function Hero({ params }) {
                 {
                     apiDataRadom.map((item) => (
                         <div key={item.id}>
+                            <Header />
 
                             <div className={styles.info}>
                                 <h1 className={styles.h1n}>{item.name}</h1>
