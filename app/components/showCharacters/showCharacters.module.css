@@ -7,6 +7,19 @@
     outline: none;
 }
 
+.iconPen{
+    color: #ffffff;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.bntEdit{
+    background-color: #B71C1C;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5em;
+}
+
 .btn {
     outline: none;
     border: none;

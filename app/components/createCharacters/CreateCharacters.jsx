@@ -16,7 +16,7 @@ const VisuallyHiddenInput = styled('input')({
     left: 0,
     whiteSpace: 'nowrap',
     width: 1,
-  });
+});
 
 
 export default function createCharacters() {
@@ -38,7 +38,7 @@ export default function createCharacters() {
         try {
             const dados = await getCharacters(searchTerm);
             setApiData(dados);
-            setFlag(true);
+            setNumCharacters(10);
         } catch (error) {
             console.error(error);
         }
@@ -152,7 +152,8 @@ export default function createCharacters() {
                     </div>
                 </ul>
 
-            </div>
+
+            </div >
         </>
     );
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from './showCharacters.module.css';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import { useRouter } from 'next/navigation';
+import {BsFillPencilFill} from 'react-icons/bs';
 
 function Home(creaters) {
   const [apiData, setApiData] = useState([]);
@@ -47,6 +48,10 @@ function Home(creaters) {
 
   const moreInfos = (id) => {
     router.push(`hero/${id}`);
+  };
+
+  const editHero = (id) => {
+    router.push(`heroEdit/${id}`);
   };
 
   const loadMoreCharacters = () => {
@@ -94,6 +99,7 @@ function Home(creaters) {
                 <h3 className={styles.name}>{item.name}</h3>
               </div>
               <div className={`${styles.info} ${styles.back}`}>
+                <button className={styles.btnEdit} onClick={() => editHero(item.id)}><BsFillPencilFill className={styles.iconPen}/></button>
                 {item.description ? (
                   <div className={styles.infos}>
                     <p className={styles.desc}>Descrição: {item.description}</p>
