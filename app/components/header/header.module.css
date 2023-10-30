@@ -47,6 +47,17 @@
   display: inline;
 }
 
+.pzin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: #fff solid 0.5px;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
 .collapsible {
   color: white;
   text-decoration: none;
