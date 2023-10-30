@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Work+Sans&display=swap');
-.header { 
+
+.header {
   background-color: #861111;
   opacity: 0.9;
-  height: 100px;
+  min-height: 100px;
   width: 100%;
-  
-  position: relative;
   z-index: 1;
   display: flex;
-
-
+  justify-content: center;
+  align-items: center;
 }
-.imagem{
-  padding-top: 23px;
-  padding-left: 20px;
+
+.imagem {
+  padding-top: 10px;
+  padding-left: 10px;
   padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.link{
+
+.link {
   padding-top: 40px;
   padding-left: 350px;
   padding-bottom: 10px;
@@ -25,7 +30,8 @@
   margin-right: 10px;
   flex-wrap: nowrap;
 }
-.link a{
+
+.link a {
   text-decoration: none;
   color: white;
   font-size: 16px;
@@ -33,14 +39,132 @@
   align-items: center;
   flex-wrap: nowrap;
 }
-.link li{
+
+.link li {
   list-style: none;
-  padding-left: 10px;
-  padding-right: 10px;
   flex-wrap: nowrap;
   display: inline;
 }
 
+.collapsible {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  margin: 1rem;
+
+}
+
+.content {
+  background-color: #861111;
+  opacity: 0.9;
+  padding: 0 18px;
+  display: flex;
 
 
+}
 
+.content li {
+  list-style: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-wrap: wrap;
+  text-decoration: none;
+
+}
+
+.DHome {
+  color: white;
+  text-align: center;
+  margin: 0.5rem;
+
+}
+
+.DAbout {
+  color: white;
+  text-align: center;
+  margin: 0.5rem;
+  
+}
+
+.DCharacter {
+  color: white;
+  text-align: center;
+  margin: 0.5rem;
+
+
+}
+
+.DCreate {
+  color: white;
+  text-align: center;
+  margin: 0.5rem;
+
+
+}
+
+@media screen and (max-width: 767px) {
+  .link {
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    flex-wrap: wrap;
+  }
+
+  .link li {
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-wrap: wrap;
+    display: inline;
+  }
+
+  .link a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0.3rem;
+  }
+
+  .imagem {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+
+  .header {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+
+  .content li{
+    margin: 0.4rem;
+  }
+
+  .content {
+    background-color: #861111;
+    opacity: 0.9;
+    padding: 0 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  
+  }
+
+  .DHome {
+    color: white;
+  }
+
+
+}

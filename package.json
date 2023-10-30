@@ -13,6 +13,7 @@
     "md5": "^2.3.0",
     "next": "13.5.4",
     "react": "^18",
+    "react-collapsed": "^4.1.1",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "react-responsive-carousel": "^3.2.23",
