@@ -1,3 +1,4 @@
+
 "use client";
 import CreateCharacters from "../components/createCharacters/CreateCharacters";
 import Header from "../components/header/Header";
@@ -18,3 +19,4 @@ const page = () => {
 };
 
 export default page;
+
