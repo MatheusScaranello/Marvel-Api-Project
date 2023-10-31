@@ -1,7 +1,8 @@
-.all{
+.all {
     min-height: 100vh;
 }
-.grid{
+
+.grid {
     display: grid;
     grid-template-rows: 1fr;
     grid-gap: 10px;
@@ -9,7 +10,8 @@
     justify-content: center;
     align-items: center;
 }
-.grid > div{
+
+.grid>div {
     background-color: #171821;
     border-radius: 1rem;
     padding: 20px;
@@ -21,61 +23,72 @@
     flex-direction: column;
 }
 
-.inpts{
+.inpts {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 5rem;
 }
-.inpts label{
+
+.inpts label {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 15px;
     margin: 15px;
 }
-.label ft{ 
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    margin: 15px;
+
+.inputWithButton {
+    position: relative;
+    display: inline-block;
 }
-.inpts input{
+
+.inputWithButton .input {
     width: 20rem;
     height: 2rem;
     border-radius: 0.5rem;
     border: none;
     outline: none;
-    margin-bottom: 1rem;
     padding-left: 1rem;
     font-family: 'Josefin Sans', sans-serif;
 }
-.inpts button{
-    width: 10rem;
-    height: 2rem;
-    border-radius: 0.5rem;
+
+.inputWithButton .btn {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
     border: none;
     outline: none;
-    background-color: #e01a38;
     color: white;
-    margin: 5px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
-.containerInputs{
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.containerInputs {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.containerInputs p{
+
+.containerInputs p {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 20px;
-   
 }
-.containerInputs input{
+
+.containerInputs input {
     width: 20rem;
     height: 2rem;
     border-radius: 0.5rem;
@@ -85,7 +98,8 @@
     padding-left: 1rem;
     font-family: 'Josefin Sans', sans-serif;
 }
-.containerInputs button{
+
+.containerInputs button {
     width: 10rem;
     height: 2rem;
     border-radius: 0.5rem;
@@ -98,7 +112,7 @@
     cursor: pointer;
 }
 
-.containerInputs select{
+.containerInputs select {
     width: 20rem;
     height: 2rem;
     border-radius: 0.5rem;
@@ -109,7 +123,7 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.containerInputs textarea{
+.containerInputs textarea {
     width: 20rem;
     height: 5rem;
     border-radius: 0.5rem;
@@ -118,24 +132,25 @@
     margin-bottom: 1rem;
     padding-left: 1rem;
     margin: 10px;
+    resize: none;
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.all h1{
+.all h1 {
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
     color: #e01a38;
     margin-bottom: 3rem;
 }
 
-.lista{
+.lista {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 10px;
 }
 
-.item{
+.item {
     background-color: #171821;
     border-radius: 1rem;
     padding: 20px;
@@ -152,27 +167,27 @@
     margin-left: 81px;
 }
 
-.item img{
+.item img {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
     margin-bottom: 1rem;
 }
 
-.name{
+.name {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
-.info{
+.info {
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 1rem;
     opacity: 0.8;
 }
 
-.bntRemove{
+.bntRemove {
     width: 10rem;
     height: 2rem;
     border-radius: 0.5rem;
@@ -186,12 +201,12 @@
     cursor: pointer;
 }
 
-.bntRemove:hover{
+.bntRemove:hover {
     background-color: #e01a38;
     opacity: 0.8;
 }
 
-.bntEdit{
+.bntEdit {
     width: 10rem;
     height: 2rem;
     border-radius: 0.5rem;
@@ -205,12 +220,12 @@
     cursor: pointer;
 }
 
-.bntEdit:hover{
+.bntEdit:hover {
     background-color: #e01a38;
     opacity: 0.8;
 }
 
-.bnts{
+.bnts {
     display: flex;
     justify-content: space-between;
     width: 100%;

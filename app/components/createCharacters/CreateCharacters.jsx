@@ -1,23 +1,25 @@
-"use client"
-import { getCharacters } from "@/data/Characters"
-import styles from "../createCharacters/createCharacters.module.css"
-import { useState } from "react"
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
+import { getCharacters } from "@/data/Characters";
+import styles from "../createCharacters/createCharacters.module.css";
+import { useState } from "react";
+import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import { RiUserSearchLine } from "react-icons/ri";
+import { Spinnaker } from "next/font/google";
+import { TailSpin } from "react-loader-spinner";
 
-const VisuallyHiddenInput = styled('input')({
-    clip: 'rect(0 0 0 0)',
-    clipPath: 'inset(50%)',
+
+const VisuallyHiddenInput = styled("input")({
+    clip: "rect(0 0 0 0)",
+    clipPath: "inset(50%)",
     height: 1,
-    overflow: 'hidden',
-    position: 'absolute',
+    overflow: "hidden",
+    position: "absolute",
     bottom: 0,
     left: 0,
-    whiteSpace: 'nowrap',
+    whiteSpace: "nowrap",
     width: 1,
 });
-
 
 export default function createCharacters() {
     const [apiData, setApiData] = useState([]);
@@ -28,13 +30,16 @@ export default function createCharacters() {
     const [characterId, setCharacterId] = useState("");
     const [id, setId] = useState(0);
     const [flag, setFlag] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+
 
     function generateId() {
-        setId(id + 1)
-        return id
+        setId(id + 1);
+        return id;
     }
 
     const handleSearch = async () => {
+        setIsLoading(true);
         try {
             const dados = await getCharacters(searchTerm);
             setApiData(dados);
@@ -42,6 +47,7 @@ export default function createCharacters() {
         } catch (error) {
             console.error(error);
         }
+        setIsLoading(false);
     };
 
     const handleKeyPress = (e) => {
@@ -65,10 +71,10 @@ export default function createCharacters() {
             }
             return item;
         });
-        setFlag(false)
+        setFlag(false);
         setApiData(updatedData);
         setCharacterId(characterId);
-        clundFilds()
+        clundFilds();
     };
 
     const handleRemove = (id) => {
@@ -77,11 +83,11 @@ export default function createCharacters() {
     };
 
     const Adicionar = () => {
-        generateId()
+        generateId();
         const newCharacter = { id: id, name, description, img };
         const updatedData = [newCharacter, ...apiData];
         setApiData(updatedData);
-        clundFilds()
+        clundFilds();
     };
 
     const handleImageChange = (event) => {
@@ -94,8 +100,7 @@ export default function createCharacters() {
         setCharacterId("");
         setImg("");
         setDescription("");
-    }
-
+    };
 
     return (
         <>
@@ -104,15 +109,19 @@ export default function createCharacters() {
                     <div className={styles.inpts}>
                         <label htmlFor="search">Procure um personagem</label>
                         <div className={styles.inputcontainer}>
-                            <input
-                                type="text"
-                                placeholder="Procurar"
-                                className={styles.input}
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                onKeyPress={handleKeyPress}
-                            />
-                            <button type="button" className={styles.btn} onClick={handleSearch}>  Procurar 🔎 </button>
+                            <div className={styles.inputWithButton}>
+                                <input
+                                    type="text"
+                                    placeholder="Procurar"
+                                    className={styles.input}
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    onKeyPress={handleKeyPress}
+                                />
+                                <button type="button" className={styles.btn} onClick={handleSearch}>
+                                    <RiUserSearchLine color="black" />
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -125,35 +134,63 @@ export default function createCharacters() {
                                 <VisuallyHiddenInput type="file" onChange={handleImageChange} />
                             </Button>
                             <label htmlFor="descri">Descrição</label>
-                            <textarea id="descri" value={description} onChange={(e) => setDescription(e.target.value)} />
+                            <textarea className={styles.textarea} id="descri" value={description} onChange={(e) => setDescription(e.target.value)} />
                             <div>
-                                {!flag ? <button className={styles.bntAdd} onClick={Adicionar}>Adicionar</button> : <button className={styles.bntEdit} onClick={handleChange}>Salvar</button>}
+                                {!flag ? (
+                                    <button className={styles.bntAdd} onClick={Adicionar}>
+                                        Adicionar
+                                    </button>
+                                ) : (
+                                    <button className={styles.bntEdit} onClick={handleChange}>
+                                        Salvar
+                                    </button>
+                                )}
                             </div>
-                        </div></div></div>
+                        </div>
+                    </div>
+                </div>
                 <h1>Lista de Personagens</h1>
                 <ul>
                     <div className={styles.lista}>
-                        {apiData.map((item) => (
-                            <div className={styles.allCards}>
-                                <div className={styles.item} key={item.id} >
-                                    <p className={styles.name}>{item.name}</p>
-                                    {
-                                        item.img ? <img src={item.img} alt={item.name} /> : item.thumbnail ? <img src={item.thumbnail.path + "." + item.thumbnail.extension} alt={item.name} /> : <img src="https://i.pinimg.com/originals/0f/8a/9a/0f8a9a5b5b5b5b5b5b5b5b5b5b5b5b5b.jpg" alt={"imagem não encontrada"} />
-                                    }
-                                    <p className={styles.info}>{item.description}</p>
-
-                                    <div className={styles.bnts}>
-                                        <button className={styles.bntRemove} onClick={() => handleRemove(item.id)}>Remover</button>
-                                        <button className={styles.bntEdit} onClick={() => handleEdit(item.id, item.name, item.description, item.img)}>Editar</button>
+                        {isLoading ? (
+                            <div className={styles.loading}>
+                                <TailSpin height="80"
+                                    width="80"
+                                    color="#861111  "
+                                    ariaLabel="tail-spin-loading"
+                                    radius="1"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                    visible={true} />
+                            </div>
+                        ) : (
+                            apiData.map((item) => (
+                                <div className={styles.allCards}>
+                                    <div className={styles.item} key={item.id}>
+                                        <p className={styles.name}>{item.name}</p>
+                                        {item.img ? (
+                                            <img src={item.img} alt={item.name} />
+                                        ) : item.thumbnail ? (
+                                            <img src={item.thumbnail.path + "." + item.thumbnail.extension} alt={item.name} />
+                                        ) : (
+                                            <img src="https://i.pinimg.com/originals/0f/8a/9a/0f8a9a5b5b5b5b5b5b5b5b5b5b5b5b5b.jpg" alt={"imagem não encontrada"} />
+                                        )}
+                                        <p className={styles.info}>{item.description}</p>
+                                        <div className={styles.bnts}>
+                                            <button className={styles.bntRemove} onClick={() => handleRemove(item.id)}>
+                                                Remover
+                                            </button>
+                                            <button className={styles.bntEdit} onClick={() => handleEdit(item.id, item.name, item.description, item.img)}>
+                                                Editar
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))
+                        )}
                     </div>
                 </ul>
-
-
-            </div >
+            </div>
         </>
     );
 }
