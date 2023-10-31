@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Josefin+Sans:ital,wght@1,300&family=Lexend+Giga&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Rowdies&family=Ubuntu:ital,wght@1,300&family=Work+Sans&display=swap');
-.fundo{
- background-image: url('https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg');
+
+.fundo {
+  background-image: url('https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -18,18 +19,13 @@
   padding: 40px;
   margin-top: -15px;
   flex-wrap: nowrap;
-
-
 }
-
-
-.text{
+.text {
   color: white;
   font-size: 20px;
   text-align: center;
-  
-
 }
+
 .feature {
   max-width: 300px;
   text-align: center;
@@ -37,15 +33,16 @@
   margin: 0 20px;
 }
 
-.feature a{
+.feature a {
   text-decoration: none;
   color: white;
 }
 
-.feactures p{
+.feactures p {
   font-size: 300px;
   color: #c6c0c0;
 }
+
 .feature h2 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -61,7 +58,7 @@
 .introducao {
   text-align: center;
   margin-bottom: 20px;
- 
+
 }
 
 .bemVindo {
@@ -69,12 +66,13 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: #FFFFFF;
   font-weight: 700;
-  margin-top: 50px; ;
+  margin-top: 50px;
+  ;
   margin-right: -9.1px;
 }
 
-.img{
-  
+.img {
+
   height: 150%;
   width: 150%;
   margin-top: -195px;
@@ -101,27 +99,31 @@
   height: auto;
   margin-bottom: 10px;
 }
-.icons img{
+
+.icons img {
   width: 200px;
   height: 200px;
-  margin: 15px; 
+  margin: 15px;
 
 }
-.icons{
+
+.icons {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
-.incons2{
+
+.incons2 {
   margin-top: 50px;
   font-size: 20px;
   text-align: center;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #FFFFFF;
 }
-.container2{
+
+.container2 {
   background-image: url('https://i.pinimg.com/564x/9d/b3/a8/9db3a8156aae930919ca3869e1ed11ff.jpg');
-  
+
 
 }
 
@@ -152,4 +154,3 @@
     font-size: 20px;
   }
 }
-
