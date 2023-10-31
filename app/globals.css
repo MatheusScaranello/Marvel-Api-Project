@@ -4,4 +4,5 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
+  scroll-behavior: smooth;
 }

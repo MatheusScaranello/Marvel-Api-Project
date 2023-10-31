@@ -10,7 +10,7 @@
   align-items: center;
   background: linear-gradient(90deg, #861111, #c02b2b, #861111);
   background-size: 200% 200%;
-  animation: gradient 3s linear infinite; 
+  animation: gradient 3s linear infinite;
   opacity: 0.9;
 }
 
@@ -84,7 +84,7 @@
   opacity: 0.9;
   padding: 0 18px;
   display: flex;
-  background-color: transparent ;
+  background-color: transparent;
 }
 
 .content li {
@@ -166,7 +166,7 @@
   }
 
   .content {
-    background-color: #861111;
+    background-color: transparent;
     opacity: 0.9;
     padding: 0 18px;
     display: flex;

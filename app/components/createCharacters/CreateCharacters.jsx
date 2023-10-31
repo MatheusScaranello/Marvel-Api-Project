@@ -62,6 +62,8 @@ export default function createCharacters() {
         setImg(img);
         setCharacterId(characterId);
         setFlag(true);
+
+        window.scrollTo(0, 0);
     };
 
     const handleChange = () => {
