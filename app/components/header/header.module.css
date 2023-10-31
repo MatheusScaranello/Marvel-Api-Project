@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Work+Sans&display=swap');
 
 .header {
-  background-color: #861111;
-  opacity: 0.9;
   min-height: 100px;
   width: 100%;
   position: relative;
@@ -10,6 +8,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(90deg, #861111, #c02b2b, #861111);
+  background-size: 200% 200%;
+  animation: gradient 3s linear infinite; 
+  opacity: 0.9;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .imagem {
@@ -65,7 +77,6 @@
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
   margin: 1rem;
-
 }
 
 .content {
@@ -73,8 +84,7 @@
   opacity: 0.9;
   padding: 0 18px;
   display: flex;
-
-
+  background-color: transparent ;
 }
 
 .content li {
@@ -83,37 +93,30 @@
   padding-right: 10px;
   flex-wrap: wrap;
   text-decoration: none;
-
 }
 
 .DHome {
   color: white;
   text-align: center;
   margin: 0.5rem;
-
 }
 
 .DAbout {
   color: white;
   text-align: center;
   margin: 0.5rem;
-  
 }
 
 .DCharacter {
   color: white;
   text-align: center;
   margin: 0.5rem;
-
-
 }
 
 .DCreate {
   color: white;
   text-align: center;
   margin: 0.5rem;
-
-
 }
 
 @media screen and (max-width: 767px) {
@@ -158,7 +161,7 @@
     height: auto;
   }
 
-  .content li{
+  .content li {
     margin: 0.4rem;
   }
 
@@ -171,12 +174,9 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-  
   }
 
   .DHome {
     color: white;
   }
-
-
 }
