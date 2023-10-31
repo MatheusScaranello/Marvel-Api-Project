@@ -1,6 +1,5 @@
 import axios from 'axios';
 import md5 from 'md5';
-
 const API_BASE_URL = "https://gateway.marvel.com/v1/public";
 const API_PUBLIC_KEY = "b0a30f2c6cf1fda6fd1fd440ee6d52d6";
 const API_PRIVATE_KEY = "d57d50281d8ac0e805135173184c87e419b4eec1";

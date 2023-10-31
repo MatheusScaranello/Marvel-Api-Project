@@ -1,50 +1,133 @@
 "use client"
+import { useState, useEffect } from 'react';
+import styles from './showCharacters.module.css';
+import { getCharacters, getCharactersRadom } from '@/data/Characters';
+import { useRouter } from 'next/navigation';
+import {BsFillPencilFill} from 'react-icons/bs';
 
-import createdCharacters from "@/models/createdCharacters"
-import styles from './showCharacters.module.css'
-import { useState } from "react"
-import {FaTrash, FaPen} from 'react-icons/fa'
+function Home(creaters) {
+  const [apiData, setApiData] = useState([]);
+  const [apiDataRadom, setApiDataRadom] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [flag, setFlag] = useState(false);
+  const [numCharacters, setNumCharacters] = useState(100);
+  
 
-const showCharacters = (characters, edit) => {
-    const [lista, setLista] = useState(characters)
+  const router = useRouter();
 
-    const removeCharacters = (id) => {
-        
-            const updatedList = lista.filter((item) => item.id !== id);
-            setLista(updatedList);
-    
+  useEffect(() => {
+    const fetchCharactersRandom = async () => {
+      try {
+        const dados = await getCharactersRadom();
+        setApiDataRadom(dados, creaters);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchCharactersRandom();
+  }, []);
+
+  
+
+  const handleSearch = async () => {
+    try {
+      const dados = await getCharacters(searchTerm);
+      setApiData(dados);
+      setFlag(true);
+      setNumCharacters(10);
+    } catch (error) {
+      console.error(error);
     }
+  };
 
-    const flagOn = () => {
-        setFlag(true)
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
     }
-    const flagOff = () => {
-        setFlag(false)
+  };
+
+  const moreInfos = (id) => {
+    router.push(`hero/${id}`);
+  };
+
+  const editHero = (id) => {
+    router.push(`heroEdit/${id}`);
+  };
+
+  const loadMoreCharacters = () => {
+    if (numCharacters < (flag ? apiData.length : apiDataRadom.length)) {
+      setNumCharacters(numCharacters + 100);
     }
+  };
 
-
-    return (
-        <div className={styles.container}>
-            <div className={styles.lista}>
-                {lista.map((item) => (
-                    <div className={styles.item}>
-                        <div >
-                            <img src={item.avatar} alt={item.name} className={styles.img}/>
-                        </div>
-                        <div className={styles.info}>
-                            <h2>{item.name}</h2>
-                            <p>{item.descri}</p>
-                        </div>
-                        <div className={styles.botoes}>
-                            <button className={styles.bnt} onClick={() => removeCharacters(item.id)}><FaTrash/></button>
-                            <button className={styles.bnt} onClick={() => edit(item.id)}><FaPen/></button>
-                        </div>
-                    </div>
-                    
-                ))}
-            </div>
+  return (
+    <div>
+      <div className={styles.container}>
+        <div className={styles.inpts}>
+          <div className={styles.inputcontainer}>
+            <input
+              type="text"
+              placeholder="Procurar"
+              className={styles.input}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyPress={handleKeyPress}
+            />
+            <button type="button" className={styles.btn} onClick={handleSearch}>
+              Procurar 🔎
+            </button>
+          </div>
         </div>
-    )
+
+        <div className={styles.grid}>
+          <div className={styles.allCards}>
+          {(flag ? apiData : apiDataRadom).slice(0, numCharacters).map((item) => (
+            <div className={styles.card} key={item.id}>
+              <div className={styles.front}>
+
+                {
+                  item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? 
+                  <img src="/interro.png"
+                  alt={item.name}
+                  className={styles.img}
+                  /> : <img
+                  src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                  alt={item.name}
+                  className={styles.img}
+                />
+                }
+                <h3 className={styles.name}>{item.name}</h3>
+              </div>
+              <div className={`${styles.info} ${styles.back}`}>
+                <div className={styles.edit} onClick={() => editHero(item.id)} >
+                  <BsFillPencilFill />
+                </div>
+                {item.description ? (
+                  <div className={styles.infos}>
+                    <p className={styles.desc}>Descrição: {item.description}</p>
+                    <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
+                  </div>
+                ) : (
+                  <div className={styles.infos}>
+                    <p className={styles.noDescription}>
+                      Esse personagem não possui descrição
+                    </p>
+                    <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+        {numCharacters < (flag ? apiData.length : apiDataRadom.length) && (
+          <button className={styles.btn2} onClick={loadMoreCharacters}>
+            Ver mais personagens
+          </button>
+        )}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default showCharacters
+export default Home;

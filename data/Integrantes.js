@@ -17,7 +17,7 @@ const integrantes = [
     },
     {
         id: 2,
-      nome: "Gabriel Canrin",
+      nome: "Gabriel Caurin",
       cargo: "Membro",
       foto: "https://i.imgur.com/iO9H6V1.jpg",
       description: "Gabriel é membro da equipe e é responsável por programar.",

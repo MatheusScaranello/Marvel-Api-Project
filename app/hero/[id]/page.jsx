@@ -4,6 +4,7 @@ import styles from './route.module.css';
 import { getCharacterById } from '@/data/Characters';
 import { useEffect, useState } from 'react';
 import Footer from '@/app/components/footer/Footer';
+import Header from '@/app/components/header/Header';
 
 
 function Hero({ params }) {
@@ -29,6 +30,7 @@ function Hero({ params }) {
                 {
                     apiDataRadom.map((item) => (
                         <div key={item.id}>
+                            <Header />
 
                             <div className={styles.info}>
                                 <h1 className={styles.h1n}>{item.name}</h1>
