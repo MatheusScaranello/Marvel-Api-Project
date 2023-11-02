@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Work+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Josefin+Sans:ital,wght@1,300&family=Lexend+Giga&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Rowdies&family=Ubuntu:ital,wght@1,300&family=Work+Sans&display=swap');
 
 .fundo {
@@ -20,6 +19,7 @@
   margin-top: -15px;
   flex-wrap: nowrap;
 }
+
 .text {
   color: white;
   font-size: 20px;
@@ -38,8 +38,8 @@
   color: white;
 }
 
-.feactures p {
-  font-size: 300px;
+.features p {
+  font-size: 20px;
   color: #c6c0c0;
 }
 
@@ -58,7 +58,6 @@
 .introducao {
   text-align: center;
   margin-bottom: 20px;
-
 }
 
 .bemVindo {
@@ -67,20 +66,15 @@
   color: #FFFFFF;
   font-weight: 700;
   margin-top: 50px;
-  ;
   margin-right: -9.1px;
 }
 
 .img {
-
   height: 150%;
   width: 150%;
   margin-top: -195px;
   margin-left: -172px;
-
 }
-
-
 
 .text {
   font-size: 18px;
@@ -104,7 +98,6 @@
   width: 200px;
   height: 200px;
   margin: 15px;
-
 }
 
 .icons {
@@ -123,11 +116,9 @@
 
 .container2 {
   background-image: url('https://i.pinimg.com/564x/9d/b3/a8/9db3a8156aae930919ca3869e1ed11ff.jpg');
-
-
 }
 
-@media screen and (max-width: 600px) and (min-device-height: 400px) {
+@media screen and (max-width: 600px) {
   .features {
     flex-direction: column;
     padding: 20px;
