@@ -47,22 +47,6 @@ function HeroEdit({ params }) {
         fetchCharacters();
     }, []);
 
-    const handleSearch = async () => {
-        try {
-            const dados = await getCharacters(searchTerm);
-            setApiData(dados, ...apiData);
-            setNumCharacters(10);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    const handleKeyPress = (e) => {
-        if (e.key == "Enter") {
-            handleSearch();
-        }
-    };
-
     const handleEdit = (characterId, name, descri, img) => {
         setName(name);
         setDescription(descri);
@@ -121,21 +105,6 @@ function HeroEdit({ params }) {
         <Header />
             <div className={styles.all}>
             <div className={styles.grid}>
-        <div className={styles.inpts}>
-              <label htmlFor="search">Procure um personagem</label>
-                <div className={styles.inputcontainer}>
-                    <input
-                        type="text"
-                        placeholder="Procurar"
-                        className={styles.input}
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        onKeyPress={handleKeyPress}
-                    />
-                    <button type="button" className={styles.btn} onClick={handleSearch}>  Procurar 🔎 </button>
-                </div>
-            </div>
-        <div>
             <div className={styles.containerInputs}>
                 <label htmlFor="name">Nome</label>
                 <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -148,7 +117,7 @@ function HeroEdit({ params }) {
                 <div>
                     {!flag ? <button className={styles.bntAdd} onClick={Adicionar}>Adicionar</button> : <button className={styles.bntEdit} onClick={handleChange}>Salvar</button>}
                 </div>
-            </div></div></div>
+            </div></div>
             <h1>Lista de Personagens</h1>
             <ul>
                 <div className={styles.lista}>
