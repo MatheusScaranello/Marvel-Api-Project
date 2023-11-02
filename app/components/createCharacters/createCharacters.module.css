@@ -230,3 +230,9 @@
     justify-content: space-between;
     width: 100%;
 }
+
+@media screen and (max-width: 600px) {
+    .allCards {
+        flex-direction: column;
+    }
+}
