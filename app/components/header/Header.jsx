@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./header.module.css";
-import NavLink from "@/app/components/navLink/NavLink";
+import NavLink from "../NavLink/NavLink";
 import { useCollapse } from "react-collapsed";
 import { AiOutlineMenu } from "react-icons/ai";
 import { ImHome3 } from "react-icons/im";
