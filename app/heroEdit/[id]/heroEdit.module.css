@@ -220,3 +220,21 @@
     justify-content: space-between;
     width: 100%;
 }
+
+@media screen and (max-width: 600px) {
+    .all{
+        padding: 0;
+        text-align: center;
+        align-items: center;
+    }
+    .grid {
+        padding: 0;
+        width: 20%;
+        margin: 0 auto;
+    }
+    .lista{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        margin: 0 auto;
+    }
+}
