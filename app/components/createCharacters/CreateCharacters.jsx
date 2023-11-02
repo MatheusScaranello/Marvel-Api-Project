@@ -1,3 +1,4 @@
+"use client";
 import { getCharacters } from "@/data/Characters";
 import styles from "../createCharacters/createCharacters.module.css";
 import { useState } from "react";
