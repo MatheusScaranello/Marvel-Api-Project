@@ -6,7 +6,6 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import { RiUserSearchLine } from "react-icons/ri";
-import { Spinnaker } from "next/font/google";
 import { TailSpin } from "react-loader-spinner";
 
 
