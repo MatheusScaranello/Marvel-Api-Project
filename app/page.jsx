@@ -20,12 +20,12 @@ const home = () => {
             <h2 className={`${styles.incons2} ${styles.fade}`}>CONHEÇA NOSSO SITE</h2>
           </div>
           <div className={styles.icons}>
-            <img src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_04.png" alt="Marvel" />
+            <img id={styles.img1} src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_04.png" alt="Marvel" />
             <div>
               <img src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_01.png" alt="Marvel" />
             </div>
             <div>
-              <img src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_02.png" alt="Marvel" />
+              <img id={styles.img3} src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_02.png" alt="Marvel" />
             </div>
           </div>
           <section className={styles.features}>
