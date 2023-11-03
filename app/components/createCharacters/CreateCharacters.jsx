@@ -1,12 +1,13 @@
 "use client";
 import { getCharacters } from "@/data/Characters";
 import styles from "../createCharacters/createCharacters.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import { RiUserSearchLine } from "react-icons/ri";
 import { TailSpin } from "react-loader-spinner";
+import { Alert, AlertTitle } from "@mui/material";
 
 
 const VisuallyHiddenInput = styled("input")({
@@ -31,6 +32,7 @@ export default function createCharacters() {
     const [id, setId] = useState(0);
     const [flag, setFlag] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [scrollToCardId, setScrollToCardId] = useState(null);
 
 
     function generateId() {
@@ -38,12 +40,31 @@ export default function createCharacters() {
         return id;
     }
 
+    const [alerData, setAlertData] = useState({
+        open: false,
+        message: "",
+        severity: "success",
+    });
+
+    const closeAlert = () => {
+        setAlertData({
+            ...setAlertData,
+            open: false,
+        });
+    }
+
+    useEffect(() => {
+        if (alerData.open) {
+            const timeOut = setTimeout(closeAlert, 5000);
+            return () => clearTimeout(timeOut);
+        }
+    }, [alerData.open]);
+
     const handleSearch = async () => {
         setIsLoading(true);
         try {
             const dados = await getCharacters(searchTerm);
             setApiData(dados);
-            setNumCharacters(10);
         } catch (error) {
             console.error(error);
         }
@@ -57,6 +78,16 @@ export default function createCharacters() {
     };
 
     const handleEdit = (characterId, name, descri, img) => {
+
+        if (name.trim == "" || description.trim == "" || img == "") {
+            setAlertData({
+                open: true,
+                message: "Preencha todos os campos para editar o personagem",
+                severity: "error",
+            });
+            return;
+        }
+
         setName(name);
         setDescription(descri);
         setImg(img);
@@ -77,7 +108,21 @@ export default function createCharacters() {
         setApiData(updatedData);
         setCharacterId(characterId);
         clundFilds();
+
+
+        setScrollToCardId(characterId);
     };
+
+    useEffect(() => {
+        if (scrollToCardId) {
+            const cardToScroll = document.getElementById(`card-${scrollToCardId}`);
+            if (cardToScroll) {
+                cardToScroll.scrollIntoView({ behavior: "smooth" });
+            }
+
+            setScrollToCardId(null);
+        }
+    }, [scrollToCardId]);
 
     const handleRemove = (id) => {
         const updatedData = apiData.filter((item) => item.id !== id);
@@ -85,6 +130,22 @@ export default function createCharacters() {
     };
 
     const Adicionar = () => {
+
+        if (name.trim == "" || description.trim == "" || img == "") {
+            setAlertData({
+                open: true,
+                message: "Preencha todos os campos para adicionar o personagem",
+                severity: "error",
+            });
+            return;
+        } else {
+            setAlertData({
+                open: true,
+                message: `${name} adicionado com sucesso`,
+                severity: "success",
+            });
+        }
+
         generateId();
         const newCharacter = { id: id, name, description, img };
         const updatedData = [newCharacter, ...apiData];
@@ -149,6 +210,14 @@ export default function createCharacters() {
                                 )}
                             </div>
                         </div>
+                        {
+                            alerData.open && (
+                                <Alert severity={alerData.severity} onClose={(closeAlert)}>
+                                    <AlertTitle>{alerData.severity}</AlertTitle>
+                                    {alerData.message}
+                                </Alert>
+                            )
+                        }
                     </div>
                 </div>
                 <h1>Lista de Personagens</h1>
@@ -167,8 +236,12 @@ export default function createCharacters() {
                             </div>
                         ) : (
                             apiData.map((item) => (
-                                <div className={styles.allCards}>
-                                    <div className={styles.item} key={item.id}>
+                                <div
+                                    id={`card-${item.id}`}
+                                    className={styles.allCards}
+                                    key={item.id}
+                                >
+                                    <div className={styles.item} >
                                         <p className={styles.name}>{item.name}</p>
                                         {item.img ? (
                                             <img src={item.img} alt={item.name} />
