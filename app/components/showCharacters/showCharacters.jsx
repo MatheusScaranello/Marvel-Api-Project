@@ -4,6 +4,7 @@ import styles from './showCharacters.module.css';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import { useRouter } from 'next/navigation';
 import {BsFillPencilFill} from 'react-icons/bs';
+import {GoMoveToTop} from 'react-icons/go';
 
 function Home(creaters) {
   const [apiData, setApiData] = useState([]);
@@ -60,8 +61,18 @@ function Home(creaters) {
     }
   };
 
+  const topGo = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div>
+      <div className={styles.topGo} onClick={topGo}>
+        <GoMoveToTop />
+      </div>
       <div className={styles.container}>
         <div className={styles.inpts}>
           <div className={styles.inputcontainer}>

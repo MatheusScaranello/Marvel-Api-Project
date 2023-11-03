@@ -8,6 +8,7 @@ import { styled } from "@mui/material/styles";
 import { RiUserSearchLine } from "react-icons/ri";
 import { TailSpin } from "react-loader-spinner";
 import { Alert, AlertTitle } from "@mui/material";
+import { GoMoveToTop } from "react-icons/go";
 
 
 const VisuallyHiddenInput = styled("input")({
@@ -39,6 +40,13 @@ export default function createCharacters() {
         setId(id + 1);
         return id;
     }
+
+    const topGo = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
 
     const [alerData, setAlertData] = useState({
         open: false,
@@ -167,6 +175,9 @@ export default function createCharacters() {
 
     return (
         <>
+        <div className={styles.topGo} onClick={topGo}>
+        <GoMoveToTop />
+      </div>
             <div className={styles.all}>
                 <div className={styles.grid}>
                     <div className={styles.inpts}>

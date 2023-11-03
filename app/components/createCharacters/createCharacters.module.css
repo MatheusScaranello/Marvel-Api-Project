@@ -247,6 +247,28 @@
         grid-template-rows: 1fr;
         margin: 0 auto;
     }
+    .item{
+       margin: 0 auto;
+    }
+    .topGo{
+        font-size: 1.5rem;
+        padding: 0.5rem
+    }
+}
+
+.topGo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #e01a38;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
 }
 /* 
  */

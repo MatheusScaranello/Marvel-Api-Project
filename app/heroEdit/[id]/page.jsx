@@ -8,6 +8,7 @@ import Header from '@/app/components/header/Header';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
+import { GoMoveToTop } from 'react-icons/go';
 
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
@@ -46,6 +47,13 @@ function HeroEdit({ params }) {
         };
         fetchCharacters();
     }, []);
+
+    const topGo = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
 
     const handleEdit = (characterId, name, descri, img) => {
         setName(name);
@@ -103,6 +111,9 @@ function HeroEdit({ params }) {
     return (
         <>
         <Header />
+        <div className={styles.topGo} onClick={topGo}>
+        <GoMoveToTop />
+      </div>
             <div className={styles.all}>
             <div className={styles.grid}>
             <div className={styles.containerInputs}>

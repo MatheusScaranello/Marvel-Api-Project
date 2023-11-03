@@ -7,6 +7,21 @@
     outline: none;
 }
 
+.topGo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #e01a38;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
 .iconPen{
     color: #ffffff;
     cursor: pointer;
@@ -215,4 +230,11 @@
     text-align: center;
     padding: 5px;
     margin: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .goTop {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }  
 }
