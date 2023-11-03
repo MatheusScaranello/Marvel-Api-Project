@@ -15,11 +15,12 @@
     background-color: #e01a38;
     position: fixed;
     bottom: 1.5rem;
-    right: 1.5rem;
+    right: 0.5rem;
     color: #fff;
     font-size: 2rem;
     cursor: pointer;
     border-radius: 50%;
+    z-index: 9999;
 }
 
 .iconPen{
