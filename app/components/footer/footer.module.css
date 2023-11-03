@@ -82,7 +82,8 @@
 
 @media (max-width:767px) {
   .site {
-    padding-bottom: 0
+    padding-bottom: 0;
+    line-height: normal;
   }
 
   .site .copyright,
@@ -160,8 +161,8 @@
   .social li.title {
     display: block;
     margin-right: 0;
-    font-weight: 600
   }
+
 }
 
 .col {
