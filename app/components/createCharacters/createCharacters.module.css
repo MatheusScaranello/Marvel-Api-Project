@@ -200,7 +200,20 @@
     font-family: 'Josefin Sans', sans-serif;
     cursor: pointer;
 }
-
+.topGo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #e01a38;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
 .bntRemove:hover {
     background-color: #e01a38;
     opacity: 0.8;
@@ -236,12 +249,14 @@
         padding: 0;
         text-align: center;
         align-items: center;
+        margin: 0;
     }
     .grid {
         padding: 0;
         width: 20%;
         margin: 0 auto;
     }
+
     .lista{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -252,23 +267,10 @@
     }
     .topGo{
         font-size: 1.5rem;
-        padding: 0.5rem
+        padding: 0.5rem;
     }
 }
 
-.topGo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    background-color: #e01a38;
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-    border-radius: 50%;
-}
+
 /* 
  */
