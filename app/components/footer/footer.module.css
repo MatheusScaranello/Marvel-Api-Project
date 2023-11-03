@@ -162,6 +162,9 @@
     display: block;
     margin-right: 0;
   }
+  .footer {
+    display: block;
+  }
 
 }
 
