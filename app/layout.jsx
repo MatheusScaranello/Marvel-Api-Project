@@ -11,6 +11,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://seeklogo.com/images/T/the-avengers-capitao-america-logo-72B7C58836-seeklogo.com.png"
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
