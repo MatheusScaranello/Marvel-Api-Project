@@ -31,7 +31,7 @@ const Header = () => {
                     <div className={styles.content}>
                         <div className={styles.DHome}>
                             <li>
-                                <NavLink texto={<ImHome3 />} rota="/" />
+                                <NavLink texto={<ImHome3/>} rota="/" />
                             </li>
                             <p className={styles.pzin}>
                                 <NavLink texto={"Home"} rota={"/"} />
