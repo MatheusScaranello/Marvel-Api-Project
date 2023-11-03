@@ -1,5 +1,5 @@
 import styles from './footer.module.css'
-import NavLink from "../navLink/NavLink"
+import NavLink from "../NavLink/NavLink"
 import {BsGithub} from "react-icons/bs"
 import {SiInstagram, SiLinktree} from "react-icons/si"
 import {BsLinkedin} from "react-icons/bs"

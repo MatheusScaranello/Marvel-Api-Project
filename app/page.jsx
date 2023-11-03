@@ -1,7 +1,7 @@
 import styles from "./page.module.css"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
-import NavLink from "./components/navLink/NavLink"
+import NavLink from "./components/NavLink/NavLink"
 
 const home = () => {
   return (
