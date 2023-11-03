@@ -4,7 +4,11 @@ import Link from "next/link"
 
 const NavLink = ({rota, texto}) => {
     return (
-            <Link href={rota} className={styles.navLink}>{texto}</Link>
+        <div className={styles.navLink}>
+            <Link href={rota}>
+                <a>{texto}</a>
+            </Link>
+        </div>
     )
 }
 
