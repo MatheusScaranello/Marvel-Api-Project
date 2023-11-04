@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Work+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Josefin+Sans:ital,wght@1,300&family=Lexend+Giga&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Raleway&family=Rowdies&family=Ubuntu:ital,wght@1,300&family=Work+Sans&display=swap');
+ */
+@font-face {
+  font-family: 'Avengers';
+  src: url('../fonts/AVENGEANCE\ HEROIC\ AVENGER\ BD.otf') format('truetype');
+  font-weight: 400;
+}
+
 
 .fundo {
   background-image: url('https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg');
@@ -11,6 +18,7 @@
   background-color: black;
   overflow-x: hidden;
 }
+
 
 .features {
   display: flex;
@@ -62,7 +70,7 @@
 
 .bemVindo {
   font-size: 70px;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Avengers', sans-serif;
   color: #FFFFFF;
   font-weight: 700;
   margin-top: 50px;
@@ -109,10 +117,10 @@
 
 .incons2 {
   margin-top: 50px;
-  font-size: 20px;
   text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Avengers", sans-serif;
   color: #FFFFFF;
+  font-size: 2rem;
 }
 
 .container2 {
@@ -147,7 +155,7 @@
   }
 
   .bemVindo {
-    font-size: 24px;
+    font-size: 2rem;
   }
 
   .text {
