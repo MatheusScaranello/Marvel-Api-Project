@@ -35,7 +35,12 @@
     .container {
         flex-direction: column;
         height: auto;
-        padding: 10px;
+        margin: 10px;
+        max-height: 100vh;
+        min-height: 100vh;
+    }
+    .fundo1{
+        overflow: hidden;
     }
 
     .title {

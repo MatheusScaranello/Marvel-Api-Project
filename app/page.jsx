@@ -2,7 +2,6 @@
 import styles from "./page.module.css"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
-import NavLink from "./components/NavLink/NavLink"
 import { CCarouselItem } from '@coreui/react'
 import { CCarousel } from '@coreui/react'
 import { CImage } from '@coreui/react'
@@ -51,7 +50,7 @@ const home = () => {
             <h2 className={`${styles.incons2} ${styles.fade}`}>Conheça nosso site</h2>
           </div>
           <div className={styles.icons}>
-            <Card className={styles.cards} style={{ width: '18rem', margin: "5px", backgroundColo: "red" }}>
+            <Card className={styles.cards} style={{ width: '18rem', margin: "5px",  backgroundSize: "cover" }}>
               <Card.Img variant="top" src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_02.png" />
               <Card.Body>
                 <Card.Title>Personagens</Card.Title>
@@ -61,23 +60,25 @@ const home = () => {
                 <CTooltip
                   content="Navegar para a página de personagens."
                   placement="top"
+                  zIndex="9999"
                 >
-                  <CButton href="./searchPage" color="primary">Click Aqui</CButton>
+                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }}  href="./searchPage" color="primary">Click Aqui</CButton>
                 </CTooltip>
               </Card.Body>
             </Card>
             <Card className={styles.cards} style={{ width: '18rem', margin: "5px" }}>
               <Card.Img variant="top" src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_01.png" />
               <Card.Body>
-                <Card.Title>Cadastro</Card.Title>
+                <Card.Title>Crie seu personagem</Card.Title>
                 <Card.Text>
                   Cadastre um novo personagem na nossa API ou fique a vontade para editar e excluir outros.
                 </Card.Text>
                 <CTooltip
                   content="Navegar para a página de cadastro de personagens."
                   placement="top"
+                  zIndex="9999"
                 >
-                  <CButton href="./createCharacters" color="primary">Click Aqui</CButton>
+                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }} href="./createCharacters" color="primary">Click Aqui</CButton>
                 </CTooltip>
               </Card.Body>
             </Card>
@@ -91,8 +92,9 @@ const home = () => {
                 <CTooltip
                   content="Navegar para a página sobre a nossa equipe."
                   placement="top"
+                  zIndex="9999"
                 >
-                  <CButton href="./sobrenos" color="primary">Click Aqui</CButton>
+                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }} href="./sobrenos" color="primary">Click Aqui</CButton>
                 </CTooltip>
               </Card.Body>
             </Card>
