@@ -102,8 +102,9 @@
 
 .icons {
   display: flex;
-  justify-content: center;
   margin-top: 50px;
+  justify-content: space-between;
+  margin: 20px;
 }
 
 .incons2 {
@@ -121,7 +122,13 @@
 .carousel {
   margin-top: 50px;
   margin-bottom: 50px;
-  height:  500px;
+  height: 500px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 767px) {
@@ -159,14 +166,26 @@
     height: auto;
   }
 
+  .icons {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+  }
+
+
   .icons img {
     width: 100px;
     height: 100px;
-    margin: 10px;
-    flex-direction: column;
+    margin: 0 auto;
   }
 
-  #img1 , #img3 {
-    display: none;
+
+
+  .carousel {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 300px;
   }
 }

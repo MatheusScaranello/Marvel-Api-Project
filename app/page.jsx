@@ -7,13 +7,17 @@ import { CCarouselItem } from '@coreui/react'
 import { CCarousel } from '@coreui/react'
 import { CImage } from '@coreui/react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Card from 'react-bootstrap/Card';
+import { CTooltip } from '@coreui/react'
+import { CButton } from '@coreui/react'
 
 
 const home = () => {
+
+
   return (
     <>
       <Header />
-
       <div className={styles.fundo}>
         <div className={styles.container}>
           <div className={styles.introducao}>
@@ -44,35 +48,58 @@ const home = () => {
                 </CCarouselItem>
               </CCarousel>
             </div>
-            <h2 className={`${styles.incons2} ${styles.fade}`}>CONHEÇA NOSSO SITE</h2>
+            <h2 className={`${styles.incons2} ${styles.fade}`}>Conheça nosso site</h2>
           </div>
           <div className={styles.icons}>
-            <img id={styles.img1} src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_04.png" alt="Marvel" />
-            <div>
-              <img src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_01.png" alt="Marvel" />
-            </div>
-            <div>
-              <img id={styles.img3} src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_02.png" alt="Marvel" />
-            </div>
+            <Card className={styles.cards} style={{ width: '18rem', margin: "5px", backgroundColo: "red" }}>
+              <Card.Img variant="top" src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_02.png" />
+              <Card.Body>
+                <Card.Title>Personagens</Card.Title>
+                <Card.Text>
+                  Veja todos os personagens da Marvel disponiveis em nossa API, e conheça um pouco mais sobre eles.
+                </Card.Text>
+                <CTooltip
+                  content="Navegar para a página de personagens."
+                  placement="top"
+                >
+                  <CButton href="./searchPage" color="primary">Click Aqui</CButton>
+                </CTooltip>
+              </Card.Body>
+            </Card>
+            <Card className={styles.cards} style={{ width: '18rem', margin: "5px" }}>
+              <Card.Img variant="top" src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_01.png" />
+              <Card.Body>
+                <Card.Title>Cadastro</Card.Title>
+                <Card.Text>
+                  Cadastre um novo personagem na nossa API ou fique a vontade para editar e excluir outros.
+                </Card.Text>
+                <CTooltip
+                  content="Navegar para a página de cadastro de personagens."
+                  placement="top"
+                >
+                  <CButton href="./createCharacters" color="primary">Click Aqui</CButton>
+                </CTooltip>
+              </Card.Body>
+            </Card>
+            <Card className={styles.cards} style={{ width: '18rem', margin: "5px" }}>
+              <Card.Img variant="top" src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_04.png" />
+              <Card.Body>
+                <Card.Title>Sobre Nós</Card.Title>
+                <Card.Text>
+                  Conheça um pouco mais sobre a nossa equipe, e veja os criadores do nosso projeto.
+                </Card.Text>
+                <CTooltip
+                  content="Navegar para a página sobre a nossa equipe."
+                  placement="top"
+                >
+                  <CButton href="./sobrenos" color="primary">Click Aqui</CButton>
+                </CTooltip>
+              </Card.Body>
+            </Card>
+
           </div>
-          <section className={styles.features}>
-            <div className={styles.feature}>
-              <h2>Conheça nossa equipe</h2>
-
-              <NavLink texto={"Veja Mais"} rota="/sobrenos" />
-            </div>
-            <div className={styles.feature}>
-              <h2>Procure por um Personagem</h2>
-              <NavLink texto={"Veja Mais"} rota="/searchPage" />
-            </div>
-            <div className={styles.feature}>
-              <h2>Crie seus Personagens</h2>
-              <NavLink texto={"Veja Mais"} rota="/createCharacters" />
-            </div>
-
-          </section>
         </div>
-      </div>
+      </div >
       <div className={styles.container2}>
       </div>
       <Footer />
