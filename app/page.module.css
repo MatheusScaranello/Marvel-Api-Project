@@ -118,6 +118,12 @@
   background-image: url('https://i.pinimg.com/564x/9d/b3/a8/9db3a8156aae930919ca3869e1ed11ff.jpg');
 }
 
+.carousel {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height:  500px;
+}
+
 @media screen and (max-width: 767px) {
   .features {
     flex-direction: column;
