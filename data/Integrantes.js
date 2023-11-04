@@ -4,7 +4,7 @@ const integrantes = [
       nome: "Matheus Scaranello",
       cargo: "TechLeader",
       foto: "https://i.imgur.com/8K96q0J.jpg",
-      description: "Matheus é o TechLeader da equipe e é responsável por gerenciar a equipe e programar",
+      description: "Matheus é o TechLeader da equipe e é responsável por gerenciar e programar",
       insta: "https://www.instagram.com/matheus_sca07/"
     },
     {

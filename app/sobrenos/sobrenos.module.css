@@ -50,9 +50,11 @@
 
     .carouselContainer {
         height: auto;
+        width: auto;
     }
 
     .carouselSlide {
         height: auto;
+        width: auto;
     }
 }
