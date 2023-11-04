@@ -51,12 +51,10 @@
     .carouselContainer {
         height: auto;
         width: auto;
-        overflow: visible;
     }
 
     .carouselSlide {
         height: auto;
         width: auto;
-        overflow: visible;
     }
 }
