@@ -38,6 +38,7 @@
         margin: 10px;
         max-height: 100vh;
         min-height: 100vh;
+        width: auto;
     }
     .fundo1{
         overflow: hidden;
