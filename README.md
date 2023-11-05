@@ -41,6 +41,8 @@ O projeto utiliza a API Marvel, necessita obter sua própria chave de autentica�
 
 . URL base <a href="https://gateway.marvel.com/v1/public">Acesse</a>
 
+.Marvel 6Devs <a href="https://marvel-6devs.vercel.app/">Veja nosso site</a>
+
 
 ## Autenticação.
 Todas as solicitações à API devem incluir uma chave de autenticação (API key) como um parâmetro de consulta.
