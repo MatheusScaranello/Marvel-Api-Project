@@ -1,17 +1,27 @@
+.fundo1{
+    background-image: url("https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+}
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 90vh;
-    cursor: grab;
+    
 }
 
 .title {
     font-size: 2rem;
     font-weight: bold;
-    color: #fff;
+    color: #c12828;
     text-align: center;
-    margin: 10px;
+    margin-bottom: 20px;
+   
 }
 
 .carouselContainer {
