@@ -47,10 +47,10 @@ const home = () => {
                 </CCarouselItem>
               </CCarousel>
             </div>
-            <h2 className={`${styles.incons2} ${styles.fade}`}>Conheça nosso site</h2>
+            <h2 className={`${styles.incons2} ${styles.fade}`}>Explore o Mundo Marvel</h2>
           </div>
           <div className={styles.icons}>
-            <Card className={styles.cards} style={{ width: '18rem', margin: "5px",  backgroundSize: "cover" }}>
+            <Card className={styles.cards} style={{ width: '18rem', margin: "5px", backgroundSize: "cover" }}>
               <Card.Img variant="top" src="https://marvelmission.com/assets/front/images/homepage/ICONO-INTRO_02.png" />
               <Card.Body>
                 <Card.Title>Personagens</Card.Title>
@@ -62,7 +62,7 @@ const home = () => {
                   placement="top"
                   zIndex="9999"
                 >
-                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }}  href="./searchPage" color="primary">Click Aqui</CButton>
+                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }} href="./searchPage" color="primary">Explore</CButton>
                 </CTooltip>
               </Card.Body>
             </Card>
@@ -78,7 +78,7 @@ const home = () => {
                   placement="top"
                   zIndex="9999"
                 >
-                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }} href="./createCharacters" color="primary">Click Aqui</CButton>
+                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }} href="./createCharacters" color="primary">Explore</CButton>
                 </CTooltip>
               </Card.Body>
             </Card>
@@ -94,7 +94,7 @@ const home = () => {
                   placement="top"
                   zIndex="9999"
                 >
-                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }} href="./sobrenos" color="primary">Click Aqui</CButton>
+                  <CButton style={{ backgroundColor: '#ce2d2d', border: "#ce2d2d" }} href="./sobrenos" color="primary">Explore</CButton>
                 </CTooltip>
               </Card.Body>
             </Card>

@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import styles from './showCharacters.module.css';
 import { getCharacters, getCharactersRadom } from '@/data/Characters';
 import { useRouter } from 'next/navigation';
-import {BsFillPencilFill} from 'react-icons/bs';
-import {GoMoveToTop} from 'react-icons/go';
+import { BsFillPencilFill } from 'react-icons/bs';
+import { GoMoveToTop } from 'react-icons/go';
+import { TailSpin } from "react-loader-spinner";
 
 function Home(creaters) {
   const [apiData, setApiData] = useState([]);
@@ -12,7 +13,7 @@ function Home(creaters) {
   const [searchTerm, setSearchTerm] = useState("");
   const [flag, setFlag] = useState(false);
   const [numCharacters, setNumCharacters] = useState(100);
-  
+  const [isLoading, setIsLoading] = useState(true);
 
   const router = useRouter();
 
@@ -21,14 +22,14 @@ function Home(creaters) {
       try {
         const dados = await getCharactersRadom();
         setApiDataRadom(dados, creaters);
+        setIsLoading(false);
       } catch (error) {
         console.error(error);
+        setIsLoading(false);
       }
     };
     fetchCharactersRandom();
   }, []);
-
-  
 
   const handleSearch = async () => {
     try {
@@ -92,49 +93,61 @@ function Home(creaters) {
 
         <div className={styles.grid}>
           <div className={styles.allCards}>
-          {(flag ? apiData : apiDataRadom).slice(0, numCharacters).map((item) => (
-            <div className={styles.card} key={item.id}>
-              <div className={styles.front}>
-
-                {
-                  item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? 
-                  <img src="/interro.png"
-                  alt={item.name}
-                  className={styles.img}
-                  /> : <img
-                  src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
-                  alt={item.name}
-                  className={styles.img}
-                />
-                }
-                <h3 className={styles.name}>{item.name}</h3>
+            {isLoading ? (
+              <div className={styles.loading}>
+                <TailSpin height="80"
+                  width="80"
+                  color="#861111  "
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true} />
               </div>
-              <div className={`${styles.info} ${styles.back}`}>
-                <div className={styles.edit} onClick={() => editHero(item.id)} >
-                  <BsFillPencilFill />
+            ) : (
+              (flag ? apiData : apiDataRadom).slice(0, numCharacters).map((item) => (
+                <div className={styles.card} key={item.id}>
+                  <div className={styles.front}>
+                    {
+                      item.thumbnail.path === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ?
+                        <img src="/interro.png"
+                          alt={item.name}
+                          className={styles.img}
+                        /> : <img
+                          src={`${item.thumbnail.path}.${item.thumbnail.extension}`}
+                          alt={item.name}
+                          className={styles.img}
+                        />
+                    }
+                    <h3 className={styles.name}>{item.name}</h3>
+                  </div>
+                  <div className={`${styles.info} ${styles.back}`}>
+                    <div className={styles.edit} onClick={() => editHero(item.id)} >
+                      <BsFillPencilFill />
+                    </div>
+                    {item.description ? (
+                      <div className={styles.infos}>
+                        <p className={styles.desc}>Descrição: {item.description}</p>
+                        <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
+                      </div>
+                    ) : (
+                      <div className={styles.infos}>
+                        <p className={styles.noDescription}>
+                          Esse personagem não possui descrição
+                        </p>
+                        <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                {item.description ? (
-                  <div className={styles.infos}>
-                    <p className={styles.desc}>Descrição: {item.description}</p>
-                    <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
-                  </div>
-                ) : (
-                  <div className={styles.infos}>
-                    <p className={styles.noDescription}>
-                      Esse personagem não possui descrição
-                    </p>
-                    <button className={styles.btn} onClick={() => moreInfos(item.id)}>Ver mais</button>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-        {numCharacters < (flag ? apiData.length : apiDataRadom.length) && (
-          <button className={styles.btn2} onClick={loadMoreCharacters}>
-            Ver mais personagens
-          </button>
-        )}
+              ))
+            )}
+          </div>
+          {numCharacters < (flag ? apiData.length : apiDataRadom.length) && (
+            <button className={styles.btn2} onClick={loadMoreCharacters}>
+              Ver mais personagens
+            </button>
+          )}
         </div>
       </div>
     </div>
