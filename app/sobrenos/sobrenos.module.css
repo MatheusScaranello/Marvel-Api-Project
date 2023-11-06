@@ -5,25 +5,30 @@
     background-position: top center;
     min-height: 100vh;
     width: 100%;
+    background-color: black;  
+}
+.fundo2{
+    background-image: url("https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    min-height: 100vh;
+    width: 100%;
     background-color: black;
-
-    
+    display: none;
 }
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 90vh;
-    
 }
 
 .title {
     font-size: 2rem;
     font-weight: bold;
-    color: #c12828;
+    color: #8B0000;
     text-align: center;
-    margin-bottom: 20px;
-   
 }
 
 .carouselContainer {
@@ -47,12 +52,15 @@
     .container {
         flex-direction: column;
         height: auto;
-        margin: 10px;
         max-height: 100vh;
         min-height: 100vh;
         width: auto;
     }
     .fundo1{
+        display: none;
+    }
+    .fundo2{
+        display: block;
         overflow: hidden;
     }
 

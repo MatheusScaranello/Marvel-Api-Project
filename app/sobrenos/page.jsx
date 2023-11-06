@@ -34,6 +34,8 @@ const Sobrenos = () => {
       }
     });
 
+    
+
     return () => {
       document.removeEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
@@ -66,6 +68,25 @@ const Sobrenos = () => {
           </div>
         </Swiper>
          </div> 
+      </div>
+      <div className={styles.fundo2}>
+        <div className={styles.container}>
+          <Swiper
+           spaceBetween={200}
+            slidesPerView={1}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+          >
+            <div className={styles.carouselContainer}>
+            <div className={styles.carouselSlide}>
+              {integrantes.map((integrante, index) => (
+                <SwiperSlide key={index}>
+                  <IntegranteCash {...integrante} />
+                </SwiperSlide>
+              ))}
+            </div>
+          </div>
+        </Swiper>
+        </div>
       </div>
       <Footer />
     </>
