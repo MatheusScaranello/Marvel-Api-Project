@@ -60,6 +60,8 @@
         align-items: center;
         justify-content: center;
         height: 90vh;
+        width: auto;
+        flex-direction: column;
     }
 
     .title {
@@ -74,5 +76,14 @@
     .carouselSlide {
         height: auto;
         width: auto;
+    }
+
+    .button{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 4rem;
+        color: #8B0000;
     }
 }
