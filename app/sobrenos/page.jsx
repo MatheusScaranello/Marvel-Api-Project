@@ -19,12 +19,20 @@ const Sobrenos = () => {
     const nextSlide = () => {
       if (swiper) {
         swiper.slideNext();
+        setSlideAtual(slideAtual + 1);
+        if (slideAtual > 4) {
+          setSlideAtual(0);
+        }
       }
     };
 
     const prevSlide = () => {
       if (swiper) {
         swiper.slidePrev();
+        setSlideAtual(slideAtual - 1);
+        if (slideAtual < 0) {
+          setSlideAtual(4);
+        }
       }
     };
 
@@ -85,11 +93,20 @@ const Sobrenos = () => {
         </Swiper>
          </div>
          <div className={styles.container2}>
+          <Swiper
+        spaceBetween={200}
+        slidesPerView={1}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+      >
          <div className={styles.carouselContainer}>
         <div className={styles.carouselSlide}>
+          <SwiperSlide>
             <IntegranteCash {...integrantes[slideAtual]}/>
+          </SwiperSlide>
         </div>
       </div>
+      </Swiper>
       <div className={styles.controls}>
         <button className={styles.button} onClick={anteriorSlide}><BsFillCaretLeftFill/></button>
         <button className={styles.button} onClick={proximoSlide}><BsFillCaretRightFill/></button>
