@@ -50,7 +50,6 @@
 
 @media screen and (max-width: 600px) {
     .container {
-        flex-direction: column;
         height: auto;
         max-height: 100vh;
         min-height: 100vh;

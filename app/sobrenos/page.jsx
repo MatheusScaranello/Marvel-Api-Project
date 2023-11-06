@@ -73,7 +73,7 @@ const Sobrenos = () => {
         <div className={styles.container}>
           <Swiper
            spaceBetween={200}
-            slidesPerView={1}
+            slidesPerView={6}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
           >
             <div className={styles.carouselContainer}>
