@@ -100,3 +100,15 @@
 .btn:hover {
     background-color: #404040;
 }
+
+@media screen and (max-width: 600px) {
+    .cont{
+        overflow: hidden;
+    }
+    .all {
+        padding: 0;
+        text-align: center;
+        align-items: center;
+        overflow: hidden;
+    }
+}
