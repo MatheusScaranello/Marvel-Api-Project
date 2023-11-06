@@ -111,4 +111,8 @@
         align-items: center;
         overflow: hidden;
     }
+    .perso{
+        display: flex;
+        flex-direction: column;
+    }
 }
