@@ -67,16 +67,15 @@ const Sobrenos = () => {
             </div>
           </div>
         </Swiper>
-         </div> 
-      </div>
-      <div className={styles.fundo2}>
-        <div className={styles.container}>
-          <Swiper
-           spaceBetween={200}
-            slidesPerView={6}
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-          >
-            <div className={styles.carouselContainer}>
+         </div>
+         <div className={styles.container2}>
+         <Swiper
+          spaceBetween={200}
+          slidesPerView={6}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+        >
+          <div className={styles.carouselContainer}>
             <div className={styles.carouselSlide}>
               {integrantes.map((integrante, index) => (
                 <SwiperSlide key={index}>
@@ -86,7 +85,7 @@ const Sobrenos = () => {
             </div>
           </div>
         </Swiper>
-        </div>
+          </div> 
       </div>
       <Footer />
     </>
