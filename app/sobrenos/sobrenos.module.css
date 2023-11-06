@@ -64,6 +64,10 @@
         flex-direction: column;
     }
 
+    .fundo1{
+        overflow: hidden;
+    }
+
     .title {
         font-size: 1.5rem;
     }
