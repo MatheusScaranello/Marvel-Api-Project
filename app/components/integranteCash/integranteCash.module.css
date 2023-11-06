@@ -13,7 +13,7 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     margin: 1em;
-    background-color: #8B0000;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .card_image {
@@ -21,7 +21,8 @@
     padding: 25px;
     margin-bottom: 2em;
     align-items: center;
-
+    display: flex;
+    justify-content: center;
 }
 
 .card_image .foto {
@@ -50,6 +51,8 @@
     font-weight: 500;
     position: relative;
     color: #F0F8FF;
+    text-emphasis: none;
+    text-decoration: none;
 }
 
 
@@ -58,6 +61,7 @@
     margin-top: 10px;
     font-weight: bold;
     position: relative;
+    text-decoration: none;
 }
 
 .card_text {
@@ -65,4 +69,5 @@
     font-size: 1.1rem;
     margin: 1em 0;
     color: #F0F8FF;
+    text-decoration: none;
 }

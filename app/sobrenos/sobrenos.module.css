@@ -1,34 +1,32 @@
+@font-face {
+    font-family: 'Avengers';
+    src: url('../../fonts/AVENGEANCE\ HEROIC\ AVENGER\ BD.otf') format('truetype');
+    font-weight: 400;
+  }
+
 .fundo1{
-    background-image: url("https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg");
+    background-image: url("https://i.pinimg.com/originals/46/28/3a/46283a918edbdc933a9831165cd644a3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
     min-height: 100vh;
     width: 100%;
-    background-color: black;  
-}
-.fundo2{
-    background-image: url("https://marvelmission.com/assets/front/images/homepage/FONDO_INTRO.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    min-height: 100vh;
-    width: 100%;
-    background-color: black;
-    display: none;
+    background-color: #333;
+    text-decoration: none;
 }
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    margin: 10rem 0;
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 5rem;
     font-weight: bold;
-    color: #8B0000;
+    color: #fff;
     text-align: center;
+  font-family: 'Avengers', sans-serif;
 }
 
 .carouselContainer {

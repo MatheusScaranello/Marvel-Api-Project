@@ -8,6 +8,7 @@ import Footer from '../components/footer/Footer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import {BsFillCaretRightFill, BsFillCaretLeftFill} from 'react-icons/bs';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Sobrenos = () => {
   const swiperRef = useRef(null);
@@ -73,7 +74,7 @@ const Sobrenos = () => {
     <>
       <Header />
       <div className={styles.fundo1}>
-       <h1 className={styles.title}>Sobre nós</h1>
+       <h1 className={`${styles.title} ${styles.fade}`}>Sobre nos</h1>
       <div className={styles.container}>
         <Swiper
           spaceBetween={200}
